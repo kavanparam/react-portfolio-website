@@ -1,45 +1,6 @@
 import * as React from "react";
 import type { HeadFC } from "gatsby";
-
-const pageStyles = {
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  fontSize: "2em",
-  fontWeight: "bold",
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-const headingAccentStyles = {
-  color: "#663399",
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-  fontFamily: "monospace",
-};
-const listStyles = {
-  fontWeight: 300,
-  marginBottom: 96,
-  paddingLeft: 0,
-  listStyleType: "disc",
-};
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-};
+import "../styles/index.css";
 
 // Refactor to social links
 const docLinks = [
@@ -104,7 +65,7 @@ const links = [
 
 const IndexPage = () => {
   return (
-    <main className="bg-slate-100 p-24 h-screen" style={pageStyles}>
+    <main className="bg-slate-100 p-24 h-screen pageStyles">
       {/* <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this
         page update in real-time. 😎
@@ -142,21 +103,16 @@ const IndexPage = () => {
         ))}
       </ul> */}
 
-      <h1 style={headingStyles}>
-        Page <span style={headingAccentStyles}>Build ⚡️</span>
+      <h1 className="headingStyles">
+        Page <span className="headingAccentStyles">Build ⚡️</span>
       </h1>
-      <code style={{ ...codeStyles, ...headingAccentStyles }}>outline</code>
-      <ul style={listStyles}>
-        <li>install tailwind</li>
-        <li>export default styles to CSS file</li>
-        <li>
-          make a global css in gatsby s.t. it's friendly w tailwind setup
-          — follow gatsby website docs
-        </li>
-        <li>push to vercel</li>
+      <code className="underline underline-offset-4 decoration-1 codeStyles">
+        outline
+      </code>
+      <ul className="ml-4 listStyles">
         <li>watch the react tailwind tutorial by dev ed</li>
         <li>understand Gatsby and GraphQL</li>
-        <dl style={descriptionStyle}>
+        <dl className="descriptionStyles">
           <dd>
             why it's used here for links and how you can leverage it in project
           </dd>

@@ -1,0 +1,43 @@
+.pageStyles {
+  font-family: -apple-system, Roboto, sans-serif, serif;
+}
+
+.headingStyles {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 64px;
+  max-width: 320px;
+}
+
+.headingAccentStyles {
+  color: #663399;
+}
+
+.paragraphStyles {
+  margin-bottom: 48px;
+}
+
+.codeStyles {
+  color: #8A6534;
+  padding: 4px;
+  background-color:#FFF4DB;
+  font-size: 1.25rem;
+  border-radius: 4;
+  font-family: monospace;
+}
+
+.listStyles {
+  font-weight: 300;
+  margin-bottom: 96;
+  margin-left: 0;
+  list-style-type: disc;
+}
+
+.descriptionStyles {
+  color: "#232129";
+  font-size: 14;
+  margin-top: 10;
+  margin-bottom: 0;
+  line-height: 1.25;
+};
