@@ -104,7 +104,7 @@ const IndexPage = () => {
       </ul> */}
 
       <h1 className="headingStyles">
-        Page <span className="headingAccentStyles">Build ⚡️</span>
+        Page <span className="text-gatsby-purple">Build ⚡️</span>
       </h1>
       <code className="underline underline-offset-4 decoration-1 codeStyles">
         outline
