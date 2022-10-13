@@ -14,6 +14,7 @@ const headingStyles = {
 const headingAccentStyles = {
   color: "#663399",
 };
+
 const paragraphStyles = {
   marginBottom: 48,
 };
@@ -25,32 +26,9 @@ const codeStyles = {
   borderRadius: 4,
 };
 const listStyles = {
+  fontWeight: 300,
   marginBottom: 96,
   paddingLeft: 0,
-};
-const doclistStyles = {
-  paddingLeft: 0,
-};
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-};
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-};
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
 };
 
 const descriptionStyle = {
@@ -61,6 +39,7 @@ const descriptionStyle = {
   lineHeight: 1.25,
 };
 
+// Refactor to social links
 const docLinks = [
   {
     text: "TypeScript Documentation",
@@ -74,22 +53,7 @@ const docLinks = [
   },
 ];
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-};
-
+// Refactor for projects — can store description, title, link in this format, and maybe features as well to be formatted into grid card style format
 const links = [
   {
     text: "Tutorial",
@@ -139,18 +103,11 @@ const links = [
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>
-          — you just made a Gatsby site! 🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
+      {/* <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this
         page update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
+      </p> */}
+      {/* <ul style={doclistStyles}>
         {docLinks.map((doc) => (
           <li key={doc.url} style={docLinkStyle}>
             <a
@@ -161,8 +118,8 @@ const IndexPage = () => {
             </a>
           </li>
         ))}
-      </ul>
-      <ul style={listStyles}>
+      </ul> */}
+      {/* <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
             <span>
@@ -181,11 +138,31 @@ const IndexPage = () => {
             </span>
           </li>
         ))}
+      </ul> */}
+
+      <h1 style={headingStyles}>
+        Page <span style={headingAccentStyles}>Build ⚡️</span>
+      </h1>
+      <code style={{ ...codeStyles, ...headingAccentStyles }}>outline</code>
+      <ul style={listStyles}>
+        <li>install tailwind</li>
+        <li>export default styles to CSS file</li>
+        <li>
+          make a global css in gatsby s.t. it's friendly w tailwind setup
+          — follow gatsby website docs
+        </li>
+        <li>push to vercel</li>
+        <li>watch the react tailwind tutorial by dev ed</li>
+        <li>understand Gatsby and GraphQL</li>
+        <dl style={descriptionStyle}>
+          <dd>
+            why it's used here for links and how you can leverage it in project
+          </dd>
+          <dd>^probably going to use a {`<Project>`} component instead</dd>
+          <dd>why isn't the {`<Link>`} component used here instead</dd>
+        </dl>
+        <li>explore gatsby plugins like the markdown one in this project</li>
       </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
     </main>
   );
 };
