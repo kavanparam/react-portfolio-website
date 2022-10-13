@@ -1,6 +1,5 @@
 import * as React from "react";
 import type { HeadFC } from "gatsby";
-import "../styles/index.css";
 
 // Refactor to social links
 const docLinks = [
@@ -65,7 +64,7 @@ const links = [
 
 const IndexPage = () => {
   return (
-    <main className="bg-slate-100 p-24 h-screen pageStyles">
+    <main className="h-screen p-24 bg-slate-100 font-main">
       {/* <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this
         page update in real-time. 😎
@@ -103,16 +102,16 @@ const IndexPage = () => {
         ))}
       </ul> */}
 
-      <h1 className="headingStyles">
+      <h1 className="max-w-xs mb-16 text-4xl font-bold">
         Page <span className="text-gatsby-purple">Build ⚡️</span>
       </h1>
-      <code className="underline underline-offset-4 decoration-1 codeStyles">
+      <code className="p-1 text-xl underline rounded underline-offset-4 decoration-0 bg-gatsby-bg-code text-gatsby-purple">
         outline
       </code>
-      <ul className="ml-4 listStyles">
+      <ul className="mb-24 ml-4 font-light list-disc">
         <li>watch the react tailwind tutorial by dev ed</li>
         <li>understand Gatsby and GraphQL</li>
-        <dl className="descriptionStyles">
+        <dl className="mt-2 ml-4">
           <dd>
             why it's used here for links and how you can leverage it in project
           </dd>
