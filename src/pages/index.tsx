@@ -2,8 +2,6 @@ import * as React from "react";
 import type { HeadFC } from "gatsby";
 
 const pageStyles = {
-  color: "#232129",
-  padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const headingStyles = {
@@ -106,7 +104,7 @@ const links = [
 
 const IndexPage = () => {
   return (
-    <main className="bg-slate-100 h-screen" style={pageStyles}>
+    <main className="bg-slate-100 p-24 h-screen" style={pageStyles}>
       {/* <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this
         page update in real-time. 😎
