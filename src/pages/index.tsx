@@ -7,6 +7,8 @@ const pageStyles = {
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const headingStyles = {
+  fontSize: "2em",
+  fontWeight: "bold",
   marginTop: 0,
   marginBottom: 64,
   maxWidth: 320,
@@ -24,11 +26,13 @@ const codeStyles = {
   backgroundColor: "#FFF4DB",
   fontSize: "1.25rem",
   borderRadius: 4,
+  fontFamily: "monospace",
 };
 const listStyles = {
   fontWeight: 300,
   marginBottom: 96,
   paddingLeft: 0,
+  listStyleType: "disc",
 };
 
 const descriptionStyle = {
@@ -102,7 +106,7 @@ const links = [
 
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
+    <main className="bg-slate-100 h-screen" style={pageStyles}>
       {/* <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this
         page update in real-time. 😎
