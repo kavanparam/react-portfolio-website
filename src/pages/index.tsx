@@ -64,12 +64,14 @@ const links = [
   },
 ];
 
+type WindowProps = {
+  x: undefined | Number;
+  y: undefined | Number;
+};
+
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [size, setSize] = useState({
-    x: window.innerWidth,
-    y: window.innerHeight,
-  });
+  const [size, setSize] = useState<WindowProps>();
 
   const updateSize = () =>
     setSize({
@@ -99,7 +101,7 @@ const IndexPage = () => {
       </button>
       <nav
         className={`z-50 sm:block font-main ${
-          isOpen && typeof window !== undefined && size.x < 640
+          isOpen && size?.x && size.x < 640
             ? "fixed right-0 bottom-0"
             : "hidden"
         }`}
