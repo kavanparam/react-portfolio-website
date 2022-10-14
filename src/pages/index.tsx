@@ -93,7 +93,9 @@ const IndexPage = () => {
         <div className="w-1 h-1 rounded-lg bg-slate-900"></div>
       </button>
       <nav
-        className={`sm:block right-0 bottom-0 ${isOpen ? "fixed" : "hidden"}`}
+        className={`sm:block ${
+          isOpen && size.x < 640 ? "fixed right-0 bottom-0" : "hidden"
+        }`}
       >
         <ul className="sm:flex sm:text-lg text-2xl py-2 justify-end gap-[15%] mr-6">
           <li>home</li>
