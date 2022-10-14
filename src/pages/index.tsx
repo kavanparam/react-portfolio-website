@@ -1,6 +1,7 @@
 import * as React from "react";
-import type { HeadFC } from "gatsby";
 import { useEffect, useRef, useState } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
+import type { HeadFC } from "gatsby";
 
 // Refactor to social links
 const docLinks = [
@@ -111,12 +112,18 @@ const IndexPage = () => {
           <h1 className="mb-8 text-5xl font-bold">Hi 👋🏼, I'm Kavan</h1>
           <ul className="flex gap-2 font-mono">
             <li>
-              <a
-                className="underline underline-offset-4 decoration-0"
-                href="#projects"
+              <Link
+                activeClass="active"
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={300}
               >
-                works
-              </a>
+                <a className="underline underline-offset-4 decoration-0">
+                  works
+                </a>
+              </Link>{" "}
               ,
             </li>
             <li>
