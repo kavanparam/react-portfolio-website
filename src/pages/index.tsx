@@ -2,6 +2,7 @@ import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import type { HeadFC } from "gatsby";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 // Refactor to social links
 const docLinks = [
