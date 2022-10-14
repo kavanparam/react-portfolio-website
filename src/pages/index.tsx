@@ -31,15 +31,15 @@ const IndexPage = () => {
     <div>
       {/* Extract to nav component */}
       <button
-        className={`z-50  fixed flex flex-col self-end gap-1 p-5 mr-2 sm:hidden`}
+        className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="w-1 h-1 rounded bg-slate-900"></div>
-        <div className="w-1 h-1 rounded bg-slate-900"></div>
-        <div className="w-1 h-1 rounded bg-slate-900"></div>
+        <div className="w-1 h-1 bg-black rounded-md"></div>
+        <div className="w-1 h-1 bg-black rounded-md"></div>
+        <div className="w-1 h-1 bg-black rounded-md"></div>
       </button>
       <nav
-        className={`z-50 sm:block w-screen fixed right-0 font-main backdrop-blur-xl backdrop-brightness-25 bg-white/50 ${
+        className={`z-50 sm:block sm:w-screen fixed sm:right-0 font-main sm:backdrop-blur-xl sm:backdrop-brightness-25 sm:bg-white/50 ${
           isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
         }`}
       >
