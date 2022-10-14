@@ -77,7 +77,11 @@ const IndexPage = () => {
       y: window.innerHeight,
     });
 
-  useEffect(() => (window.onresize = updateSize), []);
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      window.onresize = updateSize;
+    }
+  }, []);
 
   // console.log("isOpen", isOpen);
   // console.log("window size:", size.x, size.y);
@@ -95,7 +99,9 @@ const IndexPage = () => {
       </button>
       <nav
         className={`z-50 sm:block font-main ${
-          isOpen && size.x < 640 ? "fixed right-0 bottom-0" : "hidden"
+          isOpen && typeof window !== undefined && size.x < 640
+            ? "fixed right-0 bottom-0"
+            : "hidden"
         }`}
       >
         <ul className="sm:flex sm:text-xl text-4xl font-thin py-2 justify-end sm:gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
