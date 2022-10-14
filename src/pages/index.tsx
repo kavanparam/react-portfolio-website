@@ -80,9 +80,7 @@ const IndexPage = () => {
     });
 
   useEffect(() => {
-    if (typeof window !== undefined) {
-      window.onresize = updateSize;
-    }
+    window.onresize = updateSize;
   }, []);
 
   // console.log("isOpen", isOpen);
