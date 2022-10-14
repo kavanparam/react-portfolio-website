@@ -109,30 +109,34 @@ const IndexPage = () => {
 
       <main className="h-screen font-main">
         <section className="h-screen p-12 bg-slate-50">
-          <h1 className="mb-8 text-5xl font-bold">Hi 👋🏼, I'm Kavan</h1>
+          <h1 className="mt-40 mb-8 text-5xl font-bold">Hi 👋🏼, I'm Kavan</h1>
           <ul className="flex gap-2 font-mono">
             <li>
               <Link
+                className="underline cursor-pointer underline-offset-4 decoration-0"
                 activeClass="active"
                 to="projects"
                 spy={true}
                 smooth={true}
                 offset={-50}
-                duration={300}
+                duration={800}
               >
-                <a className="underline underline-offset-4 decoration-0">
-                  works
-                </a>
-              </Link>{" "}
+                works
+              </Link>
               ,
             </li>
             <li>
-              <a
-                className="underline underline-offset-4 decoration-0"
-                href="#photography"
+              <Link
+                className="underline cursor-pointer underline-offset-4 decoration-0"
+                activeClass="active"
+                to="photography"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={800}
               >
-                some photography
-              </a>
+                photography
+              </Link>
               ,
             </li>
             <li>
