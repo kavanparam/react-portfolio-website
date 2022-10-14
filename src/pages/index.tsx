@@ -56,9 +56,14 @@ const IndexPage = () => {
 
       <main className="font-main">
         <Parallax pages={5}>
-          {/* may need to rm section & h-screens for this to work as expected */}
+          {/* Link smooth scrolll to anchor is broken — need to use Parallax.scrollTo() */}
 
-          <ParallaxLayer className="z-10 h-screen p-12 bg-zinc-50 rounded-2xl">
+          {/* Main */}
+          <ParallaxLayer
+            factor={1}
+            speed={-0.75}
+            className="z-10 p-12 bg-zinc-50 rounded-2xl"
+          >
             <section>
               <h1 className="mt-40 mb-8 text-5xl font-bold drop-shadow-md">
                 Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
@@ -104,10 +109,12 @@ const IndexPage = () => {
             </section>
           </ParallaxLayer>
 
+          {/* Projects */}
           <ParallaxLayer
-            offset={1}
+            offset={0.85}
             factor={2}
-            className="z-20 h-screen p-8 drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+            speed={0}
+            className="z-20 p-8 drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
           >
             <section>
               <div className="">
@@ -149,9 +156,12 @@ const IndexPage = () => {
             </section>
           </ParallaxLayer>
 
+          {/* GitHub Activity */}
           <ParallaxLayer
-            offset={3}
-            className="z-20 h-screen p-8 drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)] rounded-3xl bg-zinc-300"
+            offset={2.85}
+            factor={1}
+            speed={0}
+            className="z-20 p-8 drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-zinc-300"
           >
             <section>
               <h2 id="projects" className="mb-8 text-2xl font-thin">
@@ -160,9 +170,12 @@ const IndexPage = () => {
             </section>
           </ParallaxLayer>
 
+          {/* Page Build */}
           <ParallaxLayer
-            offset={4}
-            className="z-30 h-screen p-12 bg-zinc-400 rounded-3xl drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)]"
+            offset={3.85}
+            factor={1}
+            speed={0}
+            className="z-30 p-12 bg-zinc-400 rounded-3xl drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)]"
           >
             <section>
               <h2 className="max-w-xs mb-16 text-3xl font-bold">
