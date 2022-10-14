@@ -69,15 +69,9 @@ type WindowProps = {
   y: undefined | Number;
 };
 
-const initializeWindow = () => {
-  if (typeof window !== undefined) {
-    return { x: window.innerWidth, y: window.innerHeight };
-  }
-};
-
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [size, setSize] = useState(initializeWindow);
+  const [size, setSize] = useState<WindowProps>();
 
   const updateSize = () =>
     setSize({
@@ -86,11 +80,12 @@ const IndexPage = () => {
     });
 
   useEffect(() => {
+    window.onload = updateSize;
     window.onresize = updateSize;
   }, []);
 
   // console.log("isOpen", isOpen);
-  console.log("window size:", size?.x, size?.y);
+  // console.log("window size:", size?.x, size?.y);
 
   return (
     <div className="flex flex-col">
