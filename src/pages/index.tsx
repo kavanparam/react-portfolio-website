@@ -1,5 +1,6 @@
 import * as React from "react";
 import type { HeadFC } from "gatsby";
+import { useEffect, useRef, useState } from "react";
 
 // Refactor to social links
 const docLinks = [
@@ -63,13 +64,47 @@ const links = [
 ];
 
 const IndexPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [size, setSize] = useState({
+    x: window.innerWidth,
+    y: window.innerHeight,
+  });
+
+  const updateSize = () =>
+    setSize({
+      x: window.innerWidth,
+      y: window.innerHeight,
+    });
+
+  useEffect(() => (window.onresize = updateSize), []);
+
+  // console.log("isOpen", isOpen);
+  // console.log("window size:", size.x, size.y);
+
   return (
-    <main className="h-screen p-24 bg-slate-100 font-main">
-      {/* <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this
-        page update in real-time. 😎
-      </p> */}
-      {/* <ul style={doclistStyles}>
+    <div className="flex flex-col">
+      {/* Extract to nav component */}
+      <button
+        className={`flex flex-col self-end gap-1 p-3 mr-4 sm:hidden`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className="w-1 h-1 rounded-lg bg-slate-900"></div>
+        <div className="w-1 h-1 rounded-lg bg-slate-900"></div>
+        <div className="w-1 h-1 rounded-lg bg-slate-900"></div>
+      </button>
+      <nav
+        className={`sm:block right-0 bottom-0 ${isOpen ? "fixed" : "hidden"}`}
+      >
+        <ul className="sm:flex sm:text-lg text-2xl py-2 justify-end gap-[15%] mr-6">
+          <li>home</li>
+          <li>
+            <a href="/about">about</a>
+          </li>
+          <li>email</li>
+        </ul>
+      </nav>
+      <main className="h-screen p-24 bg-slate-100 font-main">
+        {/* <ul style={doclistStyles}>
         {docLinks.map((doc) => (
           <li key={doc.url} style={docLinkStyle}>
             <a
@@ -81,7 +116,8 @@ const IndexPage = () => {
           </li>
         ))}
       </ul> */}
-      {/* <ul style={listStyles}>
+
+        {/* <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
             <span>
@@ -101,26 +137,27 @@ const IndexPage = () => {
           </li>
         ))}
       </ul> */}
-
-      <h1 className="max-w-xs mb-16 text-4xl font-bold">
-        Page <span className="text-gatsby-purple">Build ⚡️</span>
-      </h1>
-      <code className="p-1 text-xl underline rounded underline-offset-4 decoration-0 bg-gatsby-bg-code text-gatsby-purple">
-        outline
-      </code>
-      <ul className="mb-24 ml-4 font-light list-disc">
-        <li>watch the react tailwind tutorial by dev ed</li>
-        <li>understand Gatsby and GraphQL</li>
-        <dl className="mt-2 ml-4">
-          <dd>
-            why it's used here for links and how you can leverage it in project
-          </dd>
-          <dd>^probably going to use a {`<Project>`} component instead</dd>
-          <dd>why isn't the {`<Link>`} component used here instead</dd>
-        </dl>
-        <li>explore gatsby plugins like the markdown one in this project</li>
-      </ul>
-    </main>
+        <h1 className="max-w-xs mb-16 text-4xl font-bold">
+          Page <span className="text-gatsby-purple">Build ⚡️</span>
+        </h1>
+        <code className="p-1 text-xl underline rounded underline-offset-4 decoration-0 bg-gatsby-bg-code text-gatsby-purple">
+          outline
+        </code>
+        <ul className="mb-24 ml-4 font-light list-disc">
+          <li>watch the react tailwind tutorial by dev ed</li>
+          <li>understand Gatsby and GraphQL</li>
+          <dl className="mt-2 ml-4">
+            <dd>
+              why it's used here for links and how you can leverage it in
+              project
+            </dd>
+            <dd>^probably going to use a {`<Project>`} component instead</dd>
+            <dd>why isn't the {`<Link>`} component used here instead</dd>
+          </dl>
+          <li>explore gatsby plugins like the markdown one in this project</li>
+        </ul>
+      </main>
+    </div>
   );
 };
 
