@@ -86,7 +86,7 @@ const IndexPage = () => {
   }, []);
 
   // console.log("isOpen", isOpen);
-  // console.log("window size:", size.x, size.y);
+  console.log("window size:", size?.x, size?.y);
 
   return (
     <div className="flex flex-col">
