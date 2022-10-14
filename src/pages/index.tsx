@@ -28,34 +28,36 @@ const IndexPage = () => {
   // console.log("window size:", size?.x, size?.y);
 
   return (
-    <div>
-      {/* Extract to nav component */}
-      <button
-        className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div className="w-1 h-1 bg-black rounded-md"></div>
-        <div className="w-1 h-1 bg-black rounded-md"></div>
-        <div className="w-1 h-1 bg-black rounded-md"></div>
-      </button>
-      <nav
-        className={`z-50 sm:block sm:w-screen fixed sm:right-0 font-main sm:backdrop-blur-xl sm:backdrop-brightness-25 sm:bg-white/50 ${
-          isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
-        }`}
-      >
-        <ul className="z-50 sm:flex sm:text-xl text-4xl font-thin py-1 justify-end gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
-          <li>home</li>
-          <li>
-            <a href="/about">about</a>
-          </li>
-          <li>email</li>
-        </ul>
-      </nav>
+    <>
+      <header>
+        {/* Extract to nav component */}
+        <button
+          className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <div className="w-1 h-1 bg-black rounded-md"></div>
+          <div className="w-1 h-1 bg-black rounded-md"></div>
+          <div className="w-1 h-1 bg-black rounded-md"></div>
+        </button>
+        <nav
+          className={`z-50 sm:block sm:w-screen fixed sm:right-0 font-main sm:backdrop-brightness-25 backdrop-blur-md sm:bg-white/75 ${
+            isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
+          }`}
+        >
+          <ul className="z-50 sm:flex sm:text-xl text-4xl font-thin py-1 justify-end gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
+            <li>home</li>
+            <li>
+              <a href="/about">about</a>
+            </li>
+            <li>email</li>
+          </ul>
+        </nav>
+      </header>
 
-      <main className="font-main">
-        <Parallax pages={5}>
-          {/* Link smooth scrolll to anchor is broken — need to use Parallax.scrollTo() */}
+      <Parallax pages={6.25}>
+        {/* Link smooth scrolll to anchor is broken — need to use Parallax.scrollTo() */}
 
+        <main className="font-main">
           {/* Main */}
           <ParallaxLayer
             factor={1}
@@ -109,7 +111,7 @@ const IndexPage = () => {
 
           {/* Projects */}
           <ParallaxLayer
-            offset={0.85}
+            offset={0.9}
             factor={2}
             speed={-0.25}
             className="z-20 p-8 drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
@@ -156,7 +158,7 @@ const IndexPage = () => {
 
           {/* GitHub Activity */}
           <ParallaxLayer
-            offset={3.5}
+            offset={3.75}
             factor={1}
             speed={-0.1}
             className="z-20 p-8 drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-zinc-300"
@@ -170,9 +172,9 @@ const IndexPage = () => {
 
           {/* Page Build */}
           <ParallaxLayer
-            offset={4}
+            offset={4.9}
             factor={1}
-            speed={0}
+            speed={0.05}
             className="z-30 p-12 bg-zinc-400 rounded-3xl drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)]"
           >
             <section>
@@ -192,9 +194,14 @@ const IndexPage = () => {
               </ul>
             </section>
           </ParallaxLayer>
-        </Parallax>
-      </main>
-    </div>
+        </main>
+        <footer className="absolute bottom-0 w-screen mb-32">
+          <h4 className="text-2xl font-light text-center drop-shadow-md">
+            thanks for visiting! 🖤
+          </h4>
+        </footer>
+      </Parallax>
+    </>
   );
 };
 
