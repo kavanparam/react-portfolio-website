@@ -71,7 +71,10 @@ type WindowProps = {
 
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [size, setSize] = useState<WindowProps>();
+  const [size, setSize] = useState<WindowProps>({
+    x: window.innerWidth,
+    y: window.innerHeight,
+  });
 
   const updateSize = () =>
     setSize({
