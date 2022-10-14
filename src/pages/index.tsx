@@ -69,12 +69,15 @@ type WindowProps = {
   y: undefined | Number;
 };
 
+const initializeWindow = () => {
+  if (typeof window !== undefined) {
+    return { x: window.innerWidth, y: window.innerHeight };
+  }
+};
+
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [size, setSize] = useState<WindowProps>({
-    x: window.innerWidth,
-    y: window.innerHeight,
-  });
+  const [size, setSize] = useState(initializeWindow);
 
   const updateSize = () =>
     setSize({
