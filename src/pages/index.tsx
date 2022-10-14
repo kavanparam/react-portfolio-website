@@ -115,7 +115,7 @@ const IndexPage = () => {
       </nav>
 
       <main className="h-screen font-main">
-        <section className="z-10 h-screen p-12 -mb-10 bg-slate-50 rounded-2xl">
+        <section className="z-10 h-screen p-12 -mb-10 bg-zinc-50 rounded-2xl">
           <h1 className="mt-40 mb-8 text-5xl font-bold drop-shadow-md">
             Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
           </h1>
@@ -191,13 +191,52 @@ const IndexPage = () => {
           </li>
         ))}
       </ul> */}
-        <section className="z-20 h-screen p-12 -mb-10 drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)] rounded-3xl bg-slate-200">
-          <h2 id="projects" className="text-3xl font-thin">
-            my projects
+        <section className="z-20 p-8 -mb-10 drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)] rounded-3xl bg-zinc-100">
+          <div className="h-screen">
+            <h2 id="projects" className="mb-8 text-2xl font-thin">
+              my projects
+            </h2>
+            <div className="mb-96">
+              <h3 className="text-3xl font-bold text-center drop-shadow-2xl">
+                <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
+                  Multiplication
+                </span>{" "}
+                <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
+                  Connect
+                </span>{" "}
+                <span className="text-transparent bg-gradient-to-r bg-clip-text from-red-500 to-red-700">
+                  Four
+                </span>
+              </h3>
+            </div>
+            <div className="mb-96">
+              <h3 className="text-3xl font-bold text-center drop-shadow-2xl text-fuchsia-500 ">
+                Portfolio Website
+              </h3>
+            </div>
+          </div>
+
+          <div className="h-screen">
+            <div className="mb-96">
+              <h3 className="text-3xl font-bold text-center text-transparent drop-shadow-2xl bg-gradient-to-t from-amber-500 to-orange-600 bg-clip-text">
+                Pokedex App
+              </h3>
+            </div>
+            <div className="mb-96">
+              <h3 className="text-3xl font-bold text-center text-transparent drop-shadow-2xl bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+                BookStore App
+              </h3>
+            </div>
+          </div>
+        </section>
+
+        <section className="z-20 h-screen p-8 -mb-10 drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)] rounded-3xl bg-zinc-200">
+          <h2 id="projects" className="mb-8 text-2xl font-thin">
+            recent github activity
           </h2>
         </section>
 
-        <section className="z-30 h-screen p-12 -mb-5 bg-slate-300 rounded-3xl drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)]">
+        <section className="z-30 h-screen p-12 -mb-5 bg-zinc-300 rounded-3xl drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)]">
           <h2 className="max-w-xs mb-16 text-3xl font-bold">
             Page <span className="text-gatsby-purple">Build ⚡️</span>
           </h2>
@@ -205,19 +244,11 @@ const IndexPage = () => {
             outline
           </code>
           <ul className="mb-24 ml-4 font-light list-disc">
-            <li>watch the react tailwind tutorial by dev ed</li>
-            <li>understand Gatsby and GraphQL</li>
-            <dl className="mt-2 ml-4">
-              <dd>
-                why it's used here for links and how you can leverage it in
-                project
-              </dd>
-              <dd>^probably going to use a {`<Project>`} component instead</dd>
-              <dd>why isn't the {`<Link>`} component used here instead</dd>
-            </dl>
             <li>
-              explore gatsby plugins like the markdown one in this project
+              <s>watch the react tailwind tutorial by dev ed</s>
             </li>
+            <li>setup parallax scrolling</li>
+            <li>import projects</li>
           </ul>
         </section>
       </main>
