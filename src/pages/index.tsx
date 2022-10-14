@@ -86,7 +86,7 @@ const IndexPage = () => {
     <div className="flex flex-col">
       {/* Extract to nav component */}
       <button
-        className={`fixed flex flex-col self-end gap-1 p-3 mr-4 sm:hidden`}
+        className={`z-50  fixed flex flex-col self-end gap-1 p-5 mr-2 sm:hidden`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="w-1 h-1 rounded bg-slate-900"></div>
@@ -94,11 +94,11 @@ const IndexPage = () => {
         <div className="w-1 h-1 rounded bg-slate-900"></div>
       </button>
       <nav
-        className={`sm:block font-main ${
+        className={`z-50 sm:block font-main ${
           isOpen && size.x < 640 ? "fixed right-0 bottom-0" : "hidden"
         }`}
       >
-        <ul className="sm:flex sm:text-xl text-4xl py-2 justify-end sm:gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
+        <ul className="sm:flex sm:text-xl text-4xl font-thin py-2 justify-end sm:gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
           <li>home</li>
           <li>
             <a href="/about">about</a>
@@ -184,13 +184,13 @@ const IndexPage = () => {
           </li>
         ))}
       </ul> */}
-        <section className="z-20 h-screen p-12 -mb-10 drop-shadow-[0px_-20px_30px_rgba(240,150,10,0.2)] rounded-3xl bg-slate-100">
+        <section className="z-20 h-screen p-12 -mb-10 drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)] rounded-3xl bg-slate-200">
           <h2 id="projects" className="text-3xl font-thin">
             my projects
           </h2>
         </section>
 
-        <section className="z-30 h-screen p-12 -mb-5 bg-slate-200 rounded-3xl drop-shadow-[0px_-20px_30px_rgba(240,150,10,0.2)]">
+        <section className="z-30 h-screen p-12 -mb-5 bg-slate-300 rounded-3xl drop-shadow-[0px_0px_50px_rgba(240,150,10,0.2)]">
           <h2 className="max-w-xs mb-16 text-3xl font-bold">
             Page <span className="text-gatsby-purple">Build ⚡️</span>
           </h2>
