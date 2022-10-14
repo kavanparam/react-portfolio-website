@@ -98,7 +98,7 @@ const IndexPage = () => {
           isOpen && size.x < 640 ? "fixed right-0 bottom-0" : "hidden"
         }`}
       >
-        <ul className="sm:flex sm:text-xl text-4xl py-2 justify-end sm:gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-12 mr-6">
+        <ul className="sm:flex sm:text-xl text-4xl py-2 justify-end sm:gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
           <li>home</li>
           <li>
             <a href="/about">about</a>
@@ -108,8 +108,10 @@ const IndexPage = () => {
       </nav>
 
       <main className="h-screen font-main">
-        <section className="h-screen p-12 bg-slate-50">
-          <h1 className="mt-40 mb-8 text-5xl font-bold">Hi 👋🏼, I'm Kavan</h1>
+        <section className="z-10 h-screen p-12 -mb-10 bg-slate-50 rounded-2xl">
+          <h1 className="mt-40 mb-8 text-5xl font-bold drop-shadow-md">
+            Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
+          </h1>
           <ul className="flex gap-2 font-mono">
             <li>
               <Link
@@ -182,13 +184,13 @@ const IndexPage = () => {
           </li>
         ))}
       </ul> */}
-        <section className="h-screen p-12 bg-slate-200">
+        <section className="z-20 h-screen p-12 -mb-10 drop-shadow-[0px_-20px_30px_rgba(240,150,10,0.2)] rounded-3xl bg-slate-100">
           <h2 id="projects" className="text-3xl font-thin">
             my projects
           </h2>
         </section>
 
-        <section className="h-screen p-12 bg-slate-300">
+        <section className="z-30 h-screen p-12 -mb-5 bg-slate-200 rounded-3xl drop-shadow-[0px_-20px_30px_rgba(240,150,10,0.2)]">
           <h2 className="max-w-xs mb-16 text-3xl font-bold">
             Page <span className="text-gatsby-purple">Build ⚡️</span>
           </h2>
