@@ -28,7 +28,7 @@ const IndexPage = () => {
   // console.log("window size:", size?.x, size?.y);
 
   return (
-    <div className="flex flex-col">
+    <div>
       {/* Extract to nav component */}
       <button
         className={`z-50  fixed flex flex-col self-end gap-1 p-5 mr-2 sm:hidden`}
@@ -39,13 +39,11 @@ const IndexPage = () => {
         <div className="w-1 h-1 rounded bg-slate-900"></div>
       </button>
       <nav
-        className={`z-50 sm:block font-main ${
-          isOpen && size?.x && size.x < 640
-            ? "fixed right-0 bottom-0"
-            : "hidden"
+        className={`z-50 sm:block w-screen fixed right-0 font-main backdrop-blur-xl backdrop-brightness-25 bg-white/50 ${
+          isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
         }`}
       >
-        <ul className="sm:flex sm:text-xl text-4xl font-thin py-2 justify-end sm:gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
+        <ul className="z-50 sm:flex sm:text-xl text-4xl font-thin py-1 justify-end gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
           <li>home</li>
           <li>
             <a href="/about">about</a>
@@ -113,7 +111,7 @@ const IndexPage = () => {
           <ParallaxLayer
             offset={0.85}
             factor={2}
-            speed={0}
+            speed={-0.25}
             className="z-20 p-8 drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
           >
             <section>
@@ -158,9 +156,9 @@ const IndexPage = () => {
 
           {/* GitHub Activity */}
           <ParallaxLayer
-            offset={2.85}
+            offset={3.5}
             factor={1}
-            speed={0}
+            speed={-0.1}
             className="z-20 p-8 drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-zinc-300"
           >
             <section>
@@ -172,7 +170,7 @@ const IndexPage = () => {
 
           {/* Page Build */}
           <ParallaxLayer
-            offset={3.85}
+            offset={4}
             factor={1}
             speed={0}
             className="z-30 p-12 bg-zinc-400 rounded-3xl drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)]"
