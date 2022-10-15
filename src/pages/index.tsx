@@ -62,7 +62,7 @@ const IndexPage = () => {
           <ParallaxLayer
             factor={1}
             speed={-0.75}
-            className="z-10 p-[18%] bg-zinc-50 rounded-2xl"
+            className="z-10 p-[18%] h-screen bg-zinc-50 rounded-2xl"
           >
             <section>
               <h1 className="mt-40 mb-8 text-5xl font-bold drop-shadow-md">
@@ -114,7 +114,7 @@ const IndexPage = () => {
             offset={0.9}
             factor={2}
             speed={-0.25}
-            className="z-20 p-[4%] drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+            className="z-20 p-[4%] h-screen drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
           >
             <section>
               <div className="">
@@ -148,7 +148,7 @@ const IndexPage = () => {
                   </h3>
                 </div>
                 <div className="">
-                  <h3 className="text-3xl font-bold text-center text-transparent drop-shadow-2xl bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+                  <h3 className="text-3xl font-bold text-center text-transparent saturate-200 drop-shadow-2xl bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
                     BookStore App
                   </h3>
                 </div>
@@ -161,7 +161,7 @@ const IndexPage = () => {
             offset={3.75}
             factor={1}
             speed={-0.1}
-            className="z-20 p-[4%] drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-zinc-300"
+            className="z-20 p-[4%] h-screen drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-zinc-300"
           >
             <section>
               <h2 id="projects" className="mb-8 text-2xl font-thin">
@@ -175,7 +175,7 @@ const IndexPage = () => {
             offset={4.9}
             factor={1}
             speed={0.05}
-            className="z-30 p-12 bg-zinc-400 rounded-3xl drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)]"
+            className="z-30 p-12 h-screen bg-zinc-400 rounded-3xl drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)]"
           >
             <section>
               <h2 className="max-w-xs mb-16 text-3xl font-bold">
