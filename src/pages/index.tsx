@@ -40,7 +40,7 @@ const IndexPage = () => {
           <div className="w-1 h-1 bg-black rounded-md"></div>
         </button>
         <nav
-          className={`z-50 sm:block sm:w-screen fixed sm:right-0 font-main sm:backdrop-brightness-25 backdrop-blur-md sm:bg-white/75 ${
+          className={`z-50 sm:block sm:w-full fixed sm:right-0 font-main sm:backdrop-brightness-25 backdrop-blur-md sm:bg-white/75 ${
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
@@ -62,7 +62,7 @@ const IndexPage = () => {
           <ParallaxLayer
             factor={1}
             speed={-0.75}
-            className="z-10 p-12 bg-zinc-50 rounded-2xl"
+            className="z-10 p-[18%] bg-zinc-50 rounded-2xl"
           >
             <section>
               <h1 className="mt-40 mb-8 text-5xl font-bold drop-shadow-md">
@@ -114,7 +114,7 @@ const IndexPage = () => {
             offset={0.9}
             factor={2}
             speed={-0.25}
-            className="z-20 p-8 drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+            className="z-20 p-[4%] drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
           >
             <section>
               <div className="">
@@ -161,7 +161,7 @@ const IndexPage = () => {
             offset={3.75}
             factor={1}
             speed={-0.1}
-            className="z-20 p-8 drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-zinc-300"
+            className="z-20 p-[4%] drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-zinc-300"
           >
             <section>
               <h2 id="projects" className="mb-8 text-2xl font-thin">
