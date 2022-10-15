@@ -56,8 +56,6 @@ const IndexPage = () => {
       </header>
 
       <Parallax pages={6.25} ref={ref}>
-        {/* Link smooth scrolll to anchor is broken — need to use Parallax.scrollTo() */}
-
         <main className="font-main">
           {/* Main */}
           <ParallaxLayer
@@ -71,17 +69,12 @@ const IndexPage = () => {
               </h1>
               <ul className="flex gap-2 font-mono">
                 <li>
-                  <Link
+                  <a
                     className="underline cursor-pointer underline-offset-4 decoration-0"
-                    activeClass="active"
-                    to="projects"
-                    spy={true}
-                    smooth={true}
-                    offset={-50}
-                    duration={800}
+                    onClick={() => ref.current.scrollTo(1.15)}
                   >
                     works
-                  </Link>
+                  </a>
                   ,
                 </li>
                 <li>
@@ -191,10 +184,12 @@ const IndexPage = () => {
                   dark mode toggle
                 </li>
                 <li>
-                  <s>setup parallax scrolling</s> — setup scroll to projects &
-                  add scroll to top link in footer
+                  <s>setup parallax scrolling</s> — setup scroll to projects
                 </li>
                 <li>import projects</li>
+                <li>
+                  rm unused plugins — react smooth scroll {`<Link>`} elements{" "}
+                </li>
               </ul>
             </section>
           </ParallaxLayer>
