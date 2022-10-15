@@ -7,3 +7,12 @@
       @apply bg-zinc-500;
     }
 }
+
+@layer utilities {
+  .word-spacing-tight{
+    word-spacing: -0.2em;
+  }
+  .testing{
+    color: red;
+  }
+}

@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        div: [
+          "0 -100px 50px rgba(255, 255, 255, 1)",
+          "0 50px 90px rgba(255, 255, 255, 1)",
+        ],
+      },
       colors: {
         "gatsby-purple": "#663399",
         "gatsby-code": "#8A6534",

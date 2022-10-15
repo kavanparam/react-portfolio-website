@@ -41,16 +41,25 @@ const IndexPage = () => {
           <div className="w-1 h-1 bg-black rounded-md"></div>
         </button>
         <nav
-          className={`z-50 sm:block sm:w-full fixed sm:right-0 font-main sm:backdrop-brightness-25 backdrop-blur-md sm:bg-white/75 ${
+          className={`z-50 sm:block sm:w-full fixed sm:right-0 font-main ${
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
-          <ul className="z-50 sm:flex sm:text-xl text-4xl font-thin py-1 justify-end gap-[15%] sm:space-y-0 sm:mb-0 space-y-12 mb-32 mr-16">
-            <li>home</li>
-            <li>
+          <ul className="z-50 p-6 mb-32 font-mono text-4xl font-bold uppercase justify-right word-spacing-tight sm:gap-12 sm:flex sm:text-sm sm:mb-0 sm:mr-0">
+            <li className="mr-auto uppercase">
+              <a
+                className="cursor-pointer"
+                onClick={() => ref.current.scrollTo(0)}
+              >
+                Kavan Paramathasan
+              </a>
+            </li>
+            <li className="block sm:fixed sm:-rotate-90 sm:bottom-12 ">
               <a href="/about">about</a>
             </li>
-            <li>email</li>
+            <li className="block sm:fixed sm:right-4 sm:top-12 sm:rotate-90">
+              contact
+            </li>
           </ul>
         </nav>
       </header>
@@ -64,13 +73,13 @@ const IndexPage = () => {
             className="z-10 p-[18%] bg-zinc-50 rounded-2xl"
           >
             <section>
-              <h1 className="mt-40 mb-8 text-5xl font-bold drop-shadow-md">
+              <h1 className="mt-40 mb-8 text-6xl font-bold drop-shadow-md">
                 Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
               </h1>
               <ul className="flex gap-2 font-mono">
                 <li>
                   <a
-                    className="underline cursor-pointer underline-offset-4 decoration-0"
+                    className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
                     onClick={() => ref.current.scrollTo(1.15)}
                   >
                     works
@@ -79,7 +88,7 @@ const IndexPage = () => {
                 </li>
                 <li>
                   <Link
-                    className="underline cursor-pointer underline-offset-4 decoration-0"
+                    className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400"
                     activeClass="active"
                     to="photography"
                     spy={true}
@@ -93,7 +102,7 @@ const IndexPage = () => {
                 </li>
                 <li>
                   <a
-                    className="underline underline-offset-4 decoration-0"
+                    className="underline underline-offset-4 decoration-1"
                     href="/about"
                   >
                     about
@@ -108,7 +117,7 @@ const IndexPage = () => {
             offset={0.9}
             factor={2}
             speed={-0.25}
-            className="z-20 p-[4%] drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+            className="z-20 p-14 drop-shadow-div rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
           >
             <section>
               <div className="">
@@ -155,7 +164,7 @@ const IndexPage = () => {
             offset={3.75}
             factor={1}
             speed={-0.1}
-            className="z-20 p-[4%] drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)] rounded-3xl bg-zinc-300"
+            className="z-20 p-[4%] drop-shadow-div rounded-3xl bg-zinc-300"
           >
             <section>
               <h2 id="projects" className="mb-8 text-2xl font-thin">
@@ -169,7 +178,7 @@ const IndexPage = () => {
             offset={4.9}
             factor={1}
             speed={0.05}
-            className="z-30 p-12 bg-zinc-400 rounded-3xl drop-shadow-[0px_-10px_70px_rgba(240,150,10,0.4)]"
+            className="z-30 p-12 bg-zinc-400 rounded-3xl drop-shadow-div"
           >
             <section>
               <h2 className="max-w-xs mb-16 text-3xl font-bold">
@@ -183,10 +192,12 @@ const IndexPage = () => {
                   <s>watch the react tailwind tutorial by dev ed</s> — setup
                   dark mode toggle
                 </li>
-                <li>
-                  <s>setup parallax scrolling</s> — setup scroll to projects
-                </li>
                 <li>import projects</li>
+                <li>change navbar font</li>
+                <li>
+                  add a credits section — listing technologies and libraries
+                  used
+                </li>
                 <li>
                   rm unused plugins — react smooth scroll {`<Link>`} elements{" "}
                 </li>
