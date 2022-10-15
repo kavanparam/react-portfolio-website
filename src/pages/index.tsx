@@ -12,6 +12,7 @@ type WindowProps = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
+  const ref = useRef<any>();
 
   const updateSize = () =>
     setSize({
@@ -54,7 +55,7 @@ const IndexPage = () => {
         </nav>
       </header>
 
-      <Parallax pages={6.25}>
+      <Parallax pages={6.25} ref={ref}>
         {/* Link smooth scrolll to anchor is broken — need to use Parallax.scrollTo() */}
 
         <main className="font-main">
@@ -204,7 +205,10 @@ const IndexPage = () => {
             <h4 className="text-3xl font-light drop-shadow-md">
               thanks for visiting! 🖤
             </h4>
-            <button className="p-2 font-mono text-sm rounded-md shadow-md bg-amber-600">
+            <button
+              className="p-2 font-mono text-sm rounded-md shadow-md bg-amber-600"
+              onClick={() => ref.current.scrollTo(0)}
+            >
               scroll to top
             </button>
           </div>
