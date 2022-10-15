@@ -129,7 +129,7 @@ const IndexPage = () => {
                     <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
                       Connect
                     </span>{" "}
-                    <span className="text-transparent bg-gradient-to-r bg-clip-text from-red-500 to-red-700">
+                    <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
                       Four
                     </span>
                   </h3>
@@ -189,16 +189,25 @@ const IndexPage = () => {
                   <s>watch the react tailwind tutorial by dev ed</s> — setup
                   dark mode toggle
                 </li>
-                <li>setup parallax scrolling</li>
+                <li>
+                  <s>setup parallax scrolling</s> — setup scroll to projects &
+                  add scroll to top link in footer
+                </li>
                 <li>import projects</li>
               </ul>
             </section>
           </ParallaxLayer>
         </main>
-        <footer className="absolute bottom-0 w-screen mb-32">
-          <h4 className="text-2xl font-light text-center drop-shadow-md">
-            thanks for visiting! 🖤
-          </h4>
+
+        <footer className="absolute bottom-0 w-screen mb-24">
+          <div className="flex flex-col items-center gap-8">
+            <h4 className="text-3xl font-light drop-shadow-md">
+              thanks for visiting! 🖤
+            </h4>
+            <button className="p-2 font-mono text-sm rounded-md shadow-md bg-amber-600">
+              scroll to top
+            </button>
+          </div>
         </footer>
       </Parallax>
     </>
