@@ -125,7 +125,7 @@ const IndexPage = () => {
                   my projects
                 </h2>
                 <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center drop-shadow-2xl">
+                  <h3 className="text-3xl font-bold text-center drop-shadow">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                       Multiplication
                     </span>{" "}
@@ -138,7 +138,7 @@ const IndexPage = () => {
                   </h3>
                 </div>
                 <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center drop-shadow-2xl text-fuchsia-500 ">
+                  <h3 className="text-3xl font-bold text-center drop-shadow text-fuchsia-500 ">
                     Portfolio Website
                   </h3>
                 </div>
@@ -146,12 +146,12 @@ const IndexPage = () => {
 
               <div className="">
                 <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center text-transparent drop-shadow-2xl bg-gradient-to-t from-amber-500 to-orange-600 bg-clip-text">
+                  <h3 className="text-3xl font-bold text-center text-transparent drop-shadow bg-gradient-to-t from-amber-500 to-orange-600 bg-clip-text">
                     Pokedex App
                   </h3>
                 </div>
                 <div className="">
-                  <h3 className="text-3xl font-bold text-center text-transparent saturate-200 drop-shadow-2xl bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+                  <h3 className="text-3xl font-bold text-center text-transparent saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
                     BookStore App
                   </h3>
                 </div>
@@ -208,9 +208,7 @@ const IndexPage = () => {
 
         <footer className="absolute bottom-0 w-screen mb-24">
           <div className="flex flex-col items-center gap-8">
-            <h4 className="text-3xl font-light drop-shadow-md">
-              thanks for visiting! 🖤
-            </h4>
+            <h4 className="text-2xl font-light">thank you for visiting! 🖤</h4>
             <button
               className="p-2 font-mono text-sm rounded-md shadow-md bg-amber-600"
               onClick={() => ref.current.scrollTo(0)}
