@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        divUp: ["0 -75px 100px 75px white"],
+      },
       colors: {
         "gatsby-purple": "#663399",
         "gatsby-code": "#8A6534",
@@ -17,5 +20,15 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: false,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
+  },
 };
