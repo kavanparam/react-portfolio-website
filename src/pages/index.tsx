@@ -193,17 +193,13 @@ const IndexPage = () => {
                   <s>watch the react tailwind tutorial by dev ed</s> — setup
                   dark mode toggle
                 </li>
-                <li>
-                  <s>import daisy UI</s> — easier build of page using pre-built
-                  components that can be additionally styled
-                </li>
+                <li>import projects</li>
                 <li>
                   setup daisyUI page progress bar when scrolling — fixed, only
                   appears on scroll, horizontal+centered on mobile, vertical off
-                  the side on desktop
+                  the side on desktop, rm scroll to top after
                 </li>
-                <li>use daisy UI — ideas: code, window</li>
-                <li>import projects</li>
+                <li>implement more daisy UI — ideas: code, window</li>
                 <li>change navbar font</li>
                 <li>
                   add a credits section — listing technologies and libraries
