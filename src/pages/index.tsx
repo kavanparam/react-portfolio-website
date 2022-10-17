@@ -29,7 +29,7 @@ const IndexPage = () => {
   // console.log("window size:", size?.x, size?.y);
 
   return (
-    <>
+    <div data-theme="bumblebee">
       <header>
         {/* Extract to nav component */}
         <button
@@ -194,9 +194,15 @@ const IndexPage = () => {
                   dark mode toggle
                 </li>
                 <li>
-                  import daisy UI — easier build of page using pre-built
+                  <s>import daisy UI</s> — easier build of page using pre-built
                   components that can be additionally styled
                 </li>
+                <li>
+                  setup daisyUI page progress bar when scrolling — fixed, only
+                  appears on scroll, horizontal+centered on mobile, vertical off
+                  the side on desktop
+                </li>
+                <li>use daisy UI — ideas: code, window</li>
                 <li>import projects</li>
                 <li>change navbar font</li>
                 <li>
@@ -206,6 +212,16 @@ const IndexPage = () => {
                 <li>
                   rm unused plugins — react smooth scroll {`<Link>`} elements{" "}
                 </li>
+              </ul>
+
+              <h4 className="text-xl font-semibold">
+                Page Progress Bar — to be built
+              </h4>
+              <ul className="steps steps-vertical lg:steps-horizontal">
+                <li className="step step-primary">welcome</li>
+                <li className="step step-primary">project list</li>
+                <li className="step">github activity</li>
+                <li className="step">future page builds</li>
               </ul>
             </section>
           </ParallaxLayer>
@@ -223,7 +239,7 @@ const IndexPage = () => {
           </div>
         </footer>
       </Parallax>
-    </>
+    </div>
   );
 };
 
