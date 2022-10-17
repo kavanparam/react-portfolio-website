@@ -88,7 +88,7 @@ const IndexPage = () => {
                 </li>
                 <li>
                   <Link
-                    className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400"
+                    className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
                     activeClass="active"
                     to="photography"
                     spy={true}
@@ -102,7 +102,7 @@ const IndexPage = () => {
                 </li>
                 <li>
                   <a
-                    className="underline underline-offset-4 decoration-1"
+                    className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
                     href="/about"
                   >
                     about
@@ -138,7 +138,7 @@ const IndexPage = () => {
                   </h3>
                 </div>
                 <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center drop-shadow text-fuchsia-500 ">
+                  <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
                     Portfolio Website
                   </h3>
                 </div>
