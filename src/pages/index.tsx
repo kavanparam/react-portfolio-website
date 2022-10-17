@@ -181,16 +181,21 @@ const IndexPage = () => {
             className="z-30 p-12 bg-zinc-400 rounded-3xl shadow-divUp"
           >
             <section>
-              <h2 className="max-w-xs mb-16 text-3xl font-bold">
-                Page <span className="text-gatsby-purple">Build ⚡️</span>
+              <h2 className="mb-8 text-3xl font-bold">
+                Upcoming Page
+                <span className="text-gatsby-purple"> Build ⚡️</span>
               </h2>
-              <code className="p-1 text-xl underline rounded underline-offset-4 decoration-0 bg-gatsby-bg-code text-gatsby-purple">
+              <code className="p-1 text-lg underline rounded underline-offset-4 decoration-0 bg-gatsby-bg-code text-gatsby-purple">
                 outline
               </code>
               <ul className="mb-24 ml-4 font-light list-disc">
                 <li>
                   <s>watch the react tailwind tutorial by dev ed</s> — setup
                   dark mode toggle
+                </li>
+                <li>
+                  import daisy UI — easier build of page using pre-built
+                  components that can be additionally styled
                 </li>
                 <li>import projects</li>
                 <li>change navbar font</li>
