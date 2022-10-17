@@ -117,7 +117,7 @@ const IndexPage = () => {
             offset={0.9}
             factor={2}
             speed={-0.25}
-            className="z-20 p-14 drop-shadow-div rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+            className="z-20 p-14 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
           >
             <section>
               <div className="">
@@ -164,7 +164,7 @@ const IndexPage = () => {
             offset={3.75}
             factor={1}
             speed={-0.1}
-            className="z-20 p-[4%] drop-shadow-div rounded-3xl bg-zinc-300"
+            className="z-20 p-[4%] shadow-divUp rounded-3xl bg-zinc-300"
           >
             <section>
               <h2 id="projects" className="mb-8 text-2xl font-thin">
@@ -178,7 +178,7 @@ const IndexPage = () => {
             offset={4.9}
             factor={1}
             speed={0.05}
-            className="z-30 p-12 bg-zinc-400 rounded-3xl drop-shadow-div"
+            className="z-30 p-12 bg-zinc-400 rounded-3xl shadow-divUp"
           >
             <section>
               <h2 className="max-w-xs mb-16 text-3xl font-bold">
