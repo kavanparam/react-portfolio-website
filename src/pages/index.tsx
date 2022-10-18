@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
 import type { HeadFC } from "gatsby";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+// import { Link, animateScroll as scroll } from "react-scroll";
+// import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 type WindowProps = {
   x: undefined | Number;
@@ -81,17 +81,12 @@ const IndexPage = () => {
               ,
             </li>
             <li>
-              <Link
+              <a
+                href=""
                 className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                activeClass="active"
-                to="photography"
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={800}
               >
                 photography
-              </Link>
+              </a>
               ,
             </li>
             <li>
@@ -177,10 +172,15 @@ const IndexPage = () => {
               add a credits section — listing technologies and libraries used
             </li>
             <li>
-              rm unused plugins — react smooth scroll {`<Link>`} elements{" "}
+              clean up code — extract this list into an object like initial
+              gatsby formatting
+            </li>
+            <li className="mt-4">
+              rm unused npm packages w npm-check library or uninstall command —
+              react-spring, react-scroll
             </li>
             <li>
-              <h5 className="mt-4 underline">Move to Framer Motion</h5>
+              <h5 className="underline">Move to Framer Motion</h5>
               Oversight using the current library for Parallax Effects.
               <br />
               “Pages” are defined in ParallaxLayer in react-spring with a factor
