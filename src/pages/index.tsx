@@ -64,7 +64,7 @@ const IndexPage = () => {
         </nav>
       </header>
 
-      <Parallax pages={6.25} ref={ref}>
+      <Parallax pages={7.25} ref={ref}>
         <main className="font-main">
           {/* Main */}
           <ParallaxLayer
@@ -115,53 +115,52 @@ const IndexPage = () => {
           {/* Projects */}
           <ParallaxLayer
             offset={0.9}
-            factor={2}
+            factor={3}
             speed={-0.25}
-            className="z-20 p-14 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+            className="z-20 p-[4%] shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
           >
             <section>
-              <div className="">
-                <h2 id="projects" className="mb-8 text-2xl font-thin">
-                  my projects
-                </h2>
-                <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center drop-shadow">
-                    <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
-                      Multiplication
-                    </span>{" "}
-                    <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
-                      Connect
-                    </span>{" "}
-                    <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
-                      Four
-                    </span>
-                  </h3>
-                </div>
-                <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
-                    Portfolio Website
-                  </h3>
-                </div>
+              <h2 id="projects" className="mb-8 text-2xl font-thin">
+                my projects
+              </h2>
+
+              <div className="mb-96">
+                <h3 className="text-3xl font-bold text-center drop-shadow">
+                  <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
+                    Multiplication
+                  </span>{" "}
+                  <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
+                    Connect
+                  </span>{" "}
+                  <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
+                    Four
+                  </span>
+                </h3>
               </div>
 
-              <div className="">
-                <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center text-transparent drop-shadow bg-gradient-to-t from-amber-500 to-orange-600 bg-clip-text">
-                    Pokedex App
-                  </h3>
-                </div>
-                <div className="">
-                  <h3 className="text-3xl font-bold text-center text-transparent saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
-                    BookStore App
-                  </h3>
-                </div>
+              <div className="mb-96">
+                <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
+                  Portfolio Website
+                </h3>
+              </div>
+
+              <div className="mb-96">
+                <h3 className="text-3xl font-bold text-center text-transparent drop-shadow bg-gradient-to-t from-amber-500 to-orange-600 bg-clip-text">
+                  Pokedex App
+                </h3>
+              </div>
+
+              <div className="mb-96">
+                <h3 className="text-3xl font-bold text-center text-transparent saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+                  BookStore App
+                </h3>
               </div>
             </section>
           </ParallaxLayer>
 
           {/* GitHub Activity */}
           <ParallaxLayer
-            offset={3.75}
+            offset={4.75}
             factor={1}
             speed={-0.1}
             className="z-20 p-[4%] shadow-divUp rounded-3xl bg-zinc-300"
@@ -175,7 +174,7 @@ const IndexPage = () => {
 
           {/* Page Build */}
           <ParallaxLayer
-            offset={4.9}
+            offset={5.9}
             factor={1}
             speed={0.05}
             className="z-30 p-12 bg-zinc-400 rounded-3xl shadow-divUp"
