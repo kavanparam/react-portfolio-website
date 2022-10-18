@@ -177,7 +177,7 @@ const IndexPage = () => {
             offset={5.9}
             factor={1}
             speed={0.05}
-            className="z-30 p-12 bg-zinc-400 rounded-3xl shadow-divUp"
+            className="z-30 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll"
           >
             <section>
               <h2 className="mb-8 text-3xl font-bold">
