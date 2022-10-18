@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import type { HeadFC } from "gatsby";
+import { motion } from "framer-motion";
 // import { Link, animateScroll as scroll } from "react-scroll";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
@@ -29,7 +30,13 @@ const IndexPage = () => {
   // console.log("window size:", size?.x, size?.y);
 
   return (
-    <div className="font-main" data-theme="bumblebee">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 1.5 }}
+      className="font-main"
+      data-theme="bumblebee"
+    >
       <header>
         {/* Extract to nav component */}
         <button
@@ -81,10 +88,7 @@ const IndexPage = () => {
               ,
             </li>
             <li>
-              <a
-                href=""
-                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-              >
+              <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
                 photography
               </a>
               ,
@@ -238,7 +242,7 @@ const IndexPage = () => {
           </button>
         </div>
       </footer>
-    </div>
+    </motion.div>
   );
 };
 
