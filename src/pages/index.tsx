@@ -150,12 +150,12 @@ const IndexPage = () => {
         <section className="z-30 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll">
           <h2 className="mb-8 text-3xl font-bold">
             Upcoming Page
-            <span className="text-gatsby-purple"> Build ⚡️</span>
+            <span className="text-purple-900"> Build ⚡️</span>
           </h2>
-          <code className="p-1 text-lg underline rounded underline-offset-4 decoration-0 bg-gatsby-bg-code text-gatsby-purple">
+          <code className="p-1 text-lg text-orange-900 underline bg-yellow-100 rounded underline-offset-4 decoration-0 ">
             outline
           </code>
-          <ul className="mb-24 ml-4 font-light list-disc ">
+          <ul className="mt-2 mb-24 ml-4 font-light list-disc marker:text-purple-900">
             <li>
               <s>watch the react tailwind tutorial by dev ed</s> — setup dark
               mode toggle
@@ -180,25 +180,50 @@ const IndexPage = () => {
               react-spring, react-scroll
             </li>
             <li>
-              <h5 className="underline">Move to Framer Motion</h5>
-              Oversight using the current library for Parallax Effects.
-              <br />
-              “Pages” are defined in ParallaxLayer in react-spring with a factor
-              prop. This isn’t proportional to the content inside the
-              ParallaxLayer. Meaning that content overflows on mobile with
-              current implementation in this project, and isn’t easily fixable.
+              <h5 className="font-bold ">Move to Framer Motion</h5>
+              <p>
+                Oversight using the current library for Parallax Effects.
+                <br />
+                “Pages” are defined in ParallaxLayer in react-spring with a
+                factor prop. This isn’t proportional to the content inside the
+                ParallaxLayer. Meaning that content overflows on mobile with
+                current implementation in this project, and isn’t easily
+                fixable.
+              </p>
+              <ul className="mt-2 ml-4 list-disc list-inside">
+                <li>
+                  setup parallax w previous overlapping behaviour (& spring
+                  effect)
+                </li>
+                <li>
+                  make links functional again (navbar, welcome, footer scroll to
+                  top)
+                </li>
+              </ul>
             </li>
           </ul>
 
           <h4 className="text-xl font-semibold">
             Page Progress Bar — to be built
           </h4>
-          <ul className="steps steps-vertical lg:steps-horizontal">
-            <li className="step step-primary">welcome</li>
-            <li className="step step-primary">project list</li>
-            <li className="step">github activity</li>
-            <li className="step">future page builds</li>
+          <h5 className="underline">Build</h5>
+          <ul className="ml-6 list-disc list-outside marker:text-amber-700 marker:content-['+_'] marker:font-bold   ">
+            <li>make sections clickable</li>
+            <li>rm scroll to top once this is functional</li>
+            <li>auto-hide on mobile</li>
+            <li>
+              use md:steps-vertical and pin off the side for larger screens
+            </li>
+            <li>might want to replace with a labeled progress bar w Framer</li>
           </ul>
+          <div className="mt-4 text-center">
+            <ul className="steps steps-horizontal">
+              <li className="step step-primary">welcome</li>
+              <li className="step step-primary">project list</li>
+              <li className="step">github activity</li>
+              <li className="step">future page builds</li>
+            </ul>
+          </div>
         </section>
       </main>
 
