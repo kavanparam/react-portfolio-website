@@ -72,8 +72,8 @@ const IndexPage = () => {
             speed={-0.75}
             className="z-10 p-[18%] bg-zinc-50 rounded-2xl"
           >
-            <section>
-              <h1 className="mt-40 mb-8 text-6xl font-bold drop-shadow-md">
+            <section className="h-full translate-y-1/4">
+              <h1 className="mb-8 text-6xl font-bold drop-shadow-md">
                 Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
               </h1>
               <ul className="flex gap-2 font-mono">
