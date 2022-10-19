@@ -83,7 +83,8 @@ const IndexPage = () => {
           style={{ y }}
         >
           {/* filters */}
-          {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
+          <div>
+            {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
             <svg
               viewBox="0 0 768 578"
               fill="none"
@@ -136,7 +137,7 @@ const IndexPage = () => {
             </svg>
           </div> */}
 
-          {/* <div className="-z-10 absolute -inset-px mx-auto flex max-w-[1440px] justify-end opacity-50 lg:opacity-100">
+            {/* <div className="-z-10 absolute -inset-px mx-auto flex max-w-[1440px] justify-end opacity-50 lg:opacity-100">
             <svg
               viewBox="0 0 692 748"
               fill="none"
@@ -188,6 +189,7 @@ const IndexPage = () => {
               </defs>
             </svg>
           </div> */}
+          </div>
 
           <h1 className="mt-[40%] mb-8 text-6xl font-bold drop-shadow-md">
             Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
