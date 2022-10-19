@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import type { HeadFC } from "gatsby";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 // import { Link, animateScroll as scroll } from "react-scroll";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
@@ -13,7 +13,8 @@ type WindowProps = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
-  const ref = useRef<any>();
+  let { scrollYProgress } = useScroll();
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
 
   const updateSize = () =>
     setSize({
@@ -77,7 +78,11 @@ const IndexPage = () => {
 
       <main>
         {/* Welcome Page */}
-        <section className="h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-20">
+        <motion.section
+          className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-20"
+          // style={{ y }}
+        >
+          {/* filters */}
           {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
             <svg
               viewBox="0 0 768 578"
@@ -184,40 +189,38 @@ const IndexPage = () => {
             </svg>
           </div> */}
 
-          <div className="absolute z-10">
-            <h1 className="mt-[40%] mb-8 text-6xl font-bold drop-shadow-md">
-              Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
-            </h1>
-            <ul className="flex gap-2 font-mono">
-              <li>
-                <a
-                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                  // onClick={() => ref.current.scrollTo(1.15)}
-                >
-                  works
-                </a>
-                ,
-              </li>
-              <li>
-                <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
-                  photography
-                </a>
-                ,
-              </li>
-              <li>
-                <a
-                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                  href="/about"
-                >
-                  about
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
+          <h1 className="mt-[40%] mb-8 text-6xl font-bold drop-shadow-md">
+            Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
+          </h1>
+          <ul className="flex gap-2 font-mono">
+            <li>
+              <a
+                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                // onClick={() => ref.current.scrollTo(1.15)}
+              >
+                works
+              </a>
+              ,
+            </li>
+            <li>
+              <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
+                photography
+              </a>
+              ,
+            </li>
+            <li>
+              <a
+                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                href="/about"
+              >
+                about
+              </a>
+            </li>
+          </ul>
+        </motion.section>
 
         {/* Projects */}
-        <section className="z-20 p-[4%] min-h-min mb-20 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200">
+        <section className="z-20 p-[4%] min-h-fit  mb-20 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200">
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
           </h2>
