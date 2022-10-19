@@ -14,12 +14,14 @@ const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
   let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
+  // let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
+  let y1 = useTransform(scrollYProgress, [0, 1], [0, -10000]);
+  let y2 = useTransform(scrollYProgress, [0, 1], [0, -12000]);
+  let y3 = useTransform(scrollYProgress, [0, 1], [0, -10000]);
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
     margin: "-15%",
-    once: true,
   });
 
   const updateSize = () =>
@@ -28,11 +30,11 @@ const IndexPage = () => {
       y: window.innerHeight,
     });
 
+  /* fixme: mobile menu is clickable only when page is resized
+    - only used for the navbar & can be removed 
+    - find a better way to implement this, maybe w tw breakpoints
+  */
   useEffect(() => {
-    /* fixme: mobile menu is clickable only when page is resized
-      - only used for the navbar & can be removed 
-      - find a better way to implement this, maybe w tw breakpoints
-    */
     window.onload = updateSize;
     window.onresize = updateSize;
   }, []);
@@ -233,7 +235,8 @@ const IndexPage = () => {
         {/* Projects */}
         <motion.section
           ref={ref}
-          animate={isInView ? { y: -300 } : ""}
+          style={{ y: y1 }}
+          // animate={isInView ? { y: -300 } : ""}
           className="z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
@@ -274,14 +277,20 @@ const IndexPage = () => {
         </motion.section>
 
         {/* GitHub Activity */}
-        <section className="w-full z-30 p-[4%] h-screen mb-48 shadow-divUp rounded-3xl bg-zinc-300">
+        <motion.section
+          className="w-full z-30 p-[4%] h-screen mb-48 shadow-divUp rounded-3xl bg-zinc-300"
+          style={{ y: y2 }}
+        >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
           </h2>
-        </section>
+        </motion.section>
 
         {/* Page Build */}
-        <section className="z-40 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll">
+        <motion.section
+          className="z-40 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll"
+          style={{ y: y3 }}
+        >
           <h2 className="mb-8 text-3xl font-bold">
             Upcoming Page
             <span className="text-purple-900"> Build ⚡️</span>
@@ -358,7 +367,7 @@ const IndexPage = () => {
               <li className="step">future page builds</li>
             </ul>
           </div>
-        </section>
+        </motion.section>
       </main>
 
       <footer className="w-screen my-24">
