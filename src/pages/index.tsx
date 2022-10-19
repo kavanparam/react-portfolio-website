@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import type { HeadFC } from "gatsby";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 // import { Link, animateScroll as scroll } from "react-scroll";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
@@ -15,6 +15,12 @@ const IndexPage = () => {
   const [size, setSize] = useState<WindowProps>();
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    margin: "-15%",
+    once: true,
+  });
 
   const updateSize = () =>
     setSize({
@@ -79,8 +85,8 @@ const IndexPage = () => {
       <main className="relative">
         {/* Welcome Page */}
         <motion.section
-          className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-20"
           // style={{ y }}
+          className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-[10%]"
         >
           {/* filters */}
           <div>
@@ -193,7 +199,7 @@ const IndexPage = () => {
 
           {/* content */}
           <div>
-            <h1 className="mt-[40%] mb-8 text-6xl font-bold drop-shadow-md">
+            <h1 className="mt-[25%] mb-8 text-6xl font-bold drop-shadow-md">
               Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
             </h1>
             <ul className="flex gap-2 font-mono">
@@ -225,7 +231,11 @@ const IndexPage = () => {
         </motion.section>
 
         {/* Projects */}
-        <section className="z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200">
+        <motion.section
+          ref={ref}
+          animate={isInView ? { y: -300 } : ""}
+          className="z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+        >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
           </h2>
@@ -261,7 +271,7 @@ const IndexPage = () => {
               BookStore App
             </h3>
           </div>
-        </section>
+        </motion.section>
 
         {/* GitHub Activity */}
         <section className="w-full z-30 p-[4%] h-screen mb-48 shadow-divUp rounded-3xl bg-zinc-300">
