@@ -22,6 +22,10 @@ const IndexPage = () => {
     });
 
   useEffect(() => {
+    /* fixme: mobile menu is clickable only when page is resized
+      - only used for the navbar & can be removed 
+      - find a better way to implement this, maybe w tw breakpoints
+    */
     window.onload = updateSize;
     window.onresize = updateSize;
   }, []);
