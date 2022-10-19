@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        divUp: ["0 -75px 100px 75px white"],
+        divUp: ["0 -75px 100px 90px rgba(255,255,255,.8)"],
       },
       colors: {},
       fontFamily: {

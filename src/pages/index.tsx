@@ -80,7 +80,7 @@ const IndexPage = () => {
         {/* Welcome Page */}
         <motion.section
           className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-20"
-          style={{ y }}
+          // style={{ y }}
         >
           {/* filters */}
           <div>
@@ -191,38 +191,41 @@ const IndexPage = () => {
           </div> */}
           </div>
 
-          <h1 className="mt-[40%] mb-8 text-6xl font-bold drop-shadow-md">
-            Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
-          </h1>
-          <ul className="flex gap-2 font-mono">
-            <li>
-              <a
-                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                // onClick={() => ref.current.scrollTo(1.15)}
-              >
-                works
-              </a>
-              ,
-            </li>
-            <li>
-              <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
-                photography
-              </a>
-              ,
-            </li>
-            <li>
-              <a
-                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                href="/about"
-              >
-                about
-              </a>
-            </li>
-          </ul>
+          {/* content */}
+          <div>
+            <h1 className="mt-[40%] mb-8 text-6xl font-bold drop-shadow-md">
+              Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
+            </h1>
+            <ul className="flex gap-2 font-mono">
+              <li>
+                <a
+                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                  // onClick={() => ref.current.scrollTo(1.15)}
+                >
+                  works
+                </a>
+                ,
+              </li>
+              <li>
+                <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
+                  photography
+                </a>
+                ,
+              </li>
+              <li>
+                <a
+                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                  href="/about"
+                >
+                  about
+                </a>
+              </li>
+            </ul>
+          </div>
         </motion.section>
 
         {/* Projects */}
-        <section className="absolute z-20 p-[4%] min-h-fit w-full mb-20 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200">
+        <section className="z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200">
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
           </h2>
@@ -261,7 +264,7 @@ const IndexPage = () => {
         </section>
 
         {/* GitHub Activity */}
-        <section className="w-full z-30 p-[4%] h-screen mb-20 shadow-divUp rounded-3xl bg-zinc-300">
+        <section className="w-full z-30 p-[4%] h-screen mb-48 shadow-divUp rounded-3xl bg-zinc-300">
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
           </h2>
