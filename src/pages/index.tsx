@@ -73,8 +73,8 @@ const IndexPage = () => {
 
       <main>
         {/* Welcome Page */}
-        <section className="relative h-screen -z-10 p-[18%] bg-zinc-50 rounded-2xl -mb-20">
-          <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
+        <section className="h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-20">
+          {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
             <svg
               viewBox="0 0 768 578"
               fill="none"
@@ -125,9 +125,9 @@ const IndexPage = () => {
                 </linearGradient>
               </defs>
             </svg>
-          </div>
+          </div> */}
 
-          <div className="-z-10 absolute -inset-px mx-auto flex max-w-[1440px] justify-end opacity-50 lg:opacity-100">
+          {/* <div className="-z-10 absolute -inset-px mx-auto flex max-w-[1440px] justify-end opacity-50 lg:opacity-100">
             <svg
               viewBox="0 0 692 748"
               fill="none"
@@ -178,7 +178,7 @@ const IndexPage = () => {
                 </linearGradient>
               </defs>
             </svg>
-          </div>
+          </div> */}
 
           <div className="absolute z-10">
             <h1 className="mt-[40%] mb-8 text-6xl font-bold drop-shadow-md">
@@ -343,10 +343,10 @@ const IndexPage = () => {
         <div className="flex flex-col items-center gap-8">
           <h4 className="text-2xl font-light">thank you for visiting! 🖤</h4>
           <button
-            className="gap-2 font-mono text-gray-800 lowercase btn glass bg-amber-600"
+            className="gap-2 font-mono text-base text-black lowercase border-none btn ghost bg-amber-600"
             // onClick={() => ref.current.scrollTo(0)}
           >
-            <span className="text-2xl">☝🏽</span> scroll to top
+            scroll to top
           </button>
         </div>
       </footer>
