@@ -76,11 +76,11 @@ const IndexPage = () => {
         </nav>
       </header>
 
-      <main>
+      <main className="relative">
         {/* Welcome Page */}
         <motion.section
           className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-20"
-          // style={{ y }}
+          style={{ y }}
         >
           {/* filters */}
           {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
@@ -220,7 +220,7 @@ const IndexPage = () => {
         </motion.section>
 
         {/* Projects */}
-        <section className="z-20 p-[4%] min-h-fit  mb-20 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200">
+        <section className="absolute z-20 p-[4%] min-h-fit w-full mb-20 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200">
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
           </h2>
@@ -259,14 +259,14 @@ const IndexPage = () => {
         </section>
 
         {/* GitHub Activity */}
-        <section className="z-20 p-[4%] h-screen mb-20 shadow-divUp rounded-3xl bg-zinc-300">
+        <section className="w-full z-30 p-[4%] h-screen mb-20 shadow-divUp rounded-3xl bg-zinc-300">
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
           </h2>
         </section>
 
         {/* Page Build */}
-        <section className="z-30 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll">
+        <section className="z-40 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll">
           <h2 className="mb-8 text-3xl font-bold">
             Upcoming Page
             <span className="text-purple-900"> Build ⚡️</span>
