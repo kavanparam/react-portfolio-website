@@ -343,7 +343,7 @@ const IndexPage = () => {
         <div className="flex flex-col items-center gap-8">
           <h4 className="text-2xl font-light">thank you for visiting! 🖤</h4>
           <button
-            className="gap-2 font-mono text-base text-black lowercase border-none btn ghost bg-amber-600"
+            className="font-mono text-black lowercase border-none btn btn-sm btn-primary"
             // onClick={() => ref.current.scrollTo(0)}
           >
             scroll to top
