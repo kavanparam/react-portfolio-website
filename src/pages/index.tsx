@@ -14,14 +14,12 @@ const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
   let { scrollYProgress } = useScroll();
-  // let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
-  let y1 = useTransform(scrollYProgress, [0, 1], [0, -10000]);
-  let y2 = useTransform(scrollYProgress, [0, 1], [0, -12000]);
-  let y3 = useTransform(scrollYProgress, [0, 1], [0, -10000]);
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    margin: "-15%",
+    // margin: "-15%",
+    amount: 0.3,
   });
 
   const updateSize = () =>
@@ -38,6 +36,10 @@ const IndexPage = () => {
     window.onload = updateSize;
     window.onresize = updateSize;
   }, []);
+
+  useEffect(() => {
+    console.log("isInView:", isInView);
+  }, [isInView]);
 
   // console.log("isOpen", isOpen);
   // console.log("window size:", size?.x, size?.y);
@@ -86,10 +88,7 @@ const IndexPage = () => {
 
       <main className="relative">
         {/* Welcome Page */}
-        <motion.section
-          // style={{ y }}
-          className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-[10%]"
-        >
+        <motion.section className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-[10%]">
           {/* filters */}
           <div>
             {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
@@ -235,8 +234,8 @@ const IndexPage = () => {
         {/* Projects */}
         <motion.section
           ref={ref}
-          style={{ y: y1 }}
-          // animate={isInView ? { y: -300 } : ""}
+          initial={{ y: 0 }}
+          animate={isInView ? { y: -300, transition: { duration: 0.5 } } : ""}
           className="z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
@@ -277,20 +276,14 @@ const IndexPage = () => {
         </motion.section>
 
         {/* GitHub Activity */}
-        <motion.section
-          className="w-full z-30 p-[4%] h-screen mb-48 shadow-divUp rounded-3xl bg-zinc-300"
-          style={{ y: y2 }}
-        >
+        <motion.section className="w-full z-30 p-[4%] h-screen mb-48 shadow-divUp rounded-3xl bg-zinc-300">
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
           </h2>
         </motion.section>
 
         {/* Page Build */}
-        <motion.section
-          className="z-40 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll"
-          style={{ y: y3 }}
-        >
+        <motion.section className="z-40 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll">
           <h2 className="mb-8 text-3xl font-bold">
             Upcoming Page
             <span className="text-purple-900"> Build ⚡️</span>
