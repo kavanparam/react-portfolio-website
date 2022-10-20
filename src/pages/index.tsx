@@ -1,8 +1,9 @@
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
 import type { HeadFC } from "gatsby";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+// import { Link, animateScroll as scroll } from "react-scroll";
+// import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 type WindowProps = {
   x: undefined | Number;
@@ -12,7 +13,8 @@ type WindowProps = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
-  const ref = useRef<any>();
+  let { scrollYProgress } = useScroll();
+  let y = useTransform(scrollYProgress, [0, 0.15, 1], ["0%", "30%", "0%"]);
 
   const updateSize = () =>
     setSize({
@@ -20,6 +22,10 @@ const IndexPage = () => {
       y: window.innerHeight,
     });
 
+  /* fixme: mobile menu is clickable only when page is resized
+    - only used for the navbar & can be removed 
+    - find a better way to implement this, maybe w tw breakpoints
+  */
   useEffect(() => {
     window.onload = updateSize;
     window.onresize = updateSize;
@@ -29,7 +35,13 @@ const IndexPage = () => {
   // console.log("window size:", size?.x, size?.y);
 
   return (
-    <div data-theme="bumblebee">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+      className="font-main"
+      data-theme="bumblebee"
+    >
       <header>
         {/* Extract to nav component */}
         <button
@@ -49,7 +61,7 @@ const IndexPage = () => {
             <li className="mr-auto uppercase">
               <a
                 className="cursor-pointer"
-                onClick={() => ref.current.scrollTo(0)}
+                // onClick={() => ref.current.scrollTo(0)}
               >
                 Kavan Paramathasan
               </a>
@@ -64,178 +76,192 @@ const IndexPage = () => {
         </nav>
       </header>
 
-      <Parallax pages={6.25} ref={ref}>
-        <main className="font-main">
-          {/* Main */}
-          <ParallaxLayer
-            factor={1}
-            speed={-0.75}
-            className="z-10 p-[18%] bg-zinc-50 rounded-2xl"
-          >
-            <section>
-              <h1 className="mt-40 mb-8 text-6xl font-bold drop-shadow-md">
-                Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
-              </h1>
-              <ul className="flex gap-2 font-mono">
-                <li>
-                  <a
-                    className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                    onClick={() => ref.current.scrollTo(1.15)}
-                  >
-                    works
-                  </a>
-                  ,
-                </li>
-                <li>
-                  <Link
-                    className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400"
-                    activeClass="active"
-                    to="photography"
-                    spy={true}
-                    smooth={true}
-                    offset={-50}
-                    duration={800}
-                  >
-                    photography
-                  </Link>
-                  ,
-                </li>
-                <li>
-                  <a
-                    className="underline underline-offset-4 decoration-1"
-                    href="/about"
-                  >
-                    about
-                  </a>
-                </li>
-              </ul>
-            </section>
-          </ParallaxLayer>
+      <main>
+        {/* Welcome Page */}
+        <motion.section
+          style={{ y }}
+          className="z-0 h-screen w-full p-[10%] bg-zinc-50 rounded-2xl sm:-mb-48 -mb-44 flex flex-col items-start justify-center gap-2"
+        >
+          <h1 className="text-5xl font-bold sm:text-7xl drop-shadow-md">
+            Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
+          </h1>
+          <ul className="flex gap-2 font-mono">
+            <li>
+              <a
+                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                // onClick={() => ref.current.scrollTo(1.15)}
+              >
+                works
+              </a>
+              ,
+            </li>
+            <li>
+              <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
+                photography
+              </a>
+              ,
+            </li>
+            <li>
+              <a
+                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                href="/about"
+              >
+                about
+              </a>
+            </li>
+          </ul>
+        </motion.section>
 
-          {/* Projects */}
-          <ParallaxLayer
-            offset={0.9}
-            factor={2}
-            speed={-0.25}
-            className="z-20 p-14 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
-          >
-            <section>
-              <div className="">
-                <h2 id="projects" className="mb-8 text-2xl font-thin">
-                  my projects
-                </h2>
-                <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center drop-shadow">
-                    <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
-                      Multiplication
-                    </span>{" "}
-                    <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
-                      Connect
-                    </span>{" "}
-                    <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
-                      Four
-                    </span>
-                  </h3>
-                </div>
-                <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center drop-shadow text-fuchsia-500 ">
-                    Portfolio Website
-                  </h3>
-                </div>
-              </div>
+        {/* Projects */}
+        <motion.section
+          initial={{ scale: 0.9, y: 0, opacity: 0.5 }}
+          whileInView={{ scale: 1, y: -30, opacity: 1 }}
+          transition={{
+            type: "spring",
+            duration: 1,
+          }}
+          viewport={{ amount: 0.15, once: false }}
+          className=" z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+        >
+          <h2 id="projects" className="mb-8 text-2xl font-thin">
+            my projects
+          </h2>
 
-              <div className="">
-                <div className="mb-96">
-                  <h3 className="text-3xl font-bold text-center text-transparent drop-shadow bg-gradient-to-t from-amber-500 to-orange-600 bg-clip-text">
-                    Pokedex App
-                  </h3>
-                </div>
-                <div className="">
-                  <h3 className="text-3xl font-bold text-center text-transparent saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
-                    BookStore App
-                  </h3>
-                </div>
-              </div>
-            </section>
-          </ParallaxLayer>
-
-          {/* GitHub Activity */}
-          <ParallaxLayer
-            offset={3.75}
-            factor={1}
-            speed={-0.1}
-            className="z-20 p-[4%] shadow-divUp rounded-3xl bg-zinc-300"
-          >
-            <section>
-              <h2 id="projects" className="mb-8 text-2xl font-thin">
-                recent github activity
-              </h2>
-            </section>
-          </ParallaxLayer>
-
-          {/* Page Build */}
-          <ParallaxLayer
-            offset={4.9}
-            factor={1}
-            speed={0.05}
-            className="z-30 p-12 bg-zinc-400 rounded-3xl shadow-divUp"
-          >
-            <section>
-              <h2 className="mb-8 text-3xl font-bold">
-                Upcoming Page
-                <span className="text-gatsby-purple"> Build ⚡️</span>
-              </h2>
-              <code className="p-1 text-lg underline rounded underline-offset-4 decoration-0 bg-gatsby-bg-code text-gatsby-purple">
-                outline
-              </code>
-              <ul className="mb-24 ml-4 font-light list-disc">
-                <li>
-                  <s>watch the react tailwind tutorial by dev ed</s> — setup
-                  dark mode toggle
-                </li>
-                <li>import projects</li>
-                <li>
-                  setup daisyUI page progress bar when scrolling — fixed, only
-                  appears on scroll, horizontal+centered on mobile, vertical off
-                  the side on desktop, rm scroll to top after
-                </li>
-                <li>implement more daisy UI — ideas: code, window</li>
-                <li>change navbar font</li>
-                <li>
-                  add a credits section — listing technologies and libraries
-                  used
-                </li>
-                <li>
-                  rm unused plugins — react smooth scroll {`<Link>`} elements{" "}
-                </li>
-              </ul>
-
-              <h4 className="text-xl font-semibold">
-                Page Progress Bar — to be built
-              </h4>
-              <ul className="steps steps-vertical lg:steps-horizontal">
-                <li className="step step-primary">welcome</li>
-                <li className="step step-primary">project list</li>
-                <li className="step">github activity</li>
-                <li className="step">future page builds</li>
-              </ul>
-            </section>
-          </ParallaxLayer>
-        </main>
-
-        <footer className="absolute bottom-0 w-screen mb-24">
-          <div className="flex flex-col items-center gap-8">
-            <h4 className="text-2xl font-light">thank you for visiting! 🖤</h4>
-            <button
-              className="p-2 font-mono text-sm rounded-md shadow-md bg-amber-600"
-              onClick={() => ref.current.scrollTo(0)}
-            >
-              scroll to top
-            </button>
+          <div className="mb-96">
+            <h3 className="text-3xl font-bold text-center drop-shadow saturate-200">
+              <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
+                Multiplication
+              </span>{" "}
+              <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
+                Connect
+              </span>{" "}
+              <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
+                Four
+              </span>
+            </h3>
           </div>
-        </footer>
-      </Parallax>
-    </div>
+
+          <div className="mb-96">
+            <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
+              Portfolio Website
+            </h3>
+          </div>
+
+          <div className="mb-96">
+            <h3 className="text-3xl font-bold text-center text-transparent drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text saturate-200">
+              Pokedex App
+            </h3>
+          </div>
+
+          <div className="mb-96">
+            <h3 className="text-3xl font-bold text-center text-transparent saturate-[3] drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+              BookStore App
+            </h3>
+          </div>
+        </motion.section>
+
+        {/* GitHub Activity */}
+        <motion.section
+          initial={{ scale: 0.9, opacity: 0.5 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{
+            type: "spring",
+            duration: 1,
+          }}
+          viewport={{ amount: 0.3, once: false }}
+          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp rounded-3xl bg-zinc-300"
+        >
+          <h2 id="projects" className="mb-8 text-2xl font-thin">
+            recent github activity
+          </h2>
+        </motion.section>
+
+        {/* Page Build */}
+        <motion.section
+          initial={{ scale: 0.9, opacity: 0.5 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{
+            type: "spring",
+            duration: 1,
+          }}
+          viewport={{ amount: 0.3, once: false }}
+          className="z-40 min-h-screen p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll"
+        >
+          <h2 className="mb-8 text-3xl font-bold">
+            Upcoming Page
+            <span className="text-purple-900"> Build ⚡️</span>
+          </h2>
+          <code className="p-1 text-lg text-orange-900 underline bg-yellow-100 rounded underline-offset-4 decoration-0 ">
+            outline
+          </code>
+          <ul className="mt-2 ml-4 font-light list-disc marker:text-purple-900">
+            <li>
+              <s>watch the react tailwind tutorial by dev ed</s> — setup dark
+              mode toggle
+            </li>
+            <li>import projects</li>
+            <li>fix mobile navbar w hook-window-resize — supports SSR</li>
+            <li>implement more daisy UI — ideas: code, window</li>
+            <li>
+              add a credits section — listing technologies and libraries used
+            </li>
+            <li>
+              clean up code — extract this list into an object like initial
+              gatsby formatting
+            </li>
+            <li>change navbar font</li>
+            <li>consider adding snapping functionality</li>
+
+            <li>
+              <h5 className="font-bold ">Move to Framer Motion</h5>
+              <ul className="mt-1 ml-4 list-disc list-inside">
+                <li>
+                  rm unused npm packages w npm-check library or uninstall
+                  command — react-spring, react-scroll
+                </li>
+                <li>
+                  make links functional again (navbar, welcome, footer scroll to
+                  top)
+                </li>
+                <li>
+                  (labeled w clickable links) progress bar w Framer
+                  — amber-400/500
+                  <details className="ml-8">
+                    <summary>previous idea (use the headings)</summary>
+                    <ul className="steps steps-horizontal">
+                      <li className="step step-primary">welcome</li>
+                      <li className="step step-primary">project list</li>
+                      <li className="step">github activity</li>
+                      <li className="step">future page builds</li>
+                    </ul>
+                    <li>
+                      auto-hide on mobile when not in use (clickable links)
+                    </li>
+                    <li>
+                      use md:steps-vertical and pin off the side for larger
+                      screens
+                    </li>
+                    <li>rm scroll to top once this is functional</li>
+                  </details>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </motion.section>
+      </main>
+
+      <footer className="grid w-screen h-screen place-items-center">
+        <div className="flex flex-col items-center gap-8">
+          <h4 className="text-2xl font-light">thank you for visiting! 🖤</h4>
+          <button
+            className="font-mono text-black lowercase border-none btn btn-sm btn-primary"
+            // onClick={() => ref.current.scrollTo(0)}
+          >
+            scroll to top
+          </button>
+        </div>
+      </footer>
+    </motion.div>
   );
 };
 

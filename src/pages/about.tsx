@@ -1,6 +1,9 @@
 import React from "react";
 
-const about = () => {
+type Props = {};
+
+const about = (props: Props) => {
+  // animate down onto page OR push page to the right on entry w FM
   return <div>about</div>;
 };
 

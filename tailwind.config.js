@@ -8,13 +8,9 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        divUp: ["0 -75px 100px 75px white"],
+        divUp: ["0 -75px 150px 60px rgba(255,255,255,.8)"],
       },
-      colors: {
-        "gatsby-purple": "#663399",
-        "gatsby-code": "#8A6534",
-        "gatsby-bg-code": "#FFF4DB",
-      },
+      colors: {},
       fontFamily: {
         main: "-apple-system, Roboto, sans-serif, serif",
       },
