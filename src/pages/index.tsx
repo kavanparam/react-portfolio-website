@@ -14,7 +14,7 @@ const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
   let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
+  let y = useTransform(scrollYProgress, [0, 0.15, 1], ["0%", "45%", "0%"]);
 
   const updateSize = () =>
     setSize({
@@ -42,7 +42,7 @@ const IndexPage = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 1.5 }}
+      transition={{ ease: "easeOut", duration: 1 }}
       className="font-main"
       data-theme="bumblebee"
     >
@@ -82,7 +82,10 @@ const IndexPage = () => {
 
       <main>
         {/* Welcome Page */}
-        <motion.section className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl sm:-mb-48 -mb-44">
+        <motion.section
+          style={{ y }}
+          className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl sm:-mb-48 -mb-44"
+        >
           {/* filters */}
           <div>
             {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
@@ -192,42 +195,48 @@ const IndexPage = () => {
           </div> */}
           </div>
 
-          <h1 className="mt-[25%] mb-8 text-6xl font-bold drop-shadow-md">
-            Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
-          </h1>
-          <ul className="flex gap-2 font-mono">
-            <li>
-              <a
-                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                // onClick={() => ref.current.scrollTo(1.15)}
-              >
-                works
-              </a>
-              ,
-            </li>
-            <li>
-              <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
-                photography
-              </a>
-              ,
-            </li>
-            <li>
-              <a
-                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                href="/about"
-              >
-                about
-              </a>
-            </li>
-          </ul>
+          {/* content */}
+          <div>
+            <h1 className="mt-[25%] mb-8 text-6xl font-bold drop-shadow-md">
+              Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
+            </h1>
+            <ul className="flex gap-2 font-mono">
+              <li>
+                <a
+                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                  // onClick={() => ref.current.scrollTo(1.15)}
+                >
+                  works
+                </a>
+                ,
+              </li>
+              <li>
+                <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
+                  photography
+                </a>
+                ,
+              </li>
+              <li>
+                <a
+                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                  href="/about"
+                >
+                  about
+                </a>
+              </li>
+            </ul>
+          </div>
         </motion.section>
 
         {/* Projects */}
         <motion.section
           initial={{ scale: 0.9, y: 0 }}
           whileInView={{ scale: 1, y: -30 }}
-          transition={{ type: "spring", duration: 0.5 }}
-          viewport={{ amount: 0.3, once: false }}
+          transition={{
+            type: "spring",
+            duration: 1,
+          }}
+          viewport={{ amount: 0.15, once: false }}
           className=" z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
