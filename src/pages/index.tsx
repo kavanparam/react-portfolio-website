@@ -185,13 +185,16 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll"
+          className="z-40 min-h-screen p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll text-zinc-900"
         >
-          <h2 className="mb-8 text-4xl font-bold sm:text-5xl">
+          <h2 className="mb-8 text-4xl font-bold sm:text-5xl text-zinc-800">
             Upcoming Page
-            <span className="text-purple-900"> Build ⚡️</span>
+            <span className="text-purple-900">
+              {" "}
+              Build <span className="text-[125%] align-middle">⚡️</span>
+            </span>
           </h2>
-          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl">
+          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
             Soon
           </h3>
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-xl">
@@ -203,7 +206,7 @@ const IndexPage = () => {
             <li>add gifs/videos that demo projects</li>
           </ul>
           <div className="divider"></div>
-          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl">
+          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
             Outlined
           </h3>
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-xl">
@@ -241,15 +244,15 @@ const IndexPage = () => {
                     google url indexing
                   </a>
                 </li>
+                <li>
+                  refine section glows — make the same color as the div itself,
+                  & overall colors
+                </li>
               </ul>
             </li>
             <li className="mt-8">
               <h5 className="font-bold">Move to Framer Motion</h5>
               <ul className="mt-1 ml-4 list-disc list-inside">
-                <li>
-                  rm unused npm packages w npm-check library or uninstall
-                  command — react-spring, react-scroll
-                </li>
                 <li>
                   make links functional again (navbar, welcome, footer scroll to
                   top)
@@ -286,6 +289,10 @@ const IndexPage = () => {
                       <li>rm scroll to top once this is functional</li>
                     </details>
                   </ul>
+                </li>
+                <li>
+                  rm unused npm packages w npm-check library or uninstall
+                  command — react-spring, react-scroll
                 </li>
               </ul>
             </li>
