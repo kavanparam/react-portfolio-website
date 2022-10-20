@@ -16,12 +16,6 @@ const IndexPage = () => {
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    // margin: "-15%",
-    amount: 0.3,
-  });
-
   const updateSize = () =>
     setSize({
       x: window.innerWidth,
@@ -37,9 +31,9 @@ const IndexPage = () => {
     window.onresize = updateSize;
   }, []);
 
-  useEffect(() => {
-    console.log("isInView:", isInView);
-  }, [isInView]);
+  // useEffect(() => {
+  //   console.log("isInView:", isInView);
+  // }, [isInView]);
 
   // console.log("isOpen", isOpen);
   // console.log("window size:", size?.x, size?.y);
@@ -86,9 +80,9 @@ const IndexPage = () => {
         </nav>
       </header>
 
-      <main className="relative">
+      <main>
         {/* Welcome Page */}
-        <motion.section className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl -mb-[10%]">
+        <motion.section className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl sm:-mb-48 -mb-44">
           {/* filters */}
           <div>
             {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
@@ -198,52 +192,50 @@ const IndexPage = () => {
           </div> */}
           </div>
 
-          {/* content */}
-          <div>
-            <h1 className="mt-[25%] mb-8 text-6xl font-bold drop-shadow-md">
-              Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
-            </h1>
-            <ul className="flex gap-2 font-mono">
-              <li>
-                <a
-                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                  // onClick={() => ref.current.scrollTo(1.15)}
-                >
-                  works
-                </a>
-                ,
-              </li>
-              <li>
-                <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
-                  photography
-                </a>
-                ,
-              </li>
-              <li>
-                <a
-                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                  href="/about"
-                >
-                  about
-                </a>
-              </li>
-            </ul>
-          </div>
+          <h1 className="mt-[25%] mb-8 text-6xl font-bold drop-shadow-md">
+            Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
+          </h1>
+          <ul className="flex gap-2 font-mono">
+            <li>
+              <a
+                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                // onClick={() => ref.current.scrollTo(1.15)}
+              >
+                works
+              </a>
+              ,
+            </li>
+            <li>
+              <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
+                photography
+              </a>
+              ,
+            </li>
+            <li>
+              <a
+                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                href="/about"
+              >
+                about
+              </a>
+            </li>
+          </ul>
         </motion.section>
 
         {/* Projects */}
         <motion.section
-          ref={ref}
-          initial={{ y: 0 }}
-          animate={isInView ? { y: -300, transition: { duration: 0.5 } } : ""}
-          className="z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+          initial={{ scale: 0.9, y: 0 }}
+          whileInView={{ scale: 1, y: -30 }}
+          transition={{ type: "spring", duration: 0.5 }}
+          viewport={{ amount: 0.3, once: false }}
+          className=" z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
           </h2>
 
           <div className="mb-96">
-            <h3 className="text-3xl font-bold text-center drop-shadow">
+            <h3 className="text-3xl font-bold text-center drop-shadow saturate-200">
               <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                 Multiplication
               </span>{" "}
@@ -257,19 +249,19 @@ const IndexPage = () => {
           </div>
 
           <div className="mb-96">
-            <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
+            <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
               Portfolio Website
             </h3>
           </div>
 
           <div className="mb-96">
-            <h3 className="text-3xl font-bold text-center text-transparent drop-shadow bg-gradient-to-t from-amber-500 to-orange-600 bg-clip-text">
+            <h3 className="text-3xl font-bold text-center text-transparent drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text saturate-200">
               Pokedex App
             </h3>
           </div>
 
           <div className="mb-96">
-            <h3 className="text-3xl font-bold text-center text-transparent saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+            <h3 className="text-3xl font-bold text-center text-transparent saturate-[3] drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
               BookStore App
             </h3>
           </div>
