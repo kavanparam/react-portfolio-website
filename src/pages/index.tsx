@@ -187,19 +187,28 @@ const IndexPage = () => {
           viewport={{ amount: 0.3, once: false }}
           className="z-40 min-h-screen p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll"
         >
-          <h2 className="mb-8 text-3xl font-bold">
+          <h2 className="mb-8 text-4xl font-bold sm:text-5xl">
             Upcoming Page
             <span className="text-purple-900"> Build ⚡️</span>
           </h2>
-          <code className="p-1 text-lg text-orange-900 underline bg-yellow-100 rounded underline-offset-4 decoration-0 ">
-            outline
-          </code>
-          <ul className="mt-2 ml-4 font-light list-disc marker:text-purple-900">
+          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl">
+            Soon
+          </h3>
+          <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-xl">
             <li>
               <s>watch the react tailwind tutorial by dev ed</s> — setup dark
               mode toggle
             </li>
             <li>import projects</li>
+            <li>add gifs/videos that demo projects</li>
+          </ul>
+          <div className="divider"></div>
+          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl">
+            Outlined
+          </h3>
+          <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-xl">
+            <li>import Inter font</li>
+            <li>change navbar font</li>
             <li>fix mobile navbar w hook-window-resize — supports SSR</li>
             <li>implement more daisy UI — ideas: code, window</li>
             <li>
@@ -209,11 +218,33 @@ const IndexPage = () => {
               clean up code — extract this list into an object like initial
               gatsby formatting
             </li>
-            <li>change navbar font</li>
             <li>consider adding snapping functionality</li>
-
             <li>
-              <h5 className="font-bold ">Move to Framer Motion</h5>
+              consider tailwind{" "}
+              <a
+                href="https://tailwindcss.com/blog/tailwindcss-v3-2#container-queries"
+                className="link link-primary"
+              >
+                container queries
+              </a>
+            </li>
+            <li>
+              SEO + site design
+              <ul className="list-decimal list-inside">
+                <li>design a favicon</li>
+                <li>
+                  request{" "}
+                  <a
+                    className="link link-primary"
+                    href="https://support.google.com/webmasters/answer/9012289#request_indexing"
+                  >
+                    google url indexing
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="mt-8">
+              <h5 className="font-bold">Move to Framer Motion</h5>
               <ul className="mt-1 ml-4 list-disc list-inside">
                 <li>
                   rm unused npm packages w npm-check library or uninstall
@@ -226,23 +257,35 @@ const IndexPage = () => {
                 <li>
                   (labeled w clickable links) progress bar w Framer
                   — amber-400/500
-                  <details className="ml-8">
-                    <summary>previous idea (use the headings)</summary>
-                    <ul className="steps steps-horizontal">
-                      <li className="step step-primary">welcome</li>
-                      <li className="step step-primary">project list</li>
-                      <li className="step">github activity</li>
-                      <li className="step">future page builds</li>
-                    </ul>
+                  <ul className="ml-8 list-disc list-inside">
                     <li>
-                      auto-hide on mobile when not in use (clickable links)
+                      e.g.){" "}
+                      <a
+                        href="https://githubnext.com/"
+                        className="link link-primary"
+                      >
+                        GitHub Next
+                      </a>{" "}
+                      (minus the progress bar)
                     </li>
-                    <li>
-                      use md:steps-vertical and pin off the side for larger
-                      screens
-                    </li>
-                    <li>rm scroll to top once this is functional</li>
-                  </details>
+                    <details className="">
+                      <summary>previous idea (use the headings)</summary>
+                      <ul className="steps steps-horizontal">
+                        <li className="step step-primary">welcome</li>
+                        <li className="step step-primary">project list</li>
+                        <li className="step">github activity</li>
+                        <li className="step">future page builds</li>
+                      </ul>
+                      <li>
+                        auto-hide on mobile when not in use (clickable links)
+                      </li>
+                      <li>
+                        use md:steps-vertical and pin off the side for larger
+                        screens
+                      </li>
+                      <li>rm scroll to top once this is functional</li>
+                    </details>
+                  </ul>
                 </li>
               </ul>
             </li>
