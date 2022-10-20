@@ -14,7 +14,7 @@ const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
   let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0, 0.15, 1], ["0%", "45%", "0%"]);
+  let y = useTransform(scrollYProgress, [0, 0.15, 1], ["0%", "30%", "0%"]);
 
   const updateSize = () =>
     setSize({
@@ -30,10 +30,6 @@ const IndexPage = () => {
     window.onload = updateSize;
     window.onresize = updateSize;
   }, []);
-
-  // useEffect(() => {
-  //   console.log("isInView:", isInView);
-  // }, [isInView]);
 
   // console.log("isOpen", isOpen);
   // console.log("window size:", size?.x, size?.y);
@@ -84,160 +80,48 @@ const IndexPage = () => {
         {/* Welcome Page */}
         <motion.section
           style={{ y }}
-          className="z-0 h-screen p-[18%] bg-zinc-50 rounded-2xl sm:-mb-48 -mb-44"
+          className="z-0 h-screen w-full p-[10%] bg-zinc-50 rounded-2xl sm:-mb-48 -mb-44 flex flex-col items-start justify-center gap-2"
         >
-          {/* filters */}
-          <div>
-            {/* <div className="-z-10 absolute -inset-px mx-auto max-w-[1440px] opacity-50 lg:opacity-100">
-            <svg
-              viewBox="0 0 768 578"
-              fill="none"
-              className="w-100% overflow-visible"
-            >
-              <g filter="url(#filter0_f_15_148)">
-                <path
-                  d="M326.41 357.121c171.758 23.383 359.676 2.307 239.619-215.368 3.759 50.782-29.668 142.424-193.445 102.744a407.52 407.52 0 01-10.617-2.722L445.13-28c-44.511 74.031-102.835 158.559-162.836 233.733-60.2-45.861-39.597-108.11-14.674-140.506C178.271 25.074-2.51 17.47-10.837 308.268c-5.886 205.535 148.494 78.676 293.131-102.535 18.338 13.971 44.175 26.42 79.673 36.042L326.41 357.121z"
-                  fill="url(#paint0_linear_15_148)"
-                  fill-opacity="0.3"
-                ></path>
-              </g>
-              <defs>
-                <filter
-                  id="filter0_f_15_148"
-                  x="-175"
-                  y="-192"
-                  width="943"
-                  height="770"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood
-                    flood-opacity="0"
-                    result="BackgroundImageFix"
-                  ></feFlood>
-                  <feBlend
-                    in="SourceGraphic"
-                    in2="BackgroundImageFix"
-                    result="shape"
-                  ></feBlend>
-                  <feGaussianBlur
-                    stdDeviation="82"
-                    result="effect1_foregroundBlur_15_148"
-                  ></feGaussianBlur>
-                </filter>
-                <linearGradient
-                  id="paint0_linear_15_148"
-                  x1="563.85"
-                  y1="335.141"
-                  x2="270.219"
-                  y2="-94.2389"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#67E8F9"></stop>
-                  <stop offset="0.481847" stop-color="#8B5CF6"></stop>
-                  <stop offset="1" stop-color="#EC4899"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div> */}
-
-            {/* <div className="-z-10 absolute -inset-px mx-auto flex max-w-[1440px] justify-end opacity-50 lg:opacity-100">
-            <svg
-              viewBox="0 0 692 748"
-              fill="none"
-              className="w-full overflow-visible"
-            >
-              <g filter="url(#filter0_f_15_147)">
-                <path
-                  d="M280.846 246.59C232.81 74.832 276.108-113.086 723.276 6.971c-104.32-3.759-292.58 29.668-211.065 193.445a259.026 259.026 0 005.591 10.617L1072 127.87c-152.083 44.511-325.728 102.835-480.157 162.836 94.211 60.2 222.09 39.597 288.641 14.674 82.485 89.349 98.109 270.129-499.28 278.457-422.23 5.886-161.624-148.494 210.639-293.131-28.7-18.338-54.276-44.175-74.041-79.673L280.846 246.59z"
-                  fill="url(#paint0_linear_15_147)"
-                  fill-opacity="0.3"
-                ></path>
-              </g>
-              <defs>
-                <filter
-                  id="filter0_f_15_147"
-                  x="0"
-                  y="-195"
-                  width="1236"
-                  height="943"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood
-                    flood-opacity="0"
-                    result="BackgroundImageFix"
-                  ></feFlood>
-                  <feBlend
-                    in="SourceGraphic"
-                    in2="BackgroundImageFix"
-                    result="shape"
-                  ></feBlend>
-                  <feGaussianBlur
-                    stdDeviation="82"
-                    result="effect1_foregroundBlur_15_147"
-                  ></feGaussianBlur>
-                </filter>
-                <linearGradient
-                  id="paint0_linear_15_147"
-                  x1="326.001"
-                  y1="9.14971"
-                  x2="761.364"
-                  y2="620.762"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#67E8F9"></stop>
-                  <stop offset="0.481847" stop-color="#8B5CF6"></stop>
-                  <stop offset="1" stop-color="#EC4899"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div> */}
-          </div>
-
-          {/* content */}
-          <div>
-            <h1 className="mt-[25%] mb-8 text-6xl font-bold drop-shadow-md">
-              Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
-            </h1>
-            <ul className="flex gap-2 font-mono">
-              <li>
-                <a
-                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                  // onClick={() => ref.current.scrollTo(1.15)}
-                >
-                  works
-                </a>
-                ,
-              </li>
-              <li>
-                <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
-                  photography
-                </a>
-                ,
-              </li>
-              <li>
-                <a
-                  className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
-                  href="/about"
-                >
-                  about
-                </a>
-              </li>
-            </ul>
-          </div>
+          <h1 className="text-5xl font-bold sm:text-7xl drop-shadow-md">
+            Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
+          </h1>
+          <ul className="flex gap-2 font-mono">
+            <li>
+              <a
+                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                // onClick={() => ref.current.scrollTo(1.15)}
+              >
+                works
+              </a>
+              ,
+            </li>
+            <li>
+              <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
+                photography
+              </a>
+              ,
+            </li>
+            <li>
+              <a
+                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                href="/about"
+              >
+                about
+              </a>
+            </li>
+          </ul>
         </motion.section>
 
         {/* Projects */}
         <motion.section
-          initial={{ scale: 0.9, y: 0 }}
-          whileInView={{ scale: 1, y: -30 }}
+          initial={{ scale: 0.9, y: 0, opacity: 0.5 }}
+          whileInView={{ scale: 1, y: -30, opacity: 1 }}
           transition={{
             type: "spring",
             duration: 1,
           }}
           viewport={{ amount: 0.15, once: false }}
-          className=" z-20 p-[4%] min-h-fit w-full mb-48 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+          className=" z-20 p-[4%] min-h-fit w-full mb-96 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
@@ -277,14 +161,32 @@ const IndexPage = () => {
         </motion.section>
 
         {/* GitHub Activity */}
-        <motion.section className="w-full z-30 p-[4%] h-screen mb-48 shadow-divUp rounded-3xl bg-zinc-300">
+        <motion.section
+          initial={{ scale: 0.9, opacity: 0.5 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{
+            type: "spring",
+            duration: 1,
+          }}
+          viewport={{ amount: 0.3, once: false }}
+          className="w-full z-30 p-[4%] h-screen mb-96 shadow-divUp rounded-3xl bg-zinc-300"
+        >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
           </h2>
         </motion.section>
 
         {/* Page Build */}
-        <motion.section className="z-40 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll">
+        <motion.section
+          initial={{ scale: 0.9, opacity: 0.5 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{
+            type: "spring",
+            duration: 1,
+          }}
+          viewport={{ amount: 0.3, once: false }}
+          className="z-40 p-[8%] bg-zinc-400 rounded-3xl shadow-divUp overflow-scroll"
+        >
           <h2 className="mb-8 text-3xl font-bold">
             Upcoming Page
             <span className="text-purple-900"> Build ⚡️</span>
@@ -364,7 +266,7 @@ const IndexPage = () => {
         </motion.section>
       </main>
 
-      <footer className="w-screen my-24">
+      <footer className="grid w-screen h-screen place-items-center">
         <div className="flex flex-col items-center gap-8">
           <h4 className="text-2xl font-light">thank you for visiting! 🖤</h4>
           <button
