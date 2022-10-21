@@ -128,12 +128,13 @@ const IndexPage = () => {
             my projects
           </h2>
 
+          {/* MCF */}
           <div className="mb-16 md:mb-24">
             {/* change overflow style here & make heading sticky to allow LS to scroll as well */}
-            <div className="relative h-[90vh] overflow-hidden">
+            <div className="relative h-[100vh] md:h-[90vh] overflow-auto">
               {/* overview */}
               <div className="flex items-center justify-center md:h-full md:w-1/2 md:absolute md:top-0 md:left-0">
-                <div className="mb-8 space-y-4 w-96 lg:w-112 md:mb-0">
+                <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
                   <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                       Multiplication
@@ -167,15 +168,26 @@ const IndexPage = () => {
                   - rm padding once filling w content
               */}
               <div className="md:w-1/2 md:ml-[50%] w-full space-y-6 overflow-scroll h-full">
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                  1
+                </div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                  2
+                </div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                  3
+                </div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                  4
+                </div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                  5
+                </div>
               </div>
             </div>
           </div>
 
+          {/* Portfolio */}
           <div className="mb-16 md:mb-24">
             {/* heading */}
             <h3 className="mb-8 text-5xl font-bold text-center text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
@@ -190,12 +202,14 @@ const IndexPage = () => {
             </div>
           </div>
 
+          {/* Pokedex */}
           <div className="mb-96">
             <h3 className="text-5xl font-bold text-center text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text">
               Pokedex App
             </h3>
           </div>
 
+          {/* BookStore */}
           <div className="mb-96">
             <h3 className="text-5xl font-bold text-center text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
               BookStore App
