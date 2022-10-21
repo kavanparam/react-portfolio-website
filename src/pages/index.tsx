@@ -190,26 +190,43 @@ const IndexPage = () => {
               Portfolio Website
             </h3>
 
-            <div className="relative flex flex-col justify-center h-[80vh] overflow-hidden">
+            <div className="relative flex flex-col justify-center md:h-[95vh] h-[100vh] overflow-hidden">
               {/* v1 — overview */}
-              <div className="absolute top-0 left-0 flex items-center justify-center md:w-1/2 h-1/2">
-                <h4 className="text-3xl font-bold">v1</h4>
+              <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-1/2 h-1/2">
+                <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
+                  <h4 className="text-3xl font-bold">v1</h4>
+                  <p className="text-lg sm:text-xl text-zinc-800/80">
+                    description goes here
+                  </p>
+                  <div className="btn-group">
+                    <button className="lowercase text-white/90 btn btn-sm bg-zinc-700">
+                      live link
+                    </button>
+                    <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
+                      <StaticImage
+                        src={"../images/GitHub-Mark-Light-64px.png"}
+                        alt={""}
+                        className="opacity-90"
+                      />
+                    </button>
+                  </div>
+                </div>
               </div>
               {/* v1 — features */}
-              <div className="md:w-1/2 md:ml-[50%] w-full space-y-12 h-full overflow-scroll">
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+              <div className="flex md:w-1/2 md:ml-[50%] w-full gap-12 md:h-1/2 h-full overflow-scroll">
+                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
                   1
                 </div>
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
                   2
                 </div>
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
                   3
                 </div>
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
                   4
                 </div>
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
                   5
                 </div>
               </div>
