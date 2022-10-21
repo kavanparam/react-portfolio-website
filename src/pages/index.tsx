@@ -43,8 +43,8 @@ const IndexPage = () => {
       className="font-main"
       data-theme="bumblebee"
     >
+      {/* Extract to nav component */}
       <header>
-        {/* Extract to nav component */}
         <button
           className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
           onClick={() => setIsOpen(!isOpen)}
@@ -129,11 +129,11 @@ const IndexPage = () => {
           </h2>
 
           <div className="mb-24">
-            <div className="relative h-[85vh]">
-              {/* overview — need to scroll features*/}
-              <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-1/2 h-full">
-                <div className="space-y-4 w-96">
-                  <h3 className="inline-block text-3xl font-bold sm:text-5xl drop-shadow">
+            <div className="relative h-[85vh] overflow-hidden">
+              {/* overview */}
+              <div className="flex items-center justify-center md:h-full md:w-1/2 md:absolute md:top-0 md:left-0">
+                <div className="mb-8 space-y-4 w-96 lg:w-112 md:mb-0">
+                  <h3 className="inline-block text-5xl font-bold lg:text-6xl sm:text-5xl drop-shadow">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                       Multiplication
                     </span>{" "}
@@ -162,13 +162,16 @@ const IndexPage = () => {
                   </div>
                 </div>
               </div>
-              {/* features */}
-              <div className="w-1/2 ml-[50%] space-y-6 overflow-scroll h-full">
-                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
-                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
-                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
-                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
-                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
+              {/* features 
+                  - try to make the divs as square as possible
+                  - rm padding once filling w content
+              */}
+              <div className="md:w-1/2 md:ml-[50%] w-full space-y-6 overflow-scroll h-full">
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]"></div>
               </div>
             </div>
           </div>
