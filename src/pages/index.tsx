@@ -77,7 +77,7 @@ const IndexPage = () => {
         </nav>
       </header>
 
-      <main>
+      <main className="overflow-x-hidden">
         {/* Welcome Page */}
         <motion.section
           style={{ y }}
@@ -189,12 +189,36 @@ const IndexPage = () => {
             <h3 className="mb-8 text-5xl font-bold text-center text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
               Portfolio Website
             </h3>
-            <div className="flex justify-center h-[80vh]">
-              {/* overview & features? */}
-              <div>v1</div>
-              <div className="divider divider-horizontal" />
-              {/* overview & features? */}
-              <div>v2</div>
+
+            <div className="relative flex flex-col justify-center h-[80vh] overflow-hidden">
+              {/* v1 — overview */}
+              <div className="absolute top-0 left-0 flex items-center justify-center md:w-1/2 h-1/2">
+                <h4 className="text-3xl font-bold">v1</h4>
+              </div>
+              {/* v1 — features */}
+              <div className="md:w-1/2 md:ml-[50%] w-full space-y-12 h-full overflow-scroll">
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                  1
+                </div>
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                  2
+                </div>
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                  3
+                </div>
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                  4
+                </div>
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
+                  5
+                </div>
+              </div>
+
+              <div className="divider" />
+              {/* v2 */}
+              <div className="flex items-center justify-center md:w-1/2 h-1/2">
+                <h4 className="text-3xl font-bold">v2</h4>
+              </div>
             </div>
           </div>
 
