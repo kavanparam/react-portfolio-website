@@ -15,7 +15,7 @@ module.exports = {
         main: "-apple-system, Roboto, sans-serif, serif",
       },
       width: {
-        28: "28rem",
+        112: "28rem",
       },
     },
   },

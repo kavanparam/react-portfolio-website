@@ -2,6 +2,7 @@ import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import type { HeadFC } from "gatsby";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { StaticImage } from "gatsby-plugin-image";
 // import { Link, animateScroll as scroll } from "react-scroll";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
@@ -128,11 +129,11 @@ const IndexPage = () => {
           </h2>
 
           <div className="mb-24">
-            <div className="relative border-4">
+            <div className="relative h-[75vh] border-4 ">
               {/* overview — need to scroll features*/}
-              <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-1/2 h-full border-4">
-                <div className="pb-64 border-4 w-28">
-                  <h3 className="inline-block text-3xl font-bold sm:text-5xl drop-shadow saturate-200">
+              <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-1/2 h-full">
+                <div className="space-y-4 w-96">
+                  <h3 className="inline-block text-3xl font-bold sm:text-5xl drop-shadow">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                       Multiplication
                     </span>{" "}
@@ -143,10 +144,32 @@ const IndexPage = () => {
                       Four
                     </span>
                   </h3>
+                  <p className="text-lg sm:text-xl text-zinc-800/80">
+                    description goes here
+                  </p>
+                  <div className="btn-group">
+                    <button className="lowercase text-white/90 btn btn-sm bg-zinc-700">
+                      live link
+                    </button>
+                    <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
+                      {/* <img src={} /> */}
+                      <StaticImage
+                        src={"../images/GitHub-Mark-Light-64px.png"}
+                        alt={""}
+                        className="opacity-90"
+                      />
+                    </button>
+                  </div>
                 </div>
               </div>
               {/* features */}
-              <div className="w-1/2 h-full border-4 border-red-400 ml-[50%] py-96 bg-gradient-to-b from-white to-black"></div>
+              <div className="w-1/2 ml-[50%] space-y-64 overflow-scroll h-full">
+                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
+                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
+                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
+                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
+                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
+              </div>
             </div>
           </div>
 
