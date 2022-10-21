@@ -122,7 +122,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.15, once: false }}
-          className=" z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+          className="z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
@@ -130,7 +130,6 @@ const IndexPage = () => {
 
           {/* MCF */}
           <div className="mb-16 md:mb-24">
-            {/* change overflow style here & make heading sticky to allow LS to scroll as well */}
             <div className="relative h-[100vh] md:h-[95vh] overflow-auto">
               {/* overview */}
               <div className="flex items-center justify-center md:h-full md:w-1/2 md:sticky md:top-0 md:left-0">
@@ -163,24 +162,21 @@ const IndexPage = () => {
                   </div>
                 </div>
               </div>
-              {/* features 
-                  - try to make the divs as square as possible
-                  - rm padding once filling w content
-              */}
-              <div className="md:w-1/2 md:ml-[50%] w-full space-y-6 h-full">
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+              {/* features - make divs as square as possible*/}
+              <div className="md:w-1/2 md:ml-[50%] w-full space-y-12 h-full">
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
                   1
                 </div>
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
                   2
                 </div>
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
                   3
                 </div>
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
                   4
                 </div>
-                <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
                   5
                 </div>
               </div>
