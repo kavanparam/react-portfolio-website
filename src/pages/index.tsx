@@ -134,7 +134,7 @@ const IndexPage = () => {
               {/* overview */}
               <div className="flex items-center justify-center md:h-full md:w-1/2 md:absolute md:top-0 md:left-0">
                 <div className="mb-8 space-y-4 w-96 lg:w-112 md:mb-0">
-                  <h3 className="inline-block text-5xl font-bold lg:text-6xl sm:text-5xl drop-shadow">
+                  <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                       Multiplication
                     </span>{" "}
@@ -153,7 +153,6 @@ const IndexPage = () => {
                       live link
                     </button>
                     <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
-                      {/* <img src={} /> */}
                       <StaticImage
                         src={"../images/GitHub-Mark-Light-64px.png"}
                         alt={""}
@@ -179,7 +178,7 @@ const IndexPage = () => {
 
           <div className="mb-16 md:mb-24">
             {/* heading */}
-            <h3 className="mb-8 text-5xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
+            <h3 className="mb-8 text-5xl font-bold text-center text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
               Portfolio Website
             </h3>
             <div className="flex justify-center h-[80vh]">
@@ -192,13 +191,13 @@ const IndexPage = () => {
           </div>
 
           <div className="mb-96">
-            <h3 className="text-3xl font-bold text-center text-transparent drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text saturate-200">
+            <h3 className="text-5xl font-bold text-center text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text">
               Pokedex App
             </h3>
           </div>
 
           <div className="mb-96">
-            <h3 className="text-3xl font-bold text-center text-transparent saturate-[3] drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+            <h3 className="text-5xl font-bold text-center text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
               BookStore App
             </h3>
           </div>
