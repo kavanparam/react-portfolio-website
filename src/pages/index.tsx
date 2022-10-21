@@ -129,7 +129,7 @@ const IndexPage = () => {
           </h2>
 
           <div className="mb-24">
-            <div className="relative h-[75vh] border-4 ">
+            <div className="relative h-[85vh]">
               {/* overview — need to scroll features*/}
               <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-1/2 h-full">
                 <div className="space-y-4 w-96">
@@ -163,12 +163,12 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* features */}
-              <div className="w-1/2 ml-[50%] space-y-64 overflow-scroll h-full">
-                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
-                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
-                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
-                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
-                <div className="p-12 bg-zinc-200 rounded-3xl"></div>
+              <div className="w-1/2 ml-[50%] space-y-6 overflow-scroll h-full">
+                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
+                <div className="p-48 bg-zinc-200 rounded-[2.5rem]"></div>
               </div>
             </div>
           </div>
@@ -229,7 +229,7 @@ const IndexPage = () => {
           <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
             Soon
           </h3>
-          <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-xl">
+          <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">
             <li>
               <s>watch the react tailwind tutorial by dev ed</s> — setup dark
               mode toggle
@@ -241,7 +241,7 @@ const IndexPage = () => {
           <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
             Outlined
           </h3>
-          <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-xl">
+          <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">
             <li>import Inter font</li>
             <li>change navbar font</li>
             <li>fix mobile navbar w hook-window-resize — supports SSR</li>
@@ -274,6 +274,22 @@ const IndexPage = () => {
                     href="https://support.google.com/webmasters/answer/9012289#request_indexing"
                   >
                     google url indexing
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://blog.hubspot.com/marketing/submit-website-google"
+                    className="link link-primary"
+                  >
+                    another link
+                  </a>
+                </li>
+                <li>
+                  get github profile to show up with a google search{" "}
+                  <a
+                    href="https://www.reddit.com/r/github/comments/hybpia/how_to_make_my_github_account_show_up_when/"
+                    className="link link-primary"
+                  >
+                    (how to)
                   </a>
                 </li>
                 <li>
