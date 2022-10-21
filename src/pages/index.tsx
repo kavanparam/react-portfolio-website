@@ -130,18 +130,20 @@ const IndexPage = () => {
           <div className="mb-24">
             <div className="relative border-4">
               {/* overview — need to scroll features*/}
-              <div className="absolute top-0 left-0 w-1/2 h-full border-4 ">
-                <h3 className="text-3xl font-bold text-center drop-shadow saturate-200">
-                  <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
-                    Multiplication
-                  </span>{" "}
-                  <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
-                    Connect
-                  </span>{" "}
-                  <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
-                    Four
-                  </span>
-                </h3>
+              <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-1/2 h-full border-4">
+                <div className="pb-64 border-4 w-28">
+                  <h3 className="inline-block text-3xl font-bold sm:text-5xl drop-shadow saturate-200">
+                    <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
+                      Multiplication
+                    </span>{" "}
+                    <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
+                      Connect
+                    </span>{" "}
+                    <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
+                      Four
+                    </span>
+                  </h3>
+                </div>
               </div>
               {/* features */}
               <div className="w-1/2 h-full border-4 border-red-400 ml-[50%] py-96 bg-gradient-to-b from-white to-black"></div>

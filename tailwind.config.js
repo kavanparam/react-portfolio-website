@@ -14,6 +14,9 @@ module.exports = {
       fontFamily: {
         main: "-apple-system, Roboto, sans-serif, serif",
       },
+      width: {
+        28: "28rem",
+      },
     },
   },
   plugins: [require("daisyui")],
