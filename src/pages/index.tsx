@@ -131,9 +131,9 @@ const IndexPage = () => {
           {/* MCF */}
           <div className="mb-16 md:mb-24">
             {/* change overflow style here & make heading sticky to allow LS to scroll as well */}
-            <div className="relative h-[100vh] md:h-[90vh] overflow-auto">
+            <div className="relative h-[100vh] md:h-[95vh] overflow-auto">
               {/* overview */}
-              <div className="flex items-center justify-center md:h-full md:w-1/2 md:absolute md:top-0 md:left-0">
+              <div className="flex items-center justify-center md:h-full md:w-1/2 md:sticky md:top-0 md:left-0">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
                   <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
@@ -167,7 +167,7 @@ const IndexPage = () => {
                   - try to make the divs as square as possible
                   - rm padding once filling w content
               */}
-              <div className="md:w-1/2 md:ml-[50%] w-full space-y-6 overflow-scroll h-full">
+              <div className="md:w-1/2 md:ml-[50%] w-full space-y-6 h-full">
                 <div className="lg:p-48 p-32 bg-zinc-200 rounded-[2.5rem]">
                   1
                 </div>
