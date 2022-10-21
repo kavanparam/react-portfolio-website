@@ -83,7 +83,7 @@ const IndexPage = () => {
           style={{ y }}
           className="z-0 h-screen w-full p-[10%] bg-zinc-50 rounded-2xl sm:-mb-48 -mb-44 flex flex-col items-start justify-center gap-2"
         >
-          <h1 className="text-5xl font-bold sm:text-7xl drop-shadow-md">
+          <h1 className="text-6xl font-bold sm:text-7xl drop-shadow-md">
             Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
           </h1>
           <ul className="flex gap-2 font-mono">
@@ -134,7 +134,7 @@ const IndexPage = () => {
               {/* overview */}
               <div className="flex items-center justify-center md:h-full md:w-1/2 md:absolute md:top-0 md:left-0">
                 <div className="mb-8 space-y-4 w-96 lg:w-112 md:mb-0">
-                  <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow">
+                  <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                       Multiplication
                     </span>{" "}
