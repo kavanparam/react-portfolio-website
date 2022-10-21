@@ -128,8 +128,9 @@ const IndexPage = () => {
             my projects
           </h2>
 
-          <div className="mb-24">
-            <div className="relative h-[85vh] overflow-hidden">
+          <div className="mb-16 md:mb-24">
+            {/* change overflow style here & make heading sticky to allow LS to scroll as well */}
+            <div className="relative h-[90vh] overflow-hidden">
               {/* overview */}
               <div className="flex items-center justify-center md:h-full md:w-1/2 md:absolute md:top-0 md:left-0">
                 <div className="mb-8 space-y-4 w-96 lg:w-112 md:mb-0">
@@ -176,10 +177,18 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <div className="mb-96">
-            <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
+          <div className="mb-16 md:mb-24">
+            {/* heading */}
+            <h3 className="mb-8 text-5xl font-bold text-center text-transparent bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
               Portfolio Website
             </h3>
+            <div className="flex justify-center h-[80vh]">
+              {/* overview & features? */}
+              <div>v1</div>
+              <div className="divider divider-horizontal" />
+              {/* overview & features? */}
+              <div>v2</div>
+            </div>
           </div>
 
           <div className="mb-96">
@@ -240,13 +249,16 @@ const IndexPage = () => {
             <li>import projects</li>
             <li>add gifs/videos that demo projects</li>
           </ul>
-          <div className="divider"></div>
+          <div className="divider" />
           <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
             Outlined
           </h3>
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">
             <li>import Inter font</li>
-            <li>change navbar font</li>
+            <li>
+              change navbar font & clean up positioning s.t. it doesn't overlap
+              w content
+            </li>
             <li>fix mobile navbar w hook-window-resize — supports SSR</li>
             <li>implement more daisy UI — ideas: code, window</li>
             <li>
