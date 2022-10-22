@@ -14,6 +14,7 @@ type WindowProps = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
+  const [isDarkMode, setIsDarkMode] = useState(false);
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 0.15, 1], ["0%", "30%", "0%"]);
 
@@ -40,7 +41,7 @@ const IndexPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeOut", duration: 1 }}
-      className="font-main"
+      className={`font-main ${isDarkMode && "dark"}`}
       data-theme="bumblebee"
     >
       {/* Extract to nav component */}
@@ -72,6 +73,9 @@ const IndexPage = () => {
             </li>
             <li className="block sm:fixed sm:right-4 sm:top-12 sm:rotate-90">
               contact
+            </li>
+            <li>
+              <button className="btn btn-square">Toggle Dark Mode</button>
             </li>
           </ul>
         </nav>
@@ -192,7 +196,7 @@ const IndexPage = () => {
 
             <div className="relative flex flex-col justify-center md:h-[95vh] h-[100vh] overflow-hidden">
               {/* v1 — overview */}
-              <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-1/2 h-1/2">
+              <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-1/2">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
                   <h4 className="text-3xl font-bold">v1</h4>
                   <p className="text-lg sm:text-xl text-zinc-800/80">
@@ -213,7 +217,7 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* v1 — features */}
-              <div className="flex md:w-1/2 md:ml-[50%] w-full gap-12 md:h-1/2 h-full overflow-scroll">
+              <div className="flex md:w-[70%] md:ml-[30%] w-full gap-12 md:h-1/2 h-full overflow-scroll">
                 <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
                   1
                 </div>
