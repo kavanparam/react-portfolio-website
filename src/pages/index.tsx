@@ -14,7 +14,7 @@ type WindowProps = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 0.15, 1], ["0%", "30%", "0%"]);
 
@@ -184,20 +184,50 @@ const IndexPage = () => {
               </div>
               {/* features - make divs as square as possible*/}
               <div className="md:w-1/2 md:ml-[50%] w-full space-y-12 h-full">
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
-                  1
+                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                  <div>1</div>
+                  <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                    hic molestiae debitis temporibus impedit amet quasi
+                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
-                  2
+                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                  <div>2</div>
+                  <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                    hic molestiae debitis temporibus impedit amet quasi
+                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
-                  3
+                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                  <div>3</div>
+                  <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                    hic molestiae debitis temporibus impedit amet quasi
+                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
-                  4
+                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                  <div>4</div>
+                  <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                    hic molestiae debitis temporibus impedit amet quasi
+                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center aspect-square bg-zinc-200 rounded-[2.5rem]">
-                  5
+                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                  <div>5</div>
+                  <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                    hic molestiae debitis temporibus impedit amet quasi
+                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
+                  </div>
                 </div>
               </div>
             </div>
@@ -233,21 +263,56 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* v1 — features */}
-              <div className="flex md:w-[70%] md:ml-[30%] w-full gap-12 md:h-1/2 h-full overflow-scroll">
-                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
-                  1
+              <div className="flex items-center md:w-[70%] md:ml-[30%] gap-12 md:h-1/2 h-full overflow-x-scroll overflow-y-hidden">
+                <div className="flex flex-shrink-0 w-[50vw] h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>1</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
-                  2
+                <div className="flex flex-none w-56 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>2</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
-                  3
+                <div className="flex flex-none w-56 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>3</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
-                  4
+                <div className="flex flex-none w-56 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>4</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-56 bg-zinc-200 rounded-[2.5rem]">
-                  5
+                <div className="flex flex-none w-56 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>5</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
                 </div>
               </div>
 
@@ -261,15 +326,15 @@ const IndexPage = () => {
 
           {/* Pokedex */}
           <div className="mb-96">
-            <h3 className="text-5xl font-bold text-center text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text">
+            <h3 className="p-2 text-5xl font-bold text-center text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text">
               Pokedex App
             </h3>
           </div>
 
           {/* BookStore */}
           <div className="mb-96">
-            <h3 className="text-5xl font-bold text-center text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
-              BookStore App
+            <h3 className="p-2 text-5xl font-bold text-center text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+              Analyzing JSON Data
             </h3>
           </div>
         </motion.section>
@@ -314,6 +379,7 @@ const IndexPage = () => {
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">
             <li>import projects</li>
             <li>add gifs/videos that demo projects</li>
+            <li>import BookStore App project</li>
           </ul>
           <div className="divider" />
           <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
@@ -336,6 +402,7 @@ const IndexPage = () => {
               gatsby formatting
             </li>
             <li>consider adding snapping functionality</li>
+            <li>account for scrollbars on windows devices</li>
             <li>
               consider tailwind{" "}
               <a
