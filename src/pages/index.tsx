@@ -35,8 +35,8 @@ const IndexPage = () => {
 
   useEffect(() => {
     isDarkMode
-      ? document.body.classList.add("bg-black")
-      : document.body.classList.remove("bg-black");
+      ? document.body.classList.add("bg-zinc-900")
+      : document.body.classList.remove("bg-zinc-900");
   }, [isDarkMode]);
 
   // console.log("isOpen", isOpen);
@@ -66,7 +66,7 @@ const IndexPage = () => {
           }`}
         >
           <ul className="z-50 p-6 mb-32 font-mono text-4xl font-bold uppercase justify-right word-spacing-tight sm:gap-12 sm:flex sm:text-sm sm:mb-0 sm:mr-0">
-            <li className="mr-auto uppercase">
+            <li className="mr-auto uppercase dark:text-white">
               <a
                 className="cursor-pointer"
                 // onClick={() => ref.current.scrollTo(0)}
@@ -74,15 +74,15 @@ const IndexPage = () => {
                 Kavan Paramathasan
               </a>
             </li>
-            <li className="block sm:fixed sm:-rotate-90 sm:bottom-12 ">
+            <li className="block sm:fixed sm:-rotate-90 sm:bottom-12 dark:text-white">
               <a href="/about">about</a>
             </li>
-            <li className="block sm:fixed sm:right-4 sm:top-12 sm:rotate-90">
+            <li className="block sm:fixed sm:right-4 sm:top-12 sm:rotate-90 dark:text-white">
               contact
             </li>
             <li className="block sm:fixed sm:right-4 sm:top-24">
               <button
-                className="btn btn-square"
+                className="btn btn-square dark:text-white"
                 onClick={() => setIsDarkMode(!isDarkMode)}
               >
                 Toggle Dark Mode
@@ -92,11 +92,16 @@ const IndexPage = () => {
         </nav>
       </header>
 
+      {/* DM colours:
+      - background: rgba(20, 21, 23, 1)
+      - divs: rgba(34, 35, 38, 1)
+      - shadowed text inside: rgba(57, 59, 59, 1) */}
+
       <main className="overflow-x-hidden">
         {/* Welcome Page */}
         <motion.section
           style={{ y }}
-          className="z-0 h-screen w-full p-[10%] bg-zinc-50 rounded-2xl sm:-mb-48 -mb-44 flex flex-col items-start justify-center gap-2"
+          className="z-0 h-screen w-full p-[10%] bg-zinc-50 dark:bg-zinc-800 rounded-3xl sm:-mb-48 -mb-44 flex flex-col items-start justify-center gap-2"
         >
           <h1 className="text-6xl font-bold sm:text-7xl drop-shadow-md">
             Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
@@ -137,7 +142,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.15, once: false }}
-          className="z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp dark:shadow-divUpDark  rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+          className="z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-zinc-100 dark:bg-zinc-800"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
@@ -278,7 +283,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-zinc-300"
+          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-zinc-200 dark:bg-zinc-800"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
@@ -294,7 +299,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-[8%] bg-zinc-400 rounded-3xl shadow-divUp dark:shadow-divUpDark text-zinc-900"
+          className="z-40 min-h-screen p-[8%] bg-zinc-300 dark:bg-zinc-800 rounded-3xl shadow-divUp dark:shadow-divUpDark text-zinc-900"
         >
           <h2 className="mb-8 text-4xl font-bold sm:text-5xl text-zinc-800">
             Upcoming Page
