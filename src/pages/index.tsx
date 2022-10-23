@@ -312,10 +312,6 @@ const IndexPage = () => {
             Soon
           </h3>
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">
-            <li>
-              <s>watch the react tailwind tutorial by dev ed</s> — setup dark
-              mode toggle
-            </li>
             <li>import projects</li>
             <li>add gifs/videos that demo projects</li>
           </ul>
@@ -334,6 +330,7 @@ const IndexPage = () => {
             <li>
               add a credits section — listing technologies and libraries used
             </li>
+            <li>clean up dark mode</li>
             <li>
               clean up code — extract this list into an object like initial
               gatsby formatting
