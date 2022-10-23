@@ -183,8 +183,8 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* features - make divs as square as possible*/}
-              <div className="md:w-1/2 md:ml-[50%] w-full space-y-12 h-full">
-                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+              <div className="flex flex-col md:w-1/2 md:ml-[50%] w-full gap-12 h-full">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
                   <div>1</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -193,7 +193,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
                   <div>2</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -202,7 +202,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
                   <div>3</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -211,7 +211,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
                   <div>4</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -220,7 +220,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
                   <div>5</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -264,7 +264,7 @@ const IndexPage = () => {
               </div>
               {/* v1 — features */}
               <div className="flex items-center md:w-[70%] md:ml-[30%] gap-12 md:h-1/2 h-full overflow-x-scroll overflow-y-hidden">
-                <div className="flex flex-shrink-0 w-[50vw] h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
                   <div>1</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -274,7 +274,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-none w-56 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
                   <div>2</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -284,7 +284,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-none w-56 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
                   <div>3</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -294,7 +294,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-none w-56 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
                   <div>4</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -304,7 +304,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-none w-56 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
                   <div>5</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -380,6 +380,7 @@ const IndexPage = () => {
             <li>import projects</li>
             <li>add gifs/videos that demo projects</li>
             <li>import BookStore App project</li>
+            <li>keep feature divs responsive for diff screen sizes</li>
           </ul>
           <div className="divider" />
           <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
