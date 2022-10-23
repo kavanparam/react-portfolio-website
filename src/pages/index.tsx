@@ -14,7 +14,7 @@ type WindowProps = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 0.15, 1], ["0%", "30%", "0%"]);
 
@@ -40,7 +40,7 @@ const IndexPage = () => {
   }, [isDarkMode]);
 
   // console.log("isOpen", isOpen);
-  console.log(isDarkMode);
+  console.log("isDarkMode state:", isDarkMode);
 
   return (
     <motion.div
@@ -56,9 +56,9 @@ const IndexPage = () => {
           className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="w-1 h-1 bg-black rounded-md"></div>
-          <div className="w-1 h-1 bg-black rounded-md"></div>
-          <div className="w-1 h-1 bg-black rounded-md"></div>
+          <div className="w-1 h-1 bg-black rounded-md dark:bg-white"></div>
+          <div className="w-1 h-1 bg-black rounded-md dark:bg-white"></div>
+          <div className="w-1 h-1 bg-black rounded-md dark:bg-white"></div>
         </button>
         <nav
           className={`z-50 sm:block sm:w-full fixed sm:right-0 font-main ${
@@ -137,7 +137,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.15, once: false }}
-          className="z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
+          className="z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp dark:shadow-divUpDark  rounded-3xl bg-gradient-to-b from-zinc-100 to-zinc-200"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
@@ -278,7 +278,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp rounded-3xl bg-zinc-300"
+          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-zinc-300"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
@@ -294,7 +294,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-[8%] bg-zinc-400 rounded-3xl shadow-divUp text-zinc-900"
+          className="z-40 min-h-screen p-[8%] bg-zinc-400 rounded-3xl shadow-divUp dark:shadow-divUpDark text-zinc-900"
         >
           <h2 className="mb-8 text-4xl font-bold sm:text-5xl text-zinc-800">
             Upcoming Page
@@ -430,7 +430,9 @@ const IndexPage = () => {
 
       <footer className="grid w-screen h-screen place-items-center">
         <div className="flex flex-col items-center gap-8">
-          <h4 className="text-2xl font-light">thank you for visiting! 🖤</h4>
+          <h4 className="text-2xl font-light dark:text-white">
+            thank you for visiting! 🖤
+          </h4>
           <button
             className="font-mono text-black lowercase border-none btn btn-sm btn-primary"
             // onClick={() => ref.current.scrollTo(0)}
