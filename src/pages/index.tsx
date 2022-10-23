@@ -33,8 +33,14 @@ const IndexPage = () => {
     window.onresize = updateSize;
   }, []);
 
+  useEffect(() => {
+    isDarkMode
+      ? document.body.classList.add("bg-black")
+      : document.body.classList.remove("bg-black");
+  }, [isDarkMode]);
+
   // console.log("isOpen", isOpen);
-  // console.log("window size:", size?.x, size?.y);
+  console.log(isDarkMode);
 
   return (
     <motion.div
@@ -74,8 +80,13 @@ const IndexPage = () => {
             <li className="block sm:fixed sm:right-4 sm:top-12 sm:rotate-90">
               contact
             </li>
-            <li>
-              <button className="btn btn-square">Toggle Dark Mode</button>
+            <li className="block sm:fixed sm:right-4 sm:top-24">
+              <button
+                className="btn btn-square"
+                onClick={() => setIsDarkMode(!isDarkMode)}
+              >
+                Toggle Dark Mode
+              </button>
             </li>
           </ul>
         </nav>
