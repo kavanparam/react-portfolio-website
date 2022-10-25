@@ -235,12 +235,11 @@ const IndexPage = () => {
 
           {/* Portfolio */}
           <div className="mb-16 md:mb-24">
-            {/* heading */}
             <h3 className="mb-8 text-5xl font-bold text-center text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
               Portfolio Website
             </h3>
 
-            <div className="relative flex flex-col justify-center md:h-[95vh] h-[100vh] overflow-hidden">
+            <div className="relative flex flex-col md:h-[95vh] h-[100vh] overflow-hidden">
               {/* v1 — overview */}
               <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-1/2">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
@@ -317,9 +316,80 @@ const IndexPage = () => {
               </div>
 
               <div className="divider" />
-              {/* v2 */}
-              <div className="flex items-center justify-center md:w-1/2 h-1/2">
-                <h4 className="text-3xl font-bold">v2</h4>
+
+              {/* v2 — overview */}
+              <div className="flex items-center justify-center md:absolute md:top-1/2 md:left-0 md:w-[30%] h-1/2">
+                <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
+                  <h4 className="text-3xl font-bold">v2</h4>
+                  <p className="text-lg sm:text-xl text-zinc-800/80">
+                    description goes here
+                  </p>
+                  <div className="btn-group">
+                    <button className="lowercase text-white/90 btn btn-sm bg-zinc-700">
+                      live link
+                    </button>
+                    <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
+                      <StaticImage
+                        src={"../images/GitHub-Mark-Light-64px.png"}
+                        alt={""}
+                        className="opacity-90"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              {/* v2 — features */}
+              <div className="flex items-center md:w-[70%] md:ml-[30%] gap-12 md:h-1/2 h-full overflow-x-scroll overflow-y-hidden">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>1</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>2</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>3</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>4</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                  <div>5</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
               </div>
             </div>
           </div>
