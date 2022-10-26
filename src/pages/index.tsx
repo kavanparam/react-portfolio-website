@@ -47,10 +47,10 @@ const IndexPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeOut", duration: 1 }}
-      className={`font-main ${isDarkMode && "dark"}`}
+      className={`font-main overflow-x-hidden ${isDarkMode && "dark"}`}
       data-theme="bumblebee"
     >
-      {/* Extract to nav component */}
+      {/* Extract to Header component — need to deal w props and window sizes */}
       <header>
         <button
           className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
@@ -92,16 +92,16 @@ const IndexPage = () => {
         </nav>
       </header>
 
-      {/* DM colours:
+      {/* Dark Mode colours:
       - background: rgba(20, 21, 23, 1)
       - divs: rgba(34, 35, 38, 1)
       - shadowed text inside: rgba(57, 59, 59, 1) */}
 
-      <main className="overflow-x-hidden">
+      <main>
         {/* Welcome Page */}
         <motion.section
           style={{ y }}
-          className="z-0 h-screen w-full p-[10%] bg-zinc-50 dark:bg-zinc-800 rounded-3xl sm:-mb-48 -mb-44 flex flex-col items-start justify-center gap-2"
+          className="z-0 h-screen w-full p-[10%] bg-zinc-50 dark:bg-zinc-800 rounded-3xl sm:-mb-56 -mb-44 flex flex-col items-start justify-center gap-2"
         >
           <h1 className="text-6xl font-bold sm:text-7xl drop-shadow-md">
             Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
