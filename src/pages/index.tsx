@@ -1,7 +1,13 @@
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import type { HeadFC } from "gatsby";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useInView,
+  useSpring,
+} from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
 // import { Link, animateScroll as scroll } from "react-scroll";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
@@ -15,8 +21,33 @@ const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
   const [isDarkMode, setIsDarkMode] = useState(false);
-  let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0, 0.15, 1], ["0%", "30%", "0%"]);
+
+  let welcomePage = useRef(null);
+  let welcomeProgress = useScroll({
+    target: welcomePage,
+    offset: ["start start", "end start"],
+  });
+  let scale = useTransform(
+    welcomeProgress.scrollYProgress,
+    [0, 1],
+    ["100%", "80%"]
+  );
+  let y = useTransform(welcomeProgress.scrollYProgress, [0, 1], ["0%", "30%"]);
+
+  let projectPage = useRef(null);
+  let projectProgress = useScroll({
+    target: projectPage,
+    offset: ["start end", "end start"],
+  });
+  let width = useTransform(
+    useSpring(projectProgress.scrollYProgress, {
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001,
+    }),
+    [0, 1],
+    ["0", "100%"]
+  );
 
   const updateSize = () =>
     setSize({
@@ -97,10 +128,16 @@ const IndexPage = () => {
       - divs: rgba(34, 35, 38, 1)
       - shadowed text inside: rgba(57, 59, 59, 1) */}
 
+      <motion.div
+        style={{ width }}
+        className="fixed top-0 z-50 h-2 bg-amber-400"
+      ></motion.div>
+
       <main>
         {/* Welcome Page */}
         <motion.section
-          style={{ y }}
+          style={{ y, scale }}
+          ref={welcomePage}
           className="z-0 h-screen w-full p-[10%] bg-zinc-50 dark:bg-zinc-800 rounded-3xl sm:-mb-56 -mb-44 flex flex-col items-start justify-center gap-2"
         >
           <h1 className="text-6xl font-bold sm:text-7xl drop-shadow-md">
@@ -135,6 +172,7 @@ const IndexPage = () => {
 
         {/* Projects */}
         <motion.section
+          ref={projectPage}
           initial={{ scale: 0.9, y: 0, opacity: 0.5 }}
           whileInView={{ scale: 1, y: -30, opacity: 1 }}
           transition={{
