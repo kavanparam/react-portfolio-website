@@ -22,25 +22,24 @@ const IndexPage = () => {
   const [size, setSize] = useState<WindowProps>();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  let welcomePage = useRef(null);
-  let welcomeProgress = useScroll({
+  const welcomePage = useRef<HTMLDivElement>(null);
+  const welcomeProgress = useScroll({
     target: welcomePage,
     offset: ["start start", "end start"],
   });
-  let scale = useTransform(
+  const scale = useTransform(
     welcomeProgress.scrollYProgress,
     [0, 1],
     ["100%", "80%"]
   );
   let y = useTransform(welcomeProgress.scrollYProgress, [0, 1], ["0%", "30%"]);
 
-  let projectPage = useRef(null);
-  let projectProgress = useScroll({
-    target: projectPage,
-    offset: ["start end", "end start"],
+  const mainPage = useRef<HTMLDivElement>(null);
+  const mainProgress = useScroll({
+    target: mainPage,
   });
-  let width = useTransform(
-    useSpring(projectProgress.scrollYProgress, {
+  const width = useTransform(
+    useSpring(mainProgress.scrollYProgress, {
       stiffness: 100,
       damping: 30,
       restDelta: 0.001,
@@ -130,10 +129,10 @@ const IndexPage = () => {
 
       <motion.div
         style={{ width }}
-        className="fixed top-0 z-50 h-2 bg-amber-400"
+        className="fixed top-0 z-50 h-1 bg-amber-500"
       ></motion.div>
 
-      <main>
+      <main ref={mainPage}>
         {/* Welcome Page */}
         <motion.section
           style={{ y, scale }}
@@ -172,7 +171,7 @@ const IndexPage = () => {
 
         {/* Projects */}
         <motion.section
-          ref={projectPage}
+          // ref={projectPage}
           initial={{ scale: 0.9, y: 0, opacity: 0.5 }}
           whileInView={{ scale: 1, y: -30, opacity: 1 }}
           transition={{
