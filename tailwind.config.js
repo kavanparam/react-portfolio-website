@@ -14,6 +14,7 @@ module.exports = {
         divUpDark: ["0 -75px 150px 60px rgba(255,255,255,.2)"],
       },
       colors: {
+        "light-black": "#131517",
         "dark-white": "#f1f1f1",
         "dark-black": "#0f0f0f",
         "dark-secondary": "#3F3F3F",

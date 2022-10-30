@@ -127,7 +127,7 @@ const IndexPage = () => {
         className="fixed top-0 z-50 h-1 bg-amber-500"
       ></motion.div>
 
-      <main ref={mainPage} className="dark:text-dark-white">
+      <main ref={mainPage} className="text-light-black dark:text-dark-white">
         {/* Welcome Page */}
         <motion.section
           style={{ y, scale }}
@@ -201,7 +201,7 @@ const IndexPage = () => {
                     description goes here
                   </p>
                   <div className="btn-group">
-                    <button className="lowercase bg-gray-700 text-white/90 btn btn-sm">
+                    <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
                       live link
                     </button>
                     <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
@@ -267,7 +267,7 @@ const IndexPage = () => {
 
           {/* Portfolio */}
           <div className="mb-16 md:mb-24">
-            <h3 className="mb-8 text-5xl font-bold text-center text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-gray-900 via-purple-900 to-violet-600">
+            <h3 className="mb-8 text-5xl font-bold text-center text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-black/60 via-purple-800 to-violet-500">
               Portfolio Website
             </h3>
 
@@ -280,7 +280,7 @@ const IndexPage = () => {
                     description goes here
                   </p>
                   <div className="btn-group">
-                    <button className="lowercase bg-gray-700 text-white/90 btn btn-sm">
+                    <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
                       live link
                     </button>
                     <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
@@ -357,7 +357,7 @@ const IndexPage = () => {
                     description goes here
                   </p>
                   <div className="btn-group">
-                    <button className="lowercase bg-gray-700 text-white/90 btn btn-sm">
+                    <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
                       live link
                     </button>
                     <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
@@ -606,7 +606,7 @@ const IndexPage = () => {
             thank you for visiting! 🖤
           </h4>
           <button
-            className="font-mono text-black lowercase border-none btn btn-sm btn-primary"
+            className="font-mono lowercase border-none text-light-black btn btn-sm btn-primary"
             // onClick={() => ref.current.scrollTo(0)}
           >
             scroll to top
