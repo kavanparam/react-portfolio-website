@@ -8,7 +8,7 @@ html{
 
 @layer base{
     body{
-      @apply bg-neutralgray-400;
+      @apply bg-gray-400;
     }
 }
 

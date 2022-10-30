@@ -65,8 +65,8 @@ const IndexPage = () => {
 
   useEffect(() => {
     isDarkMode
-      ? document.body.classList.add("bg-zinc-900")
-      : document.body.classList.remove("bg-zinc-900");
+      ? document.body.classList.add("bg-gray-900")
+      : document.body.classList.remove("bg-gray-900");
   }, [isDarkMode]);
 
   // console.log("isOpen", isOpen);
@@ -137,7 +137,7 @@ const IndexPage = () => {
         <motion.section
           style={{ y, scale }}
           ref={welcomePage}
-          className="z-0 h-screen w-full p-[10%] bg-zinc-50 dark:bg-zinc-800 rounded-3xl sm:-mb-56 -mb-44 flex flex-col items-start justify-center gap-2"
+          className="z-0 h-screen w-full p-[10%] bg-gray-50 dark:bg-gray-800 rounded-3xl sm:-mb-56 -mb-44 flex flex-col items-start justify-center gap-2"
         >
           <h1 className="text-6xl font-bold sm:text-7xl drop-shadow-md">
             Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
@@ -179,7 +179,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.15, once: false }}
-          className="z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-zinc-100 dark:bg-zinc-800"
+          className="z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-100 dark:bg-gray-800"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             my projects
@@ -202,11 +202,11 @@ const IndexPage = () => {
                       Four
                     </span>
                   </h3>
-                  <p className="text-lg sm:text-xl text-zinc-800/80">
+                  <p className="text-lg sm:text-xl text-gray-800/80">
                     description goes here
                   </p>
                   <div className="btn-group">
-                    <button className="lowercase text-white/90 btn btn-sm bg-zinc-700">
+                    <button className="lowercase bg-gray-700 text-white/90 btn btn-sm">
                       live link
                     </button>
                     <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
@@ -221,7 +221,7 @@ const IndexPage = () => {
               </div>
               {/* features - make divs as square as possible*/}
               <div className="flex flex-col md:w-1/2 md:ml-[50%] w-full gap-12 h-full">
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 rounded-[2.5rem]">
                   <div>1</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -230,7 +230,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 rounded-[2.5rem]">
                   <div>2</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -239,7 +239,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 rounded-[2.5rem]">
                   <div>3</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -248,7 +248,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 rounded-[2.5rem]">
                   <div>4</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -257,7 +257,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 rounded-[2.5rem]">
                   <div>5</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -281,11 +281,11 @@ const IndexPage = () => {
               <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-1/2">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
                   <h4 className="text-3xl font-bold">v1</h4>
-                  <p className="text-lg sm:text-xl text-zinc-800/80">
+                  <p className="text-lg sm:text-xl text-gray-800/80">
                     description goes here
                   </p>
                   <div className="btn-group">
-                    <button className="lowercase text-white/90 btn btn-sm bg-zinc-700">
+                    <button className="lowercase bg-gray-700 text-white/90 btn btn-sm">
                       live link
                     </button>
                     <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
@@ -300,7 +300,7 @@ const IndexPage = () => {
               </div>
               {/* v1 — features */}
               <div className="flex items-center md:w-[70%] md:ml-[30%] gap-12 md:h-1/2 h-full overflow-x-scroll overflow-y-hidden">
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>1</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -310,7 +310,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>2</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -320,7 +320,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>3</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -330,7 +330,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>4</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -340,7 +340,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>5</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -358,11 +358,11 @@ const IndexPage = () => {
               <div className="flex items-center justify-center md:absolute md:top-1/2 md:left-0 md:w-[30%] h-1/2">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
                   <h4 className="text-3xl font-bold">v2</h4>
-                  <p className="text-lg sm:text-xl text-zinc-800/80">
+                  <p className="text-lg sm:text-xl text-gray-800/80">
                     description goes here
                   </p>
                   <div className="btn-group">
-                    <button className="lowercase text-white/90 btn btn-sm bg-zinc-700">
+                    <button className="lowercase bg-gray-700 text-white/90 btn btn-sm">
                       live link
                     </button>
                     <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
@@ -377,7 +377,7 @@ const IndexPage = () => {
               </div>
               {/* v2 — features */}
               <div className="flex items-center md:w-[70%] md:ml-[30%] gap-12 md:h-1/2 h-full overflow-x-scroll overflow-y-hidden">
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>1</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -387,7 +387,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>2</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -397,7 +397,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>3</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -407,7 +407,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>4</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -417,7 +417,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-zinc-200 rounded-[2.5rem]">
+                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 rounded-[2.5rem]">
                   <div>5</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -455,7 +455,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-zinc-200 dark:bg-zinc-800"
+          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-200 dark:bg-gray-800"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
@@ -471,16 +471,16 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-[8%] bg-zinc-300 dark:bg-zinc-800 rounded-3xl shadow-divUp dark:shadow-divUpDark text-zinc-900 dark:text-dark-white"
+          className="z-40 min-h-screen p-[8%] bg-gray-300 dark:bg-gray-800 rounded-3xl shadow-divUp dark:shadow-divUpDark text-gray-900 dark:text-dark-white"
         >
-          <h2 className="mb-8 text-4xl font-bold sm:text-5xl text-zinc-800 dark:text-dark-white">
+          <h2 className="mb-8 text-4xl font-bold text-gray-800 sm:text-5xl dark:text-dark-white">
             Upcoming Page
             <span className="text-purple-900">
               {" "}
               Build <span className="text-[125%] align-middle">⚡️</span>
             </span>
           </h2>
-          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80 dark:text-dark-white">
+          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-gray-800/80 dark:text-dark-white">
             Soon
           </h3>
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">
@@ -490,7 +490,7 @@ const IndexPage = () => {
             <li>keep feature divs responsive for diff screen sizes</li>
           </ul>
           <div className="divider" />
-          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80 dark:text-dark-white">
+          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-gray-800/80 dark:text-dark-white">
             Outlined
           </h3>
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">
