@@ -468,7 +468,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-200 dark:bg-dark-secondary dark:bg-dark-main"
+          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-200 dark:bg-dark-main"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin">
             recent github activity
