@@ -185,8 +185,8 @@ const IndexPage = () => {
 
         {/* Projects */}
         <motion.section
-          initial={{ scale: 0.9, y: 0, opacity: 0.5 }}
-          whileInView={{ scale: 1, y: -30, opacity: 1 }}
+          initial={{ scale: 0.9, opacity: 0.5 }}
+          whileInView={{ scale: 1, opacity: 1 }}
           transition={{
             type: "spring",
             duration: 1,
