@@ -151,15 +151,15 @@ const IndexPage = () => {
         <motion.section
           style={{ y, scale }}
           ref={welcomePage}
-          className="z-0 h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl sm:-mb-56 -mb-44 flex flex-col items-start justify-center gap-2"
+          className="z-0 h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl sm:-mb-56 -mb-44 flex flex-col items-start justify-center gap-4"
         >
           <h1 className="text-6xl font-bold sm:text-7xl drop-shadow-md">
             Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
           </h1>
-          <ul className="flex gap-2 font-mono">
+          <ul className="flex gap-2 font-mono opacity-70">
             <li>
               <a
-                className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 active:decoration-amber-400 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8"
+                className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8"
                 // onClick={() => ref.current.scrollTo(1.15)}
               >
                 works
@@ -167,14 +167,14 @@ const IndexPage = () => {
               ,
             </li>
             <li>
-              <a className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 active:decoration-amber-400 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8">
+              <a className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8">
                 photography
               </a>
               ,
             </li>
             <li>
               <a
-                className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 active:decoration-amber-400 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8"
+                className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8"
                 href="/about"
               >
                 about
