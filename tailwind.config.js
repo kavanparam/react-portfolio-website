@@ -15,6 +15,9 @@ module.exports = {
       },
       colors: {
         "dark-white": "#f1f1f1",
+        "dark-black": "#0f0f0f",
+        "dark-secondary": "#3F3F3F",
+        "dark-main": "#272727",
         neutralgray: colors.neutral,
       },
       fontFamily: {
