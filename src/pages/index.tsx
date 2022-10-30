@@ -86,17 +86,17 @@ const IndexPage = () => {
           className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="w-1 h-1 bg-black rounded-md dark:bg-white"></div>
-          <div className="w-1 h-1 bg-black rounded-md dark:bg-white"></div>
-          <div className="w-1 h-1 bg-black rounded-md dark:bg-white"></div>
+          <div className="w-1 h-1 bg-black rounded-md dark:bg-dark-white"></div>
+          <div className="w-1 h-1 bg-black rounded-md dark:bg-dark-white"></div>
+          <div className="w-1 h-1 bg-black rounded-md dark:bg-dark-white"></div>
         </button>
         <nav
           className={`z-50 sm:block sm:w-full fixed sm:right-0 font-main ${
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
-          <ul className="z-50 p-6 mb-32 font-mono text-4xl font-bold uppercase justify-right word-spacing-tight sm:gap-12 sm:flex sm:text-sm sm:mb-0 sm:mr-0">
-            <li className="mr-auto uppercase dark:text-white">
+          <ul className="z-50 p-6 mb-32 font-mono text-4xl font-bold uppercase justify-right word-spacing-tight sm:gap-12 sm:flex sm:text-sm sm:mb-0 sm:mr-0 dark:text-dark-white">
+            <li className="mr-auto uppercase">
               <a
                 className="cursor-pointer"
                 // onClick={() => ref.current.scrollTo(0)}
@@ -104,15 +104,15 @@ const IndexPage = () => {
                 Kavan Paramathasan
               </a>
             </li>
-            <li className="block sm:fixed sm:-rotate-90 sm:bottom-12 dark:text-white">
+            <li className="block sm:fixed sm:-rotate-90 sm:bottom-12">
               <a href="/about">about</a>
             </li>
-            <li className="block sm:fixed sm:right-4 sm:top-12 sm:rotate-90 dark:text-white">
+            <li className="block sm:fixed sm:right-4 sm:top-12 sm:rotate-90">
               contact
             </li>
             <li className="block sm:fixed sm:right-4 sm:top-24">
               <button
-                className="btn btn-square dark:text-white"
+                className="btn btn-square"
                 onClick={() => setIsDarkMode(!isDarkMode)}
               >
                 Toggle Dark Mode
@@ -132,7 +132,7 @@ const IndexPage = () => {
         className="fixed top-0 z-50 h-1 bg-amber-500"
       ></motion.div>
 
-      <main ref={mainPage}>
+      <main ref={mainPage} className="dark:text-dark-white">
         {/* Welcome Page */}
         <motion.section
           style={{ y, scale }}
@@ -471,16 +471,16 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-[8%] bg-zinc-300 dark:bg-zinc-800 rounded-3xl shadow-divUp dark:shadow-divUpDark text-zinc-900"
+          className="z-40 min-h-screen p-[8%] bg-zinc-300 dark:bg-zinc-800 rounded-3xl shadow-divUp dark:shadow-divUpDark text-zinc-900 dark:text-dark-white"
         >
-          <h2 className="mb-8 text-4xl font-bold sm:text-5xl text-zinc-800">
+          <h2 className="mb-8 text-4xl font-bold sm:text-5xl text-zinc-800 dark:text-dark-white">
             Upcoming Page
             <span className="text-purple-900">
               {" "}
               Build <span className="text-[125%] align-middle">⚡️</span>
             </span>
           </h2>
-          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
+          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80 dark:text-dark-white">
             Soon
           </h3>
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">
@@ -490,7 +490,7 @@ const IndexPage = () => {
             <li>keep feature divs responsive for diff screen sizes</li>
           </ul>
           <div className="divider" />
-          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80">
+          <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-zinc-800/80 dark:text-dark-white">
             Outlined
           </h3>
           <ul className="flex flex-col gap-1 mt-2 ml-4 font-light list-disc marker:text-purple-900 sm:text-lg">

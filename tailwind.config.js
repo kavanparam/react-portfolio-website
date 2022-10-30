@@ -11,7 +11,9 @@ module.exports = {
         divUp: ["0 -75px 150px 60px rgba(255,255,255,.8)"],
         divUpDark: ["0 -75px 150px 60px rgba(255,255,255,.2)"],
       },
-      colors: {},
+      colors: {
+        "dark-white": "#f1f1f1",
+      },
       fontFamily: {
         main: "-apple-system, Roboto, sans-serif, serif",
       },
