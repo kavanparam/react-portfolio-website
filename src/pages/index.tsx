@@ -159,7 +159,7 @@ const IndexPage = () => {
           <ul className="flex gap-2 font-mono">
             <li>
               <a
-                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 active:decoration-amber-400 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8"
                 // onClick={() => ref.current.scrollTo(1.15)}
               >
                 works
@@ -167,14 +167,14 @@ const IndexPage = () => {
               ,
             </li>
             <li>
-              <a className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400">
+              <a className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 active:decoration-amber-400 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8">
                 photography
               </a>
               ,
             </li>
             <li>
               <a
-                className="underline transition-colors cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 active:decoration-amber-400"
+                className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 active:decoration-amber-400 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8"
                 href="/about"
               >
                 about
