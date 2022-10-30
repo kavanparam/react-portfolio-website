@@ -20,7 +20,7 @@ type WindowProps = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const welcomePage = useRef<HTMLDivElement>(null);
   const welcomeProgress = useScroll({
@@ -86,9 +86,9 @@ const IndexPage = () => {
           className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="w-1 h-1 bg-black rounded-md dark:bg-dark-white"></div>
-          <div className="w-1 h-1 bg-black rounded-md dark:bg-dark-white"></div>
-          <div className="w-1 h-1 bg-black rounded-md dark:bg-dark-white"></div>
+          <div className="w-1 h-1 rounded-md bg-light-black dark:bg-dark-white"></div>
+          <div className="w-1 h-1 rounded-md bg-light-black dark:bg-dark-white"></div>
+          <div className="w-1 h-1 rounded-md bg-light-black dark:bg-dark-white"></div>
         </button>
         <nav
           className={`z-50 sm:block sm:w-full fixed sm:right-0 font-main ${
