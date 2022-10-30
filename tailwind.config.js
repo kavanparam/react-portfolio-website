@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
@@ -13,6 +15,7 @@ module.exports = {
       },
       colors: {
         "dark-white": "#f1f1f1",
+        neutralgray: colors.neutral,
       },
       fontFamily: {
         main: "-apple-system, Roboto, sans-serif, serif",
