@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       boxShadow: {
         divUp: ["0 -75px 150px 60px rgba(255,255,255,.8)"],
-        divUpDark: ["0 -75px 150px 60px rgba(63,63,63,1)"],
+        divUpDark: ["0 -75px 150px 60px rgba(63,63,63,.8)"],
       },
       colors: {
         "light-black": "#131517",

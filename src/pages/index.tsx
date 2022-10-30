@@ -9,7 +9,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
-// import { Link, animateScroll as scroll } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 type WindowProps = {
@@ -30,9 +30,9 @@ const IndexPage = () => {
   const scale = useTransform(
     welcomeProgress.scrollYProgress,
     [0, 1],
-    ["100%", "80%"]
+    ["100%", "85%"]
   );
-  let y = useTransform(welcomeProgress.scrollYProgress, [0, 1], ["0%", "30%"]);
+  let y = useTransform(welcomeProgress.scrollYProgress, [0, 1], ["0%", "45%"]);
 
   const mainPage = useRef<HTMLDivElement>(null);
   const mainProgress = useScroll({
@@ -97,10 +97,7 @@ const IndexPage = () => {
         >
           <ul className="z-50 p-6 mb-32 font-mono text-4xl font-bold text-right uppercase sm:p-0 sm:text-start word-spacing-tight sm:text-sm dark:text-dark-white">
             <li className="sm:fixed sm:top-6 sm:left-6">
-              <a
-                className="cursor-pointer"
-                // onClick={() => ref.current.scrollTo(0)}
-              >
+              <a className="cursor-pointer" onClick={scroll.scrollToTop}>
                 Kavan Paramathasan
               </a>
             </li>
@@ -149,21 +146,28 @@ const IndexPage = () => {
       <main ref={mainPage} className="text-light-black dark:text-dark-white">
         {/* Welcome Page */}
         <motion.section
-          style={{ y, scale }}
+          style={{ y, scale, z: 0 }}
           ref={welcomePage}
-          className="z-0 h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl sm:-mb-56 -mb-44 flex flex-col items-start justify-center gap-4"
+          className="h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl flex flex-col items-start justify-center gap-3"
         >
-          <h1 className="text-6xl font-bold sm:text-7xl drop-shadow-md">
+          <h1
+            id="welcome"
+            className="text-6xl font-bold sm:text-7xl drop-shadow-md"
+          >
             Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
           </h1>
-          <ul className="flex gap-2 font-mono opacity-70">
+          <ul className="flex gap-2 font-mono dark:text-dark-white/70 text-light-black/70">
             <li>
-              <a
+              <Link
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={1000}
                 className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8"
-                // onClick={() => ref.current.scrollTo(1.15)}
               >
                 works
-              </a>
+              </Link>
               ,
             </li>
             <li>
@@ -185,25 +189,34 @@ const IndexPage = () => {
 
         {/* Projects */}
         <motion.section
-          initial={{ scale: 0.9, opacity: 0.5 }}
-          whileInView={{ scale: 1, opacity: 1 }}
+          initial={{ opacity: 0.5 }}
+          style={{ y: "-2%", z: 20 }}
+          whileInView={{ opacity: 1 }}
           transition={{
             type: "spring",
             duration: 1,
           }}
-          viewport={{ amount: 0.15, once: false }}
-          className="z-20 p-[4%] min-h-screen w-full mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-100 dark:bg-dark-main"
+          viewport={{ amount: 0.1, once: false }}
+          className="sm:p-10 p-[4%] min-h-screen w-full mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-100 dark:bg-dark-main"
         >
-          <h2 id="projects" className="mb-8 text-2xl font-thin">
-            my projects
+          <h2 id="projects" className="mb-8 text-2xl font-thin cursor-pointer">
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={1000}
+            >
+              my projects
+            </Link>
           </h2>
 
           {/* MCF */}
           <div className="mb-16 md:mb-24">
-            <div className="relative h-[100vh] md:h-[95vh] overflow-auto">
+            <div className="">
               {/* overview */}
-              <div className="flex items-center justify-center md:top-1/2 md:sticky md:w-1/2">
-                <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
+              <div className="flex items-center justify-center">
+                <div className="mb-6 space-y-4 w-96 lg:w-112">
                   <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                       Multiplication
@@ -233,7 +246,7 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* features - make divs as square as possible*/}
-              <div className="flex flex-col md:w-1/2 md:ml-[50%] w-full gap-12 h-full">
+              <div className="flex flex-col w-full h-full gap-12">
                 <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
                   <div>1</div>
                   <div>
@@ -461,8 +474,8 @@ const IndexPage = () => {
 
         {/* GitHub Activity */}
         <motion.section
-          initial={{ scale: 0.9, opacity: 0.5 }}
-          whileInView={{ scale: 1, opacity: 1 }}
+          initial={{ opacity: 0.5 }}
+          whileInView={{ opacity: 1 }}
           transition={{
             type: "spring",
             duration: 1,
@@ -470,15 +483,23 @@ const IndexPage = () => {
           viewport={{ amount: 0.3, once: false }}
           className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-200 dark:bg-dark-main"
         >
-          <h2 id="projects" className="mb-8 text-2xl font-thin">
-            recent github activity
+          <h2 id="github" className="mb-8 text-2xl font-thin cursor-pointer">
+            <Link
+              to="github"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={1000}
+            >
+              recent github activity
+            </Link>
           </h2>
         </motion.section>
 
         {/* Page Build */}
         <motion.section
-          initial={{ scale: 0.9, opacity: 0.5 }}
-          whileInView={{ scale: 1, opacity: 1 }}
+          initial={{ opacity: 0.5 }}
+          whileInView={{ opacity: 1 }}
           transition={{
             type: "spring",
             duration: 1,
@@ -486,12 +507,23 @@ const IndexPage = () => {
           viewport={{ amount: 0.3, once: false }}
           className="z-40 min-h-screen p-[8%] bg-gray-300 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark text-gray-900 dark:text-dark-white/80"
         >
-          <h2 className="mb-8 text-4xl font-bold text-gray-800 sm:text-5xl dark:text-dark-white">
-            Upcoming Page
-            <span className="text-purple-900">
-              {" "}
-              Build <span className="text-[125%] align-middle">⚡️</span>
-            </span>
+          <h2
+            id="build"
+            className="mb-8 text-4xl font-bold text-gray-800 cursor-pointer sm:text-5xl dark:text-dark-white"
+          >
+            <Link
+              to="build"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={1000}
+            >
+              Upcoming Page
+              <span className="text-purple-900">
+                {" "}
+                Build <span className="text-[125%] align-middle">⚡️</span>
+              </span>
+            </Link>
           </h2>
           <h3 className="mb-4 font-mono text-lg font-bold underline underline-offset-8 sm:text-2xl text-gray-800/80 dark:text-dark-white/80 dark:text-dark-white">
             Soon
@@ -625,7 +657,7 @@ const IndexPage = () => {
           </h4>
           <button
             className="font-mono lowercase border-none text-light-black btn btn-sm btn-primary"
-            // onClick={() => ref.current.scrollTo(0)}
+            onClick={scroll.scrollToTop}
           >
             scroll to top
           </button>
