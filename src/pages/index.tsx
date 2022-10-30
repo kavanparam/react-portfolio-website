@@ -166,7 +166,6 @@ const IndexPage = () => {
 
         {/* Projects */}
         <motion.section
-          // ref={projectPage}
           initial={{ scale: 0.9, y: 0, opacity: 0.5 }}
           whileInView={{ scale: 1, y: -30, opacity: 1 }}
           transition={{
@@ -184,7 +183,7 @@ const IndexPage = () => {
           <div className="mb-16 md:mb-24">
             <div className="relative h-[100vh] md:h-[95vh] overflow-auto">
               {/* overview */}
-              <div className="sticky top-0 flex items-center justify-center md:h-full md:w-1/2 md:left-0">
+              <div className="flex items-center justify-center md:top-1/2 md:sticky md:w-1/2">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
                   <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
                     <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
