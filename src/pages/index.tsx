@@ -247,7 +247,7 @@ const IndexPage = () => {
               </div>
               {/* features - make divs as square as possible*/}
               <div className="grid gap-6 md:grid-cols-4 md:gap-2">
-                <div className="flex flex-col items-center justify-center flex-shrink-0 col-span-2 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 col-span-2 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
                   <div>1</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -256,7 +256,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
                   <div>2</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -265,7 +265,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 row-span-2 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 row-span-2 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
                   <div>3</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -274,7 +274,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
                   <div>4</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -283,7 +283,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 col-span-2 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 col-span-2 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
                   <div>5</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -303,85 +303,8 @@ const IndexPage = () => {
             </h3>
 
             <div className="relative flex flex-col">
-              {/* v1 — overview */}
-              <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-1/2">
-                <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
-                  <h4 className="text-3xl font-bold">v1</h4>
-                  <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
-                    description goes here
-                  </p>
-                  <div className="btn-group">
-                    <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
-                      live link
-                    </button>
-                    <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
-                      <StaticImage
-                        src={"../images/GitHub-Mark-Light-64px.png"}
-                        alt={""}
-                        className="opacity-90"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              {/* v1 — features */}
-              <div className="flex items-center md:w-[70%] md:ml-[30%] gap-12 md:h-1/2 h-full overflow-x-scroll overflow-y-hidden">
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>1</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
-                </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>2</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
-                </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>3</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
-                </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>4</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
-                </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>5</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
-                </div>
-              </div>
-
-              <div className="divider before:bg-gradient-to-r before:from-transparent before:to-fuchsia-500/70 after:bg-fuchsia-500/70" />
-
               {/* v2 — overview */}
-              <div className="flex items-center justify-center md:absolute md:top-1/2 md:left-0 md:w-[30%] h-1/2">
+              <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-full">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
                   <h4 className="text-3xl font-bold">v2</h4>
                   <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
@@ -402,8 +325,8 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* v2 — features */}
-              <div className="flex items-center md:w-[70%] md:ml-[30%] gap-12 md:h-1/2 h-full overflow-x-scroll overflow-y-hidden">
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+              <div className="grid md:grid-cols-2 md:w-[70%] md:ml-[30%] gap-6 md:gap-2">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-gray-200 dark:bg-dark-secondary rounded-2xl">
                   <div>1</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -413,7 +336,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-gray-200 dark:bg-dark-secondary rounded-2xl">
                   <div>2</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -423,7 +346,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-gray-200 dark:bg-dark-secondary rounded-2xl">
                   <div>3</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -433,7 +356,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-gray-200 dark:bg-dark-secondary rounded-2xl">
                   <div>4</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -443,7 +366,76 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 w-96 h-full p-16 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+              </div>
+            </div>
+
+            <div className="divider before:bg-gradient-to-r before:from-transparent before:to-fuchsia-500/70 after:bg-fuchsia-500/70" />
+
+            <div className="relative">
+              {/* v1 — overview */}
+              <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-full">
+                <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
+                  <h4 className="text-3xl font-bold">v1</h4>
+                  <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
+                    description goes here
+                  </p>
+                  <div className="btn-group">
+                    <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
+                      live link
+                    </button>
+                    <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
+                      <StaticImage
+                        src={"../images/GitHub-Mark-Light-64px.png"}
+                        alt={""}
+                        className="opacity-90"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              {/* v1 — features */}
+              <div className="flex items-stretch md:w-[70%] md:ml-[30%] min-h-[40vh] gap-6 md:gap-2 overflow-x-scroll overflow-y-hidden">
+                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                  <div>1</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
+                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                  <div>2</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
+                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                  <div>3</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
+                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                  <div>4</div>
+                  <div>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                    inventore rerum. Sapiente, reiciendis qui tempore possimus
+                    laudantium corrupti eos totam, nihil, praesentium voluptas
+                    dolore!
+                  </div>
+                </div>
+                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
                   <div>5</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
