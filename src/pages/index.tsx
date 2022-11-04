@@ -302,7 +302,7 @@ const IndexPage = () => {
               Portfolio Website
             </h3>
 
-            <div className="relative flex flex-col md:h-[95vh] h-[100vh] overflow-hidden">
+            <div className="relative flex flex-col">
               {/* v1 — overview */}
               <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-1/2">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
@@ -378,7 +378,7 @@ const IndexPage = () => {
                 </div>
               </div>
 
-              <div className="divider" />
+              <div className="divider before:bg-gradient-to-r before:from-transparent before:to-fuchsia-500/70 after:bg-fuchsia-500/70" />
 
               {/* v2 — overview */}
               <div className="flex items-center justify-center md:absolute md:top-1/2 md:left-0 md:w-[30%] h-1/2">
