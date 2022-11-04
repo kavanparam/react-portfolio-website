@@ -95,7 +95,7 @@ const IndexPage = () => {
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
-          <ul className="z-50 p-6 mb-32 font-mono text-4xl font-bold text-right uppercase sm:p-0 sm:text-start word-spacing-tight sm:text-sm dark:text-dark-white">
+          <ul className="z-50 p-6 mb-32 font-mono text-4xl font-bold text-right uppercase sm:p-0 sm:text-start word-spacing-tight sm:text-sm dark:text-white">
             <li className="sm:fixed sm:top-6 sm:left-6">
               <a className="cursor-pointer" onClick={scroll.scrollToTop}>
                 Kavan Paramathasan
@@ -246,8 +246,8 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* features - make divs as square as possible*/}
-              <div className="flex flex-col w-full h-full gap-12">
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+              <div className="grid gap-6 md:grid-cols-4 md:gap-2">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 col-span-2 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
                   <div>1</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -256,7 +256,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
                   <div>2</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -265,7 +265,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 row-span-2 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
                   <div>3</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -274,7 +274,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
                   <div>4</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -283,7 +283,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 h-96 flex-col justify-center items-center p-16 bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 col-span-2 p-12 bg-gray-200 rounded-2xl md:p-4 dark:bg-dark-secondary">
                   <div>5</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
