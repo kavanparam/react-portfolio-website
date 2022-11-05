@@ -21,6 +21,7 @@ const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [progressBar, setProgressBar] = useState(0);
 
   const welcomePage = useRef<HTMLDivElement>(null);
   const welcomeProgress = useScroll({
@@ -68,6 +69,13 @@ const IndexPage = () => {
       ? document.body.classList.add("bg-dark-black")
       : document.body.classList.remove("bg-dark-black");
   }, [isDarkMode]);
+
+  useEffect(() => {
+    return mainProgress.scrollYProgress.onChange((latest) => {
+      const scrollPercent = Math.round(latest * 100);
+      setProgressBar(scrollPercent);
+    });
+  }, [mainProgress]);
 
   // console.log("isOpen", isOpen);
   console.log("isDarkMode state:", isDarkMode);
@@ -140,8 +148,12 @@ const IndexPage = () => {
 
       <motion.div
         style={{ width }}
-        className="fixed top-0 z-50 h-1 bg-amber-500"
-      ></motion.div>
+        className="fixed top-0 z-50 flex items-center justify-end h-3 bg-gradient-to-l from-amber-500 via-amber-400/50 text-dark-white/90"
+      >
+        <div className="mr-1 font-mono text-xs tracking-wider drop-shadow-lg">
+          {progressBar}%
+        </div>
+      </motion.div>
 
       <main ref={mainPage} className="text-light-black dark:text-dark-white">
         {/* Welcome Page */}
@@ -369,7 +381,7 @@ const IndexPage = () => {
               </div>
             </div>
 
-            <div className="divider before:bg-gradient-to-r before:from-transparent before:to-fuchsia-500/70 after:bg-fuchsia-500/70" />
+            <div className="divider before:bg-gradient-to-r before:from-transparent before:to-purple-500 after:bg-purple-500" />
 
             <div className="relative">
               {/* v1 — overview */}
