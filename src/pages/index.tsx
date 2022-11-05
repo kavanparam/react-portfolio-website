@@ -314,7 +314,7 @@ const IndexPage = () => {
               Portfolio Website
             </h3>
 
-            <div className="relative flex flex-col">
+            <div className="relative">
               {/* v2 — overview */}
               <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-full">
                 <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
@@ -406,8 +406,8 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* v1 — features */}
-              <div className="flex items-stretch md:w-[70%] md:ml-[30%] min-h-[40vh] gap-6 md:gap-2 overflow-x-scroll overflow-y-hidden">
-                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+              <div className="carousel carousel-center items-stretch md:w-[70%] md:ml-[30%] min-h-[40vh] gap-6 md:gap-2 rounded-2xl">
+                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
                   <div>1</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -417,7 +417,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
                   <div>2</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -427,7 +427,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
                   <div>3</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -437,7 +437,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
                   <div>4</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -447,7 +447,7 @@ const IndexPage = () => {
                     dolore!
                   </div>
                 </div>
-                <div className="flex flex-shrink-0 p-16 w-96 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
+                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
                   <div>5</div>
                   <div>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
