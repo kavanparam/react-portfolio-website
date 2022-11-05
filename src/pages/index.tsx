@@ -7,6 +7,7 @@ import {
   useTransform,
   useInView,
   useSpring,
+  AnimatePresence,
 } from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link, animateScroll as scroll } from "react-scroll";
@@ -89,7 +90,7 @@ const IndexPage = () => {
       data-theme="bumblebee"
     >
       {/* Extract to Header component — need to deal w props and window sizes */}
-      <header>
+      <header className="text-light-black dark:text-white">
         <button
           className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
           onClick={() => setIsOpen(!isOpen)}
@@ -99,17 +100,17 @@ const IndexPage = () => {
           <div className="w-1 h-1 rounded-md bg-light-black dark:bg-dark-white"></div>
         </button>
         <nav
-          className={`z-50 sm:block sm:w-full fixed sm:right-0 font-main ${
+          className={`z-50 sm:block sm:w-full fixed font-main ${
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
-          <ul className="z-50 p-6 mb-32 font-mono text-4xl font-bold text-right uppercase sm:p-0 sm:text-start word-spacing-tight sm:text-sm dark:text-white">
+          <ul className="p-6 mb-32 font-mono text-4xl font-bold text-right uppercase sm:mb-0 sm:p-0 sm:text-start word-spacing-tight sm:text-sm drop-shadow-[0_20px_100px_rgba(0,0,0,0.8)] sm:drop-shadow-none">
             <li className="sm:fixed sm:top-6 sm:left-6">
               <a className="cursor-pointer" onClick={scroll.scrollToTop}>
                 Kavan Paramathasan
               </a>
             </li>
-            <li className="sm:fixed sm:-rotate-90 sm:bottom-12 sm:left-2">
+            <li className="sm:fixed sm:-rotate-90 sm:-bottom-[95vh] sm:left-2">
               <a href="/about">about</a>
             </li>
             <li className="sm:fixed sm:right-0 sm:top-12">
@@ -148,10 +149,29 @@ const IndexPage = () => {
 
       <motion.div
         style={{ width }}
-        className="fixed top-0 z-50 flex items-center justify-end h-3 bg-gradient-to-l from-amber-500 via-amber-400/50 text-dark-white/90"
+        className="fixed top-0 z-50 flex justify-end h-3 rounded-md shadow-lg bg-gradient-to-l from-amber-500 via-amber-400/50 text-dark-white/90"
       >
-        <div className="mr-1 font-mono text-xs tracking-wider drop-shadow-lg">
-          {progressBar}%
+        <div className="flex items-center mr-2 font-mono text-xs tracking-wider drop-shadow-md">
+          {progressBar > 40 && progressBar < 60 ? (
+            <motion.span
+              initial={{ x: -100 }}
+              animate={{ x: 0 }}
+              className="mt-1 mr-1 text-lg"
+            >
+              🚀
+            </motion.span>
+          ) : (
+            progressBar === 100 && (
+              <motion.span
+                initial={{ opacity: 0, scale: 5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="mt-1 mr-1 text-lg"
+              >
+                💯
+              </motion.span>
+            )
+          )}
+          <span className="">{progressBar}%</span>
         </div>
       </motion.div>
 
@@ -259,7 +279,7 @@ const IndexPage = () => {
               </div>
               {/* features - make divs as square as possible*/}
               <div className="grid gap-6 md:grid-cols-4 md:gap-2">
-                <div className="flex flex-col items-center justify-center flex-shrink-0 col-span-2 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 sm:col-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
                   <div>1</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -277,7 +297,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 row-span-2 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
                   <div>3</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -295,7 +315,7 @@ const IndexPage = () => {
                     laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 col-span-2 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 sm:col-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
                   <div>5</div>
                   <div>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
