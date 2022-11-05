@@ -27,7 +27,7 @@ const IndexPage = () => {
     [0, 1],
     ["100%", "85%"]
   );
-  let y = useTransform(welcomeProgress.scrollYProgress, [0, 1], ["0%", "45%"]);
+  let y = useTransform(welcomeProgress.scrollYProgress, [0, 1], ["0%", "40%"]);
 
   const mainPage = useRef<HTMLDivElement>(null);
   const mainProgress = useScroll({
@@ -195,9 +195,9 @@ const IndexPage = () => {
 
         {/* Projects */}
         <motion.section
-          initial={{ opacity: 0.5 }}
-          style={{ y: "-2.5%", z: 20 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0.75, scale: 0.98 }}
+          style={{ y: "-3%", z: 20 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             duration: 1,
@@ -514,8 +514,8 @@ const IndexPage = () => {
 
         {/* GitHub Activity */}
         <motion.section
-          initial={{ opacity: 0.5 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0.75, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             duration: 1,
@@ -538,8 +538,8 @@ const IndexPage = () => {
 
         {/* Page Build */}
         <motion.section
-          initial={{ opacity: 0.5 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0.75, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             duration: 1,
