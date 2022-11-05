@@ -157,7 +157,10 @@ const IndexPage = () => {
             id="welcome"
             className="text-6xl font-bold sm:text-7xl drop-shadow-md"
           >
-            Hi 👋🏼, I'm <span className="text-amber-500">Kavan</span>
+            Hi 👋🏼, I'm{" "}
+            <span className="text-transparent bg-gradient-to-tr bg-clip-text from-amber-500 to-yellow-300 saturate-150">
+              Kavan
+            </span>
           </h1>
           <ul className="flex gap-2 font-mono dark:text-dark-white/70 text-light-black/70">
             <li>
@@ -518,7 +521,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-30 w-full min-h-screen p-6 bg-gray-200 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
+          className="z-30 w-full min-h-screen p-6 bg-gray-100 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="github" className="mb-8 text-2xl font-thin cursor-pointer">
             <Link
@@ -542,7 +545,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-6 text-gray-900 bg-gray-300 md:p-8 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark dark:text-dark-white/80"
+          className="z-40 min-h-screen p-6 text-gray-900 bg-gray-100 md:p-8 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark dark:text-dark-white/80"
         >
           <h2
             id="build"
