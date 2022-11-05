@@ -93,11 +93,11 @@ const IndexPage = () => {
           <div className="w-1 h-1 rounded-md bg-light-black dark:bg-dark-white"></div>
         </button>
         <nav
-          className={`z-40 sm:block sm:w-full fixed font-main mt-3 ${
+          className={`z-40 sm:block sm:w-full fixed font-main pt-3 ${
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
-          <ul className="p-6 mb-32 sm:flex sm:items-center sm:gap-8 font-mono text-4xl font-bold text-right uppercase sm:mb-0 sm:p-0 sm:px-8 sm:py-1.5 sm:text-start word-spacing-tight sm:text-sm drop-shadow-[0_20px_100px_rgba(0,0,0,0.8)] sm:drop-shadow-none">
+          <ul className="p-6 mb-32 sm:flex sm:items-center sm:gap-8 font-mono text-4xl font-bold text-right uppercase sm:mb-0 sm:p-0 sm:px-8 sm:py-1.5 sm:text-start word-spacing-tight sm:text-sm drop-shadow-xl sm:drop-shadow-none">
             <li className="mr-auto">
               <a className="cursor-pointer" onClick={scroll.scrollToTop}>
                 Kavan Paramathasan
@@ -136,6 +136,7 @@ const IndexPage = () => {
         </nav>
       </header>
 
+      {/* Progress Bar */}
       <motion.div
         style={{ width }}
         className="fixed z-50 flex justify-end h-3 shadow-sm rounded-r-md bg-gradient-to-l from-amber-500 to-yellow-300/40 text-dark-white/90"
@@ -150,7 +151,7 @@ const IndexPage = () => {
         <motion.section
           style={{ y, scale, z: 0 }}
           ref={welcomePage}
-          className="h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl flex flex-col items-start justify-center gap-3"
+          className="min-h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl flex flex-col items-start justify-center gap-3"
         >
           <h1
             id="welcome"
@@ -192,14 +193,14 @@ const IndexPage = () => {
         {/* Projects */}
         <motion.section
           initial={{ opacity: 0.5 }}
-          style={{ y: "-2%", z: 20 }}
+          style={{ y: "-2.5%", z: 20 }}
           whileInView={{ opacity: 1 }}
           transition={{
             type: "spring",
             duration: 1,
           }}
           viewport={{ amount: 0.1, once: false }}
-          className="sm:p-10 p-[4%] min-h-screen w-full mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-100 dark:bg-dark-main"
+          className="w-full min-h-screen p-6 bg-gray-100 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin cursor-pointer">
             <Link
@@ -453,16 +454,58 @@ const IndexPage = () => {
 
           {/* Pokedex */}
           <div className="mb-96">
-            <h3 className="p-2 text-5xl font-bold text-center text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text">
-              Pokedex App
-            </h3>
+            {/* overview */}
+            <div className="flex items-center justify-center">
+              <div className="mb-6 space-y-4 w-96 lg:w-112">
+                <h3 className="text-5xl font-bold text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text">
+                  Pokedex App
+                </h3>
+                <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
+                  description goes here
+                </p>
+                <div className="btn-group">
+                  <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
+                    live link
+                  </button>
+                  <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
+                    <StaticImage
+                      src={"../images/GitHub-Mark-Light-64px.png"}
+                      alt={""}
+                      className="opacity-90"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* features */}
           </div>
 
-          {/* BookStore */}
+          {/* JSON data */}
           <div className="mb-96">
-            <h3 className="p-2 text-5xl font-bold text-center text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
-              Analyzing JSON Data
-            </h3>
+            {/* overview */}
+            <div className="flex items-center justify-center">
+              <div className="mb-6 space-y-4 w-96 lg:w-112">
+                <h3 className="text-5xl font-bold text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+                  Analyzing JSON Data
+                </h3>
+                <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
+                  description goes here
+                </p>
+                <div className="btn-group">
+                  <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
+                    live link
+                  </button>
+                  <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
+                    <StaticImage
+                      src={"../images/GitHub-Mark-Light-64px.png"}
+                      alt={""}
+                      className="opacity-90"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* features */}
           </div>
         </motion.section>
 
@@ -475,7 +518,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="w-full z-30 p-[4%] min-h-screen mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl bg-gray-200 dark:bg-dark-main"
+          className="z-30 w-full min-h-screen p-6 bg-gray-200 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="github" className="mb-8 text-2xl font-thin cursor-pointer">
             <Link
@@ -499,7 +542,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-[8%] bg-gray-300 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark text-gray-900 dark:text-dark-white/80"
+          className="z-40 min-h-screen p-6 text-gray-900 bg-gray-300 md:p-8 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark dark:text-dark-white/80"
         >
           <h2
             id="build"
