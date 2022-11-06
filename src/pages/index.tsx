@@ -83,7 +83,7 @@ const IndexPage = () => {
       data-theme="bumblebee"
     >
       {/* Extract to Header component — need to deal w props and window sizes */}
-      <header className="text-light-black dark:text-white">
+      <header className="transition-colors duration-1000 text-light-black dark:text-white">
         <button
           className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
           onClick={() => setIsOpen(!isOpen)}
@@ -93,7 +93,7 @@ const IndexPage = () => {
           <div className="w-1 h-1 rounded-md bg-light-black dark:bg-dark-white"></div>
         </button>
         <nav
-          className={`z-50 sm:block sm:w-full fixed font-main sm:pt-2 sm:backdrop-blur sm:dark:bg-dark-main/75 sm:bg-dark-white/75 sm:border-b sm:border-dark-black/10 sm:dark:border-dark-white/10 ${
+          className={`z-50 sm:block sm:w-full fixed font-main sm:pt-2 sm:backdrop-blur sm:dark:bg-dark-main/75 sm:bg-dark-white/75 sm:border-b sm:border-dark-black/10 sm:dark:border-dark-white/10 transition-colors duration-1000 ${
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
@@ -172,12 +172,15 @@ const IndexPage = () => {
         </label>
       </label>
 
-      <main ref={mainPage} className="text-light-black dark:text-dark-white">
+      <main
+        ref={mainPage}
+        className="transition-colors duration-1000 text-light-black dark:text-dark-white"
+      >
         {/* Welcome Page */}
         <motion.section
           style={{ y, scale, z: 0 }}
           ref={welcomePage}
-          className="min-h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl flex flex-col items-start justify-center gap-3"
+          className="min-h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl flex flex-col items-start justify-center gap-3 transition-colors duration-1000"
         >
           <h1
             id="welcome"
@@ -229,7 +232,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.1, once: false }}
-          className="w-full min-h-screen p-6 bg-gray-100 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
+          className="w-full min-h-screen p-6 transition-colors duration-1000 bg-gray-100 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin cursor-pointer">
             <Link
@@ -547,7 +550,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-30 w-full min-h-screen p-6 bg-gray-100 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
+          className="z-30 w-full min-h-screen p-6 transition-colors duration-1000 bg-gray-100 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="github" className="mb-8 text-2xl font-thin cursor-pointer">
             <Link
@@ -571,7 +574,7 @@ const IndexPage = () => {
             duration: 1,
           }}
           viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-6 text-gray-900 bg-gray-100 md:p-8 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark dark:text-dark-white/80"
+          className="z-40 min-h-screen p-6 text-gray-900 transition-colors duration-1000 bg-gray-100 md:p-8 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark dark:text-dark-white/80"
         >
           <h2
             id="build"
@@ -674,7 +677,7 @@ const IndexPage = () => {
         </motion.section>
       </main>
 
-      <footer className="grid w-screen h-screen place-items-center">
+      <footer className="grid w-screen h-screen transition-colors duration-1000 place-items-center">
         <div className="flex flex-col items-center gap-8">
           <h4 className="text-2xl font-light dark:text-white">
             thank you for visiting! 🖤
