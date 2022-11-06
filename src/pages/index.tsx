@@ -104,9 +104,15 @@ const IndexPage = () => {
               </a>
             </li>
             <li className="">
-              <a href="/about">about</a>
+              <a
+              // href="/about"
+              >
+                <label htmlFor="my-modal-4">about</label>
+              </a>
             </li>
-            <li className="">contact</li>
+            <li className="">
+              <label htmlFor="my-modal-4">contact</label>
+            </li>
             <li>
               <label className="swap swap-rotate">
                 {/* <!-- this hidden checkbox controls the state --> */}
@@ -146,6 +152,26 @@ const IndexPage = () => {
         </div>
       </motion.div>
 
+      {/* Not implemented modal */}
+      <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+      <label
+        htmlFor="my-modal-4"
+        className="cursor-pointer modal"
+        data-theme={isDarkMode ? "dark" : "light"}
+      >
+        <label
+          className="relative modal-box dark:text-dark-white dark:bg-dark-main"
+          htmlFor=""
+        >
+          <h3 className="text-lg font-bold">
+            Please note <span className="text-2xl">✍🏼</span>
+          </h3>
+          <p className="py-4">
+            This has not been implemented yet, but will be in an upcoming build!
+          </p>
+        </label>
+      </label>
+
       <main ref={mainPage} className="text-light-black dark:text-dark-white">
         {/* Welcome Page */}
         <motion.section
@@ -178,16 +204,16 @@ const IndexPage = () => {
             </li>
             <li>
               <a className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8">
-                photography
+                <label htmlFor="my-modal-4">photography</label>
               </a>
               ,
             </li>
             <li>
               <a
                 className="underline transition-all cursor-pointer underline-offset-4 decoration-1 hover:decoration-amber-400 hover:decoration-2 hover:underline-offset-8 focus:decoration-amber-400 focus:decoration-2 focus:underline-offset-8"
-                href="/about"
+                // href="/about"
               >
-                about
+                <label htmlFor="my-modal-4">about</label>
               </a>
             </li>
           </ul>
@@ -639,52 +665,10 @@ const IndexPage = () => {
                   & overall colors
                 </li>
               </ul>
-            </li>
-            <li className="mt-8">
-              <h5 className="font-bold">Move to Framer Motion</h5>
-              <ul className="mt-1 ml-4 list-disc list-inside">
-                <li>
-                  make links functional again (navbar, welcome, footer scroll to
-                  top)
-                </li>
-                <li>
-                  (labeled w clickable links) progress bar w Framer
-                  — amber-400/500
-                  <ul className="ml-8 list-disc list-inside">
-                    <li>
-                      e.g.){" "}
-                      <a
-                        href="https://githubnext.com/"
-                        className="link link-primary"
-                      >
-                        GitHub Next
-                      </a>{" "}
-                      (minus the progress bar)
-                    </li>
-                    <details className="">
-                      <summary>previous idea (use the headings)</summary>
-                      <ul className="steps steps-horizontal">
-                        <li className="step step-primary">welcome</li>
-                        <li className="step step-primary">project list</li>
-                        <li className="step">github activity</li>
-                        <li className="step">future page builds</li>
-                      </ul>
-                      <li>
-                        auto-hide on mobile when not in use (clickable links)
-                      </li>
-                      <li>
-                        use md:steps-vertical and pin off the side for larger
-                        screens
-                      </li>
-                      <li>rm scroll to top once this is functional</li>
-                    </details>
-                  </ul>
-                </li>
-                <li>
-                  rm unused npm packages w npm-check library or uninstall
-                  command — react-spring, react-scroll
-                </li>
-              </ul>
+              <li>
+                rm unused npm packages w npm-check library or uninstall command
+                — react-spring, react-scroll
+              </li>
             </li>
           </ul>
         </motion.section>
