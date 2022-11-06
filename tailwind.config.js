@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
@@ -9,10 +11,21 @@ module.exports = {
     extend: {
       boxShadow: {
         divUp: ["0 -75px 150px 60px rgba(255,255,255,.8)"],
+        divUpDark: ["0 -75px 150px 60px rgba(63,63,63,.8)"],
       },
-      colors: {},
+      colors: {
+        "light-black": "#131517",
+        "dark-white": "#f1f1f1",
+        "dark-black": "#0f0f0f",
+        "dark-secondary": "#3F3F3F",
+        "dark-main": "#272727",
+        neutralgray: colors.neutral,
+      },
       fontFamily: {
         main: "-apple-system, Roboto, sans-serif, serif",
+      },
+      width: {
+        112: "28rem",
       },
     },
   },
@@ -27,4 +40,5 @@ module.exports = {
     prefix: "",
     darkTheme: "dark",
   },
+  darkMode: "class",
 };

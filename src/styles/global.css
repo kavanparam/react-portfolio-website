@@ -8,7 +8,7 @@ html{
 
 @layer base{
     body{
-      @apply bg-zinc-500;
+      @apply bg-gray-500;
     }
 }
 
