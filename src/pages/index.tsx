@@ -93,7 +93,7 @@ const IndexPage = () => {
           <div className="w-1 h-1 rounded-md bg-light-black dark:bg-dark-white"></div>
         </button>
         <nav
-          className={`z-40 sm:block sm:w-full fixed font-main pt-3 ${
+          className={`z-50 sm:block sm:w-full fixed font-main sm:pt-2 sm:backdrop-blur sm:dark:bg-dark-main/75 sm:bg-dark-white/75 sm:border-b sm:border-dark-black/10 sm:dark:border-dark-white/10 ${
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
@@ -147,7 +147,7 @@ const IndexPage = () => {
         style={{ width }}
         className="fixed z-50 flex justify-end h-3 shadow-sm rounded-r-md bg-gradient-to-l from-amber-500 to-yellow-300/40 text-dark-white/90"
       >
-        <div className="flex items-center mr-2 font-mono text-xs tracking-wider drop-shadow-md">
+        <div className="flex items-center mr-2 font-mono text-xs tracking-wider">
           <span className="">{progressBar}%</span>
         </div>
       </motion.div>
@@ -160,7 +160,7 @@ const IndexPage = () => {
         data-theme={isDarkMode ? "dark" : "light"}
       >
         <label
-          className="relative modal-box dark:text-dark-white dark:bg-dark-main"
+          className="relative modal-box text-light-black bg-dark-white dark:text-dark-white dark:bg-dark-main"
           htmlFor=""
         >
           <h3 className="text-lg font-bold">
