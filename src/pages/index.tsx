@@ -225,13 +225,13 @@ const IndexPage = () => {
         {/* Projects */}
         <motion.section
           initial={{ opacity: 0.6, scale: 0.98 }}
-          style={{ y: "-3%", z: 20 }}
+          style={{ y: "-2%", z: 20 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             duration: 1,
           }}
-          viewport={{ amount: 0.1, once: false }}
+          viewport={{ amount: 0.05, once: false }}
           className="w-full min-h-screen p-6 transition-colors duration-500 bg-white md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin cursor-pointer">
@@ -250,8 +250,8 @@ const IndexPage = () => {
           <div className="mb-16 md:mb-72">
             {/* overview */}
             <div className="flex items-center justify-center">
-              <div className="mb-6 space-y-4 w-96 lg:w-112">
-                <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
+              <div className="mb-6 space-y-4 w-96 lg:w-[48rem]">
+                <h3 className="pb-1 text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
                   <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
                     Multiplication
                   </span>{" "}
@@ -351,8 +351,8 @@ const IndexPage = () => {
           <div className="mb-16 md:mb-72">
             {/* v2 — overview */}
             <div className="flex items-center justify-center">
-              <div className="mb-6 space-y-4 w-96 lg:w-112">
-                <h3 className="text-5xl font-bold text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-black/60 via-purple-800 to-violet-500">
+              <div className="mb-6 space-y-4 w-96 lg:w-[32rem]">
+                <h3 className="pb-1 text-5xl font-bold text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-black/60 via-purple-800 to-violet-500">
                   Portfolio Website
                 </h3>
                 <h4 className="text-3xl font-bold">v2</h4>
@@ -506,9 +506,9 @@ const IndexPage = () => {
           {/* Pokedex */}
           <div className="relative mb-16 md:mb-72 min-h-[50vh]">
             {/* overview */}
-            <div className="flex items-center justify-center h-full md:absolute md:top-0 md:right-0 md:w-[45%]">
+            <div className="flex items-center justify-center h-full md:absolute md:top-0 md:right-0 lg:w-[50%] md:w-[45%]">
               <div className="mb-6 space-y-4 w-96 lg:w-112">
-                <h3 className="text-5xl font-bold text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-400 to-orange-600 bg-clip-text">
+                <h3 className="pb-1 text-5xl font-bold text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-400 to-orange-600 bg-clip-text">
                   Pokedex App
                 </h3>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
@@ -564,11 +564,11 @@ const IndexPage = () => {
           </div>
 
           {/* JSON data */}
-          <div className="mb-16 md:mb-72">
+          <div className="">
             {/* overview */}
             <div className="flex items-center justify-center">
-              <div className="mb-6 space-y-4 w-96 lg:w-112">
-                <h3 className="text-5xl font-bold text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-700 to-red-800 bg-clip-text">
+              <div className="mb-6 space-y-4 w-96 lg:w-[38rem]">
+                <h3 className="pb-1 text-5xl font-bold text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-700 to-red-800 bg-clip-text">
                   Analyzing JSON Data
                 </h3>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
@@ -589,7 +589,7 @@ const IndexPage = () => {
               </div>
             </div>
             {/* features */}
-            <div className="grid gap-6 md:grid-cols-3 md:gap-2">
+            <div className="grid gap-6 mb-24 md:grid-cols-3 md:gap-2">
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
                 <div>1</div>
                 <div>
@@ -629,7 +629,7 @@ const IndexPage = () => {
             type: "spring",
             duration: 1,
           }}
-          viewport={{ amount: 0.3, once: false }}
+          viewport={{ amount: 0.2, once: false }}
           className="z-30 w-full min-h-screen p-6 transition-colors duration-500 bg-white md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="github" className="mb-8 text-2xl font-thin cursor-pointer">
@@ -653,7 +653,7 @@ const IndexPage = () => {
             type: "spring",
             duration: 1,
           }}
-          viewport={{ amount: 0.3, once: false }}
+          viewport={{ amount: 0.2, once: false }}
           className="z-40 min-h-screen p-6 text-gray-900 transition-colors duration-500 bg-white md:p-8 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark dark:text-dark-white/80"
         >
           <h2
