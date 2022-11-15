@@ -452,7 +452,7 @@ const IndexPage = () => {
                 <span className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-white/0 dark:from-dark-main dark:to-dark-main/0" />
                 <span className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-white/0 dark:from-dark-main dark:to-dark-main/0" />
                 <div className="items-stretch gap-6 carousel carousel-center min-h-[40vh] md:gap-2 rounded-2xl">
-                  <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
+                  <div className="carousel-item flex-shrink-0 ml-48 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
                     <div>1</div>
                     <div>
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -492,7 +492,7 @@ const IndexPage = () => {
                       dolore!
                     </div>
                   </div>
-                  <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
+                  <div className="carousel-item flex-shrink-0 mr-48 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
                     <div>5</div>
                     <div>
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
