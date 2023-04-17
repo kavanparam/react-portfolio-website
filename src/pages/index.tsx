@@ -4,6 +4,7 @@ import type { HeadFC } from "gatsby";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link, animateScroll as scroll } from "react-scroll";
+import FeatureDiv from "../components/FeatureDiv";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 type WindowProps = {
@@ -52,6 +53,7 @@ const IndexPage = () => {
   /* fixme: mobile menu is clickable only when page is resized
     - only used for the navbar & can be removed 
     - find a better way to implement this, maybe w tw breakpoints
+    - **use windowresizehook
   */
   useEffect(() => {
     window.onload = updateSize;
@@ -73,6 +75,14 @@ const IndexPage = () => {
 
   // console.log("isOpen", isOpen);
   console.log("isDarkMode state:", isDarkMode);
+
+  /* todo:
+      - create FeatureDiv — default styling (can be added to or disregarded), optional lorem text for description (if optional lorem prop is passed w true), icon / numbered section
+      - this is a list of objects that will be mapped to feature divs
+      - map over this into a <FeatureDiv> like Gatsby to build grid
+      - move descriptions here (from Notion)
+  */
+  const mcfFeatures = [{}, {}];
 
   return (
     <motion.div
@@ -281,13 +291,18 @@ const IndexPage = () => {
             </div>
             {/* features */}
             <div className="grid gap-6 md:grid-cols-3 md:grid-rows-3 md:gap-2">
+              <FeatureDiv styles={"flex"} />
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
                 <div>1</div>
                 <div>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Veritatis aspernatur, perferendis corrupti sunt atque cumque
                   hic molestiae debitis temporibus impedit amet quasi laudantium
-                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                  rerum animi quas, ea voluptatibus! Eos, ducimus. Lorem ipsum
+                  dolor sit, amet consectetur adipisicing elit. Tenetur
+                  perferendis ut molestiae voluptate recusandae! Laborum fugit
+                  perspiciatis praesentium tempore dignissimos aspernatur porro,
+                  maiores iure optio aliquam voluptatum doloribus numquam omnis.
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-1 rounded-2xl md:p-8 dark:bg-dark-secondary">
