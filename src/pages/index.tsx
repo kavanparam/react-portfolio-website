@@ -4,6 +4,7 @@ import type { HeadFC } from "gatsby";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link, animateScroll as scroll } from "react-scroll";
+import FeatureDiv from "../components/FeatureDiv";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 type WindowProps = {
@@ -14,7 +15,7 @@ type WindowProps = {
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [progressBar, setProgressBar] = useState(0);
 
   const welcomePage = useRef<HTMLDivElement>(null);
@@ -52,6 +53,7 @@ const IndexPage = () => {
   /* fixme: mobile menu is clickable only when page is resized
     - only used for the navbar & can be removed 
     - find a better way to implement this, maybe w tw breakpoints
+    - **use windowresizehook
   */
   useEffect(() => {
     window.onload = updateSize;
@@ -74,6 +76,14 @@ const IndexPage = () => {
   // console.log("isOpen", isOpen);
   console.log("isDarkMode state:", isDarkMode);
 
+  /* todo:
+      - create FeatureDiv — default styling (can be added to or disregarded), optional lorem text for description (if optional lorem prop is passed w true), icon / numbered section
+      - this is a list of objects that will be mapped to feature divs
+      - map over this into a <FeatureDiv> like Gatsby to build grid
+      - move descriptions here (from Notion)
+  */
+  const mcfFeatures = [{}, {}];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -83,7 +93,7 @@ const IndexPage = () => {
       data-theme="bumblebee"
     >
       {/* Extract to Header component — need to deal w props and window sizes */}
-      <header className="transition-colors duration-1000 text-light-black dark:text-white">
+      <header className="transition-colors duration-500 text-light-black dark:text-white">
         <button
           className={`z-50 fixed right-0 flex flex-col gap-1 p-5 mr-2 sm:hidden`}
           onClick={() => setIsOpen(!isOpen)}
@@ -93,11 +103,11 @@ const IndexPage = () => {
           <div className="w-1 h-1 rounded-md bg-light-black dark:bg-dark-white"></div>
         </button>
         <nav
-          className={`z-50 sm:block sm:w-full fixed font-main sm:pt-2 sm:backdrop-blur sm:dark:bg-dark-main/75 sm:bg-dark-white/75 sm:border-b sm:border-dark-black/10 sm:dark:border-dark-white/10 transition-colors duration-1000 ${
+          className={`z-50 sm:block sm:w-full fixed sm:pt-2.5 sm:backdrop-blur sm:dark:bg-dark-main/75 sm:bg-dark-white/75 sm:border-b sm:border-dark-black/10 sm:dark:border-dark-white/10 transition-colors duration-500 ${
             isOpen && size?.x && size.x < 640 ? "right-0 bottom-0" : "hidden"
           }`}
         >
-          <ul className="p-6 mb-32 sm:flex sm:items-center sm:gap-8 font-mono text-4xl font-bold text-right uppercase sm:mb-0 sm:p-0 sm:px-8 sm:py-1.5 sm:text-start word-spacing-tight sm:text-sm drop-shadow-xl sm:drop-shadow-none">
+          <ul className="p-6 mb-32 sm:flex sm:items-center sm:gap-8 font-mono text-4xl font-semibold text-right uppercase sm:mb-0 sm:p-0 sm:px-8 sm:py-1.5 sm:text-start word-spacing-tight sm:text-sm drop-shadow-xl sm:drop-shadow-none">
             <li className="mr-auto">
               <a className="cursor-pointer" onClick={scroll.scrollToTop}>
                 Kavan Paramathasan
@@ -113,7 +123,7 @@ const IndexPage = () => {
             <li className="">
               <label htmlFor="my-modal-4">contact</label>
             </li>
-            <li>
+            <li className="mt-0.5">
               <label className="swap swap-rotate">
                 {/* <!-- this hidden checkbox controls the state --> */}
                 <input
@@ -174,13 +184,13 @@ const IndexPage = () => {
 
       <main
         ref={mainPage}
-        className="transition-colors duration-1000 text-light-black dark:text-dark-white"
+        className="transition-colors duration-500 text-light-black dark:text-dark-white"
       >
         {/* Welcome Page */}
         <motion.section
           style={{ y, scale, z: 0 }}
           ref={welcomePage}
-          className="min-h-screen w-full p-[10%] bg-gray-50 dark:bg-dark-main rounded-3xl flex flex-col items-start justify-center gap-3 transition-colors duration-1000"
+          className="min-h-screen w-full p-[10%] bg-white dark:bg-dark-main rounded-3xl flex flex-col items-start justify-center gap-3 transition-colors duration-500"
         >
           <h1
             id="welcome"
@@ -224,15 +234,15 @@ const IndexPage = () => {
 
         {/* Projects */}
         <motion.section
-          initial={{ opacity: 0.75, scale: 0.98 }}
-          style={{ y: "-3%", z: 20 }}
+          initial={{ opacity: 0.6, scale: 0.98 }}
+          style={{ y: "-2%", z: 20 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             duration: 1,
           }}
-          viewport={{ amount: 0.1, once: false }}
-          className="w-full min-h-screen p-6 transition-colors duration-1000 bg-gray-100 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
+          viewport={{ amount: 0.05, once: false }}
+          className="w-full min-h-screen p-6 transition-colors duration-500 bg-white md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="projects" className="mb-8 text-2xl font-thin cursor-pointer">
             <Link
@@ -247,159 +257,183 @@ const IndexPage = () => {
           </h2>
 
           {/* MCF */}
-          <div className="mb-16 md:mb-24">
-            <div className="">
-              {/* overview */}
-              <div className="flex items-center justify-center">
-                <div className="mb-6 space-y-4 w-96 lg:w-112">
-                  <h3 className="inline-block text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
-                    <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
-                      Multiplication
-                    </span>{" "}
-                    <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
-                      Connect
-                    </span>{" "}
-                    <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
-                      Four
-                    </span>
-                  </h3>
-                  <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
-                    description goes here
-                  </p>
-                  <div className="btn-group">
-                    <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
-                      live link
-                    </button>
-                    <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
-                      <StaticImage
-                        src={"../images/GitHub-Mark-Light-64px.png"}
-                        alt={""}
-                        className="opacity-90"
-                      />
-                    </button>
-                  </div>
+          <div className="mb-16 md:mb-72">
+            {/* overview */}
+            <div className="flex items-center justify-center">
+              <div className="mb-6 space-y-4 w-96 lg:w-[48rem]">
+                <h3 className="pb-1 text-5xl font-bold lg:text-6xl drop-shadow saturate-150">
+                  <span className="text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text">
+                    Multiplication
+                  </span>{" "}
+                  <span className="text-transparent bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text">
+                    Connect
+                  </span>{" "}
+                  <span className="text-transparent bg-gradient-to-r bg-clip-text from-rose-500 to-red-600">
+                    Four
+                  </span>
+                </h3>
+                <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
+                  description goes here
+                </p>
+                <div className="btn-group">
+                  <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
+                    live link
+                  </button>
+                  <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
+                    <StaticImage
+                      src={"../images/GitHub-Mark-Light-64px.png"}
+                      alt={""}
+                      className="opacity-90"
+                    />
+                  </button>
                 </div>
               </div>
-              {/* features - make divs as square as possible*/}
-              <div className="grid gap-6 md:grid-cols-4 md:gap-2">
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 sm:col-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
-                  <div>1</div>
-                  <div>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
-                    hic molestiae debitis temporibus impedit amet quasi
-                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
-                  </div>
+            </div>
+            {/* features */}
+            <div className="grid gap-6 md:grid-cols-3 md:grid-rows-3 md:gap-2">
+              <FeatureDiv styles={"flex"} />
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>1</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus. Lorem ipsum
+                  dolor sit, amet consectetur adipisicing elit. Tenetur
+                  perferendis ut molestiae voluptate recusandae! Laborum fugit
+                  perspiciatis praesentium tempore dignissimos aspernatur porro,
+                  maiores iure optio aliquam voluptatum doloribus numquam omnis.
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
-                  <div>2</div>
-                  <div>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
-                    hic molestiae debitis temporibus impedit amet quasi
-                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
-                  </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-1 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>2</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
-                  <div>3</div>
-                  <div>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
-                    hic molestiae debitis temporibus impedit amet quasi
-                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
-                  </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>3</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 rounded-2xl md:p-8 dark:bg-dark-secondary">
-                  <div>4</div>
-                  <div>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
-                    hic molestiae debitis temporibus impedit amet quasi
-                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
-                  </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>4</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-gray-200 sm:col-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
-                  <div>5</div>
-                  <div>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis aspernatur, perferendis corrupti sunt atque cumque
-                    hic molestiae debitis temporibus impedit amet quasi
-                    laudantium rerum animi quas, ea voluptatibus! Eos, ducimus.
-                  </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>5</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>6</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-1 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>7</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
                 </div>
               </div>
             </div>
           </div>
 
           {/* Portfolio */}
-          <div className="mb-16 md:mb-24">
-            <h3 className="mb-8 text-5xl font-bold text-center text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-black/60 via-purple-800 to-violet-500">
-              Portfolio Website
-            </h3>
-
-            <div className="relative">
-              {/* v2 — overview */}
-              <div className="flex items-center justify-center md:absolute md:top-0 md:left-0 md:w-[30%] h-full">
-                <div className="mb-6 space-y-4 w-96 lg:w-112 md:mb-0">
-                  <h4 className="text-3xl font-bold">v2</h4>
-                  <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
-                    description goes here
-                  </p>
-                  <div className="btn-group">
-                    <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
-                      live link
-                    </button>
-                    <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
-                      <StaticImage
-                        src={"../images/GitHub-Mark-Light-64px.png"}
-                        alt={""}
-                        className="opacity-90"
-                      />
-                    </button>
-                  </div>
+          <div className="mb-16 md:mb-72">
+            {/* v2 — overview */}
+            <div className="flex items-center justify-center">
+              <div className="mb-6 space-y-4 w-96 lg:w-[32rem]">
+                <h3 className="pb-1 text-5xl font-bold text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-black/60 via-purple-800 to-violet-500">
+                  Portfolio Website
+                </h3>
+                <h4 className="text-3xl font-bold">v2</h4>
+                <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
+                  description goes here
+                </p>
+                <div className="btn-group">
+                  <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
+                    live link
+                  </button>
+                  <button className="p-1 btn btn-square bg-amber-500 btn-primary btn-sm">
+                    <StaticImage
+                      src={"../images/GitHub-Mark-Light-64px.png"}
+                      alt={""}
+                      className="opacity-90"
+                    />
+                  </button>
                 </div>
               </div>
-              {/* v2 — features */}
-              <div className="grid md:grid-cols-2 md:w-[70%] md:ml-[30%] gap-6 md:gap-2">
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-gray-200 dark:bg-dark-secondary rounded-2xl">
-                  <div>1</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
+            </div>
+
+            {/* v2 — features */}
+            <div className="grid gap-6 md:grid-cols-4 md:gap-2">
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:col-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>1</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-gray-200 dark:bg-dark-secondary rounded-2xl">
-                  <div>2</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>2</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-gray-200 dark:bg-dark-secondary rounded-2xl">
-                  <div>3</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>3</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
                 </div>
-                <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-gray-200 dark:bg-dark-secondary rounded-2xl">
-                  <div>4</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
-                  </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>4</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:col-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>5</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
                 </div>
               </div>
             </div>
@@ -429,55 +463,59 @@ const IndexPage = () => {
                 </div>
               </div>
               {/* v1 — features */}
-              <div className="carousel carousel-center items-stretch md:w-[70%] md:ml-[30%] min-h-[40vh] gap-6 md:gap-2 rounded-2xl">
-                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>1</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
+              <div className="relative md:w-[70%] md:ml-[30%] min-h-[40vh]">
+                <span className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-white/0 dark:from-dark-main dark:to-dark-main/0" />
+                <span className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-white/0 dark:from-dark-main dark:to-dark-main/0" />
+                <div className="items-stretch gap-6 carousel carousel-center min-h-[40vh] md:gap-2 rounded-2xl">
+                  <div className="carousel-item flex-shrink-0 ml-48 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
+                    <div>1</div>
+                    <div>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                      inventore rerum. Sapiente, reiciendis qui tempore possimus
+                      laudantium corrupti eos totam, nihil, praesentium voluptas
+                      dolore!
+                    </div>
                   </div>
-                </div>
-                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>2</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
+                  <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
+                    <div>2</div>
+                    <div>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                      inventore rerum. Sapiente, reiciendis qui tempore possimus
+                      laudantium corrupti eos totam, nihil, praesentium voluptas
+                      dolore!
+                    </div>
                   </div>
-                </div>
-                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>3</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
+                  <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
+                    <div>3</div>
+                    <div>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                      inventore rerum. Sapiente, reiciendis qui tempore possimus
+                      laudantium corrupti eos totam, nihil, praesentium voluptas
+                      dolore!
+                    </div>
                   </div>
-                </div>
-                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>4</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
+                  <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
+                    <div>4</div>
+                    <div>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                      inventore rerum. Sapiente, reiciendis qui tempore possimus
+                      laudantium corrupti eos totam, nihil, praesentium voluptas
+                      dolore!
+                    </div>
                   </div>
-                </div>
-                <div className="carousel-item flex-shrink-0 p-16 w-80 flex-col items-center justify-center bg-gray-200 dark:bg-dark-secondary rounded-[2.5rem]">
-                  <div>5</div>
-                  <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                    inventore rerum. Sapiente, reiciendis qui tempore possimus
-                    laudantium corrupti eos totam, nihil, praesentium voluptas
-                    dolore!
+                  <div className="carousel-item flex-shrink-0 mr-48 p-16 w-80 flex-col items-center justify-center bg-light-secondary dark:bg-dark-secondary rounded-[2.5rem]">
+                    <div>5</div>
+                    <div>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                      inventore rerum. Sapiente, reiciendis qui tempore possimus
+                      laudantium corrupti eos totam, nihil, praesentium voluptas
+                      dolore!
+                    </div>
                   </div>
                 </div>
               </div>
@@ -485,11 +523,11 @@ const IndexPage = () => {
           </div>
 
           {/* Pokedex */}
-          <div className="mb-96">
+          <div className="relative mb-16 md:mb-72 min-h-[50vh]">
             {/* overview */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center h-full md:absolute md:top-0 md:right-0 lg:w-[50%] md:w-[45%]">
               <div className="mb-6 space-y-4 w-96 lg:w-112">
-                <h3 className="text-5xl font-bold text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-500 to-orange-500 bg-clip-text">
+                <h3 className="pb-1 text-5xl font-bold text-transparent lg:text-6xl drop-shadow bg-gradient-to-t from-amber-400 to-orange-600 bg-clip-text">
                   Pokedex App
                 </h3>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
@@ -510,14 +548,46 @@ const IndexPage = () => {
               </div>
             </div>
             {/* features */}
+            <div className="flex flex-col md:w-[50%] gap-6 md:gap-4">
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-light-secondary dark:bg-dark-secondary rounded-2xl">
+                <div>1</div>
+                <div>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                  inventore rerum. Sapiente, reiciendis qui tempore possimus
+                  laudantium corrupti eos totam, nihil, praesentium voluptas
+                  dolore!
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-light-secondary dark:bg-dark-secondary rounded-2xl">
+                <div>2</div>
+                <div>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                  inventore rerum. Sapiente, reiciendis qui tempore possimus
+                  laudantium corrupti eos totam, nihil, praesentium voluptas
+                  dolore!
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-light-secondary dark:bg-dark-secondary rounded-2xl">
+                <div>3</div>
+                <div>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Tenetur hic repudiandae aliquid enim, perspiciatis iste
+                  inventore rerum. Sapiente, reiciendis qui tempore possimus
+                  laudantium corrupti eos totam, nihil, praesentium voluptas
+                  dolore!
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* JSON data */}
-          <div className="mb-96">
+          <div className="">
             {/* overview */}
             <div className="flex items-center justify-center">
-              <div className="mb-6 space-y-4 w-96 lg:w-112">
-                <h3 className="text-5xl font-bold text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-600 to-red-600 bg-clip-text">
+              <div className="mb-6 space-y-4 w-96 lg:w-[38rem]">
+                <h3 className="pb-1 text-5xl font-bold text-transparent lg:text-6xl saturate-200 drop-shadow bg-gradient-to-r from-cyan-700 to-red-800 bg-clip-text">
                   Analyzing JSON Data
                 </h3>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
@@ -538,19 +608,48 @@ const IndexPage = () => {
               </div>
             </div>
             {/* features */}
+            <div className="grid gap-6 mb-24 md:grid-cols-3 md:gap-2">
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>1</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>2</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
+                <div>3</div>
+                <div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
+                  hic molestiae debitis temporibus impedit amet quasi laudantium
+                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                </div>
+              </div>
+            </div>
           </div>
         </motion.section>
 
         {/* GitHub Activity */}
         <motion.section
-          initial={{ opacity: 0.75, scale: 0.98 }}
+          initial={{ opacity: 0.6, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             duration: 1,
           }}
-          viewport={{ amount: 0.3, once: false }}
-          className="z-30 w-full min-h-screen p-6 transition-colors duration-1000 bg-gray-100 md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
+          viewport={{ amount: 0.2, once: false }}
+          className="z-30 w-full min-h-screen p-6 transition-colors duration-500 bg-white md:p-8 mb-96 shadow-divUp dark:shadow-divUpDark rounded-3xl dark:bg-dark-main"
         >
           <h2 id="github" className="mb-8 text-2xl font-thin cursor-pointer">
             <Link
@@ -567,14 +666,14 @@ const IndexPage = () => {
 
         {/* Page Build */}
         <motion.section
-          initial={{ opacity: 0.75, scale: 0.98 }}
+          initial={{ opacity: 0.6, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             type: "spring",
             duration: 1,
           }}
-          viewport={{ amount: 0.3, once: false }}
-          className="z-40 min-h-screen p-6 text-gray-900 transition-colors duration-1000 bg-gray-100 md:p-8 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark dark:text-dark-white/80"
+          viewport={{ amount: 0.2, once: false }}
+          className="z-40 min-h-screen p-6 text-gray-900 transition-colors duration-500 bg-white md:p-8 dark:bg-dark-main rounded-3xl shadow-divUp dark:shadow-divUpDark dark:text-dark-white/80"
         >
           <h2
             id="build"
@@ -677,7 +776,7 @@ const IndexPage = () => {
         </motion.section>
       </main>
 
-      <footer className="grid w-screen h-screen transition-colors duration-1000 place-items-center">
+      <footer className="grid w-screen h-screen transition-colors duration-500 place-items-center">
         <div className="flex flex-col items-center gap-8">
           <h4 className="text-2xl font-light dark:text-white">
             thank you for visiting! 🖤
