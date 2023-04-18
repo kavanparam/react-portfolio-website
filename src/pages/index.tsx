@@ -12,6 +12,20 @@ type WindowProps = {
   y: undefined | Number;
 };
 
+/* todo:
+      - create FeatureDiv — default styling (can be added to or disregarded), optional lorem text for description (if optional lorem prop is passed w true), icon / numbered section
+      - this is a list of objects that will be mapped to feature divs
+      - map over this into a <FeatureDiv> like Gatsby to build grid
+      - move descriptions here (from Notion)
+*/
+const projects = [
+  { title: "", color: "", description: "", liveLink: "", repoLink: "" },
+  { title: "", color: "", description: "", liveLink: "", repoLink: "" },
+  { title: "", color: "", description: "", liveLink: "", repoLink: "" },
+  { title: "", color: "", description: "", liveLink: "", repoLink: "" },
+];
+const mcfFeatures = [{}, {}];
+
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
@@ -75,14 +89,6 @@ const IndexPage = () => {
 
   // console.log("isOpen", isOpen);
   console.log("isDarkMode state:", isDarkMode);
-
-  /* todo:
-      - create FeatureDiv — default styling (can be added to or disregarded), optional lorem text for description (if optional lorem prop is passed w true), icon / numbered section
-      - this is a list of objects that will be mapped to feature divs
-      - map over this into a <FeatureDiv> like Gatsby to build grid
-      - move descriptions here (from Notion)
-  */
-  const mcfFeatures = [{}, {}];
 
   return (
     <motion.div
@@ -256,6 +262,8 @@ const IndexPage = () => {
             </Link>
           </h2>
 
+          {projects.map((project) => "")}
+
           {/* MCF */}
           <div className="mb-16 md:mb-72">
             {/* overview */}
@@ -273,7 +281,9 @@ const IndexPage = () => {
                   </span>
                 </h3>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
-                  description goes here
+                  An interactive React app built with hooks & designed for
+                  Skillify users. MCF is a two player Connect Four game with a
+                  twist that tests mulitiplication fundamentals.
                 </p>
                 <div className="btn-group">
                   <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
@@ -291,8 +301,15 @@ const IndexPage = () => {
             </div>
             {/* features */}
             <div className="grid gap-6 md:grid-cols-3 md:grid-rows-3 md:gap-2">
-              <FeatureDiv styles={"flex"} />
-              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+              <FeatureDiv
+                styles={
+                  "flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary"
+                }
+                description={
+                  "Testing — replacement for FeatureDiv 1. How would I style the content here? Spacing (new line), fonts, images, etc."
+                }
+              />
+              {/* <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
                 <div>1</div>
                 <div>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -304,7 +321,7 @@ const IndexPage = () => {
                   perspiciatis praesentium tempore dignissimos aspernatur porro,
                   maiores iure optio aliquam voluptatum doloribus numquam omnis.
                 </div>
-              </div>
+              </div> */}
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-1 rounded-2xl md:p-8 dark:bg-dark-secondary">
                 <div>2</div>
                 <div>
@@ -367,12 +384,13 @@ const IndexPage = () => {
             {/* v2 — overview */}
             <div className="flex items-center justify-center">
               <div className="mb-6 space-y-4 w-96 lg:w-[32rem]">
-                <h3 className="pb-1 text-5xl font-bold text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 from-black/60 via-purple-800 to-violet-500">
+                <h3 className="pb-1 text-5xl font-bold text-transparent lg:text-6xl bg-clip-text drop-shadow bg-gradient-to-b saturate-150 dark:from-dark-secondary dark:via-purple-800 dark:to-violet-500 from-black/60 via-purple-800 to-violet-500">
                   Portfolio Website
                 </h3>
                 <h4 className="text-3xl font-bold">v2</h4>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
-                  description goes here
+                  A hub for projects, personal links, and what I'm currently
+                  working on.
                 </p>
                 <div className="btn-group">
                   <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
