@@ -12,20 +12,6 @@ type WindowProps = {
   y: undefined | Number;
 };
 
-/* todo:
-      - create FeatureDiv — default styling (can be added to or disregarded), optional lorem text for description (if optional lorem prop is passed w true), icon / numbered section
-      - this is a list of objects that will be mapped to feature divs
-      - map over this into a <FeatureDiv> like Gatsby to build grid
-      - move descriptions here (from Notion)
-*/
-const projects = [
-  { title: "", color: "", description: "", liveLink: "", repoLink: "" },
-  { title: "", color: "", description: "", liveLink: "", repoLink: "" },
-  { title: "", color: "", description: "", liveLink: "", repoLink: "" },
-  { title: "", color: "", description: "", liveLink: "", repoLink: "" },
-];
-const mcfFeatures = [{}, {}];
-
 const IndexPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState<WindowProps>();
@@ -262,8 +248,6 @@ const IndexPage = () => {
             </Link>
           </h2>
 
-          {projects.map((project) => "")}
-
           {/* MCF */}
           <div className="mb-16 md:mb-72">
             {/* overview */}
@@ -301,15 +285,7 @@ const IndexPage = () => {
             </div>
             {/* features */}
             <div className="grid gap-6 md:grid-cols-3 md:grid-rows-3 md:gap-2">
-              <FeatureDiv
-                styles={
-                  "flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary"
-                }
-                description={
-                  "Testing — replacement for FeatureDiv 1. How would I style the content here? Spacing (new line), fonts, images, etc."
-                }
-              />
-              {/* <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
+              <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-2 rounded-2xl md:p-8 dark:bg-dark-secondary">
                 <div>1</div>
                 <div>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -321,7 +297,7 @@ const IndexPage = () => {
                   perspiciatis praesentium tempore dignissimos aspernatur porro,
                   maiores iure optio aliquam voluptatum doloribus numquam omnis.
                 </div>
-              </div> */}
+              </div>
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary sm:row-span-1 rounded-2xl md:p-8 dark:bg-dark-secondary">
                 <div>2</div>
                 <div>
@@ -601,7 +577,7 @@ const IndexPage = () => {
           </div>
 
           {/* JSON data */}
-          <div className="">
+          <div className="mb-16 md:mb-72">
             {/* overview */}
             <div className="flex items-center justify-center">
               <div className="mb-6 space-y-4 w-96 lg:w-[38rem]">
