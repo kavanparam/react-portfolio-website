@@ -265,9 +265,9 @@ const IndexPage = () => {
                   </span>
                 </h3>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
-                  An interactive React app built with hooks & designed for
-                  Skillify users. MCF is a two player Connect Four game with a
-                  twist that tests mulitiplication fundamentals.
+                  React app built with hooks. Built to a specification, designed
+                  for Skillify users. MCF is a two player Connect Four game with
+                  a twist that tests multiplication fundamentals.
                 </p>
                 <div className="btn-group">
                   <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
@@ -525,7 +525,7 @@ const IndexPage = () => {
                   Pokedex App
                 </h3>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
-                  description goes here
+                  Using JavaScript to add interactivity to a website.
                 </p>
                 <div className="btn-group">
                   <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
@@ -544,33 +544,26 @@ const IndexPage = () => {
             {/* features */}
             <div className="flex flex-col md:w-[50%] gap-6 md:gap-4">
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-light-secondary dark:bg-dark-secondary rounded-2xl">
-                <div>1</div>
-                <div>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                  inventore rerum. Sapiente, reiciendis qui tempore possimus
-                  laudantium corrupti eos totam, nihil, praesentium voluptas
-                  dolore!
+                <div className="text-2xl">
+                  Retrieve and display data to the user using a RESTful API
+                </div>
+                <div className="flex w-full">
+                  <div className="w-1/2">Search box image</div>
+                  <div className="w-1/2">Search box that queries PokeAPI</div>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-light-secondary dark:bg-dark-secondary rounded-2xl">
-                <div>2</div>
                 <div>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                  inventore rerum. Sapiente, reiciendis qui tempore possimus
-                  laudantium corrupti eos totam, nihil, praesentium voluptas
-                  dolore!
+                  <div className="text-3xl">JS Promises</div>
+                  <div>Fetch API</div>
+                  <div>Async-Await</div>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-10 bg-light-secondary dark:bg-dark-secondary rounded-2xl">
-                <div>3</div>
                 <div>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Tenetur hic repudiandae aliquid enim, perspiciatis iste
-                  inventore rerum. Sapiente, reiciendis qui tempore possimus
-                  laudantium corrupti eos totam, nihil, praesentium voluptas
-                  dolore!
+                  <div className="text-2xl">JSON object interpretation</div>
+                  <div>Show sprites (if available)</div>
+                  <div>Toggle to show/hide full move list</div>
                 </div>
               </div>
             </div>
@@ -585,7 +578,9 @@ const IndexPage = () => {
                   Analyzing JSON Data
                 </h3>
                 <p className="text-lg sm:text-xl text-gray-800/80 dark:text-dark-white/80">
-                  description goes here
+                  Array manipulation in JavaScript with core array
+                  transformation methods. Aggregation and interpretation of JSON
+                  objects, such as those that would be received by an API.
                 </p>
                 <div className="btn-group">
                   <button className="lowercase bg-gray-700 border-none text-white/90 btn btn-sm">
@@ -604,30 +599,21 @@ const IndexPage = () => {
             {/* features */}
             <div className="grid gap-6 mb-24 md:grid-cols-3 md:gap-2">
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
-                <div>1</div>
-                <div>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
-                  hic molestiae debitis temporibus impedit amet quasi laudantium
-                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                <div className="flex flex-col text-4xl">
+                  <div>.filter(),</div>
+                  <div>.map(),</div>
+                  <div>.reduce()</div>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
-                <div>2</div>
-                <div>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
-                  hic molestiae debitis temporibus impedit amet quasi laudantium
-                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                <div className="text-2xl">
+                  Practice with JavaScript syntax: anonymous functions & arrow
+                  expressions.
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center flex-shrink-0 p-12 bg-light-secondary rounded-2xl md:p-8 dark:bg-dark-secondary">
-                <div>3</div>
-                <div>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis aspernatur, perferendis corrupti sunt atque cumque
-                  hic molestiae debitis temporibus impedit amet quasi laudantium
-                  rerum animi quas, ea voluptatibus! Eos, ducimus.
+                <div className="text-xl">
+                  Node.js file to use Fetch API outside of the browser.
                 </div>
               </div>
             </div>
